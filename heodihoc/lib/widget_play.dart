@@ -64,22 +64,24 @@ class WidgetButton extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Container(
-              width: double.infinity,
-              height: MediaQuery.of(context).size.height / 11.5,
-              decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      "assets/$img",
+            Expanded(
+              child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height / 11.5,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        "assets/$img",
+                      ),
+                      fit: BoxFit.fill,
                     ),
-                    fit: BoxFit.fill,
-                  ),
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(8)),
-              child: ListTile(onTap: () {
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => Main_game()));
-              }),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8)),
+                child: ListTile(onTap: () {
+                  Navigator.of(context).push(
+                      MaterialPageRoute(builder: (context) => Main_game()));
+                }),
+              ),
             ),
             Text(
               text,
