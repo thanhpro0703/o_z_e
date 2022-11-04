@@ -1,8 +1,0 @@
-Yêu cầu code giao diện :
-Tên các hàm sử dụng tiếng anh,
-Tách file ra riêng biệt nhìn cho gọn
-Sử dụng phông chữ UTM APTIMA
- Ai đã đọc rồi thì kí tên vào đây
-
-  #Thạnhhh
-
