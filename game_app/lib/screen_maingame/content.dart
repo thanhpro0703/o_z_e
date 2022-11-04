@@ -82,6 +82,7 @@ class _MyContentState extends State<MyContent> {
                       width: 200,
                       child: Text(
                         "Play",
+                        textAlign: TextAlign.center,
                         style: TextStyle(fontSize: 25),
                       ),
                     ),
@@ -123,7 +124,10 @@ class _MyContentState extends State<MyContent> {
                       width: 200,
                       child: Text(
                         "Random",
-                        style: TextStyle(fontSize: 25),
+                        style: TextStyle(
+                          fontSize: 25,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
@@ -165,6 +169,7 @@ class _MyContentState extends State<MyContent> {
                       child: Text(
                         "1 vs 1",
                         style: TextStyle(fontSize: 25),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
