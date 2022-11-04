@@ -122,7 +122,7 @@ class _MyContentState extends State<MyContent> {
                       padding: EdgeInsets.all(20),
                       width: 200,
                       child: Text(
-                        "Play",
+                        "Random",
                         style: TextStyle(fontSize: 25),
                       ),
                     ),
@@ -163,7 +163,7 @@ class _MyContentState extends State<MyContent> {
                       padding: EdgeInsets.all(20),
                       width: 200,
                       child: Text(
-                        "Play",
+                        "1 vs 1",
                         style: TextStyle(fontSize: 25),
                       ),
                     ),
