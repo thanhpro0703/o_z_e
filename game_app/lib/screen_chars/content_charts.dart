@@ -97,10 +97,12 @@ class _MyContentChartsState extends State<MyContentCharts> {
                             ],
                           ),
                         ),
-                        child: Icon(
-                          Icons.search,
-                          size: 50,
-                        ))
+                        child: IconButton(
+                            onPressed: (() {}),
+                            icon: Icon(
+                              Icons.search,
+                              size: 30,
+                            )))
                   ],
                 ),
               ),

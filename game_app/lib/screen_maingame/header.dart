@@ -50,9 +50,63 @@ class _MyHeaderState extends State<MyHeader> {
               padding: const EdgeInsets.all(8.0),
               child: Expanded(
                 child: Container(
-                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                  width: 80,
+                  height: 80,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment(0.7, 1.5),
+                      colors: <Color>[
+                        Color(0xffff8e0e00),
+                        Color(0xfff1f1c18),
+                      ],
+                    ),
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(0, 4),
+                          blurRadius: 5.0)
+                    ],
+                  ),
+                  child: Expanded(
+                    child: ElevatedButton(
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                          ),
+                          minimumSize: MaterialStateProperty.all(Size(100, 60)),
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.transparent),
+                          // elevation: MaterialStateProperty.all(3),
+                          shadowColor:
+                              MaterialStateProperty.all(Colors.transparent),
+                        ),
+                        onPressed: () {},
+                        child: Image.asset(
+                          'assets/account.png',
+                          width: 45,
+                          height: 40,
+                        )),
+                  ),
+                ),
+              ),
+            ),
+            ButtonHeaderWidget(
+              buttonheader: ElavetedButon(text: "Coins"),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Expanded(
+                  flex: 1,
+                  child: Container(
+                    width: 50,
+                    height: 50,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(20),
                       gradient: LinearGradient(
                         begin: Alignment.topLeft,
                         end: Alignment(0.7, 1.5),
@@ -68,33 +122,29 @@ class _MyHeaderState extends State<MyHeader> {
                             blurRadius: 5.0)
                       ],
                     ),
-                    child: Icon(
-                      Icons.account_circle_sharp,
-                      size: 40,
-                      shadows: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 128, 122, 122)
-                              .withOpacity(0.5),
-                          spreadRadius: 5,
-                          blurRadius: 8,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    )),
-              ),
-            ),
-            ButtonHeaderWidget(
-              buttonheader: ElavetedButon(text: "Coins"),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Expanded(
-                flex: 1,
-                child: CircleAvatar(
-                  backgroundColor: Colors.white10,
-                  backgroundImage: AssetImage("assets/gear.png"),
-                ),
-              ),
+                    child: Expanded(
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                            ),
+                            minimumSize:
+                                MaterialStateProperty.all(Size(100, 60)),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.transparent),
+                            // elevation: MaterialStateProperty.all(3),
+                            shadowColor:
+                                MaterialStateProperty.all(Colors.transparent),
+                          ),
+                          onPressed: () {},
+                          child: Image.asset(
+                            'assets/settings.png',
+                          )),
+                    ),
+                  )),
             ),
           ],
         ),

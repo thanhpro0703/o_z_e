@@ -21,18 +21,51 @@ class _MyFooterChartState extends State<MyFooterChart> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(8.0),
-                      topRight: Radius.circular(8.0),
+                  padding: const EdgeInsets.all(0),
+                  child: Container(
+                    width: 100,
+                    height: 60,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 4),
+                            blurRadius: 5.0)
+                      ],
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.7, 1.5),
+                        colors: <Color>[
+                          Color(0xffff8e0e00),
+                          Color(0xfff1f1c18),
+                        ],
+                      ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: Expanded(
-                      child: Image.asset(
-                        'assets/reply-message.png',
-                        width: 55,
-                        height: 55,
-                      ),
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                            ),
+                            minimumSize:
+                                MaterialStateProperty.all(Size(100, 60)),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.transparent),
+                            // elevation: MaterialStateProperty.all(3),
+                            shadowColor:
+                                MaterialStateProperty.all(Colors.transparent),
+                          ),
+                          onPressed: () {},
+                          child: Image.asset(
+                            'assets/reply-message.png',
+                            width: 45,
+                            height: 45,
+                          )),
                     ),
                   ),
                 ),
