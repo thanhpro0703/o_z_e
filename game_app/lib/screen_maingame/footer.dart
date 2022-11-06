@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screen_room/footer_room.dart';
+import '../screen_room/screen_room.dart';
 
 class MyFooter extends StatefulWidget {
   const MyFooter({super.key});
@@ -65,7 +66,13 @@ class _MyFooterState extends State<MyFooter> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: ElavetedButon(text: "FRIENDS")),
+                      child: ElavetedButon(
+                          text: "FRIENDS",
+                          page: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ScreenRoom(),
+                            ));
+                          })),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(1.0),
@@ -88,7 +95,13 @@ class _MyFooterState extends State<MyFooter> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: ElavetedButon(text: "EVENT")),
+                      child: ElavetedButon(
+                          text: "EVENT",
+                          page: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ScreenRoom(),
+                            ));
+                          })),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(1.0),
@@ -111,7 +124,13 @@ class _MyFooterState extends State<MyFooter> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(20),
                       ),
-                      child: ElavetedButon(text: "SHOP")),
+                      child: ElavetedButon(
+                          text: "SHOP",
+                          page: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => ScreenRoom(),
+                            ));
+                          })),
                 ),
               ],
             )));

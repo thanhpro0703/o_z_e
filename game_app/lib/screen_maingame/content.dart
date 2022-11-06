@@ -49,22 +49,45 @@ class _MyContentState extends State<MyContent> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ButtonPlayWidget(
-                  buttonplay: ElavetedButonPlay(text: "P L A Y"),
+                  buttonplay: ElavetedButonPlay(
+                    text: "P L A Y",
+                    page: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ScreenRoom(),
+                      ));
+                    },
+                  ),
                 ),
                 ButtonPlayWidget(
-                  buttonplay: ElavetedButonPlay(text: "R O O M"),
+                  buttonplay: ElavetedButonPlay(
+                    text: "R O O M",
+                    page: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ScreenRoom(),
+                      ));
+                    },
+                  ),
                 ),
                 ButtonPlayWidget(
-                  buttonplay: ElavetedButonPlay(text: "1 vs 1"),
+                  buttonplay: ElavetedButonPlay(
+                    text: "1 vs 1",
+                    page: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ScreenRoom(),
+                      ));
+                    },
+                  ),
                 )
-              ],
+              ], /*   */
             )));
   }
 }
 
 class ElavetedButonPlay extends StatefulWidget {
-  const ElavetedButonPlay({super.key, required this.text});
+  const ElavetedButonPlay({super.key, required this.text, required this.page});
   final String text;
+  final page;
+
   @override
   State<ElavetedButonPlay> createState() => _ElavetedButonPlayState();
 }
@@ -84,11 +107,7 @@ class _ElavetedButonPlayState extends State<ElavetedButonPlay> {
         // elevation: MaterialStateProperty.all(3),
         shadowColor: MaterialStateProperty.all(Colors.transparent),
       ),
-      onPressed: () {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => ScreenRoom(),
-        ));
-      },
+      onPressed: widget.page,
       child: Padding(
         padding: const EdgeInsets.only(
           top: 10,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screen_maingame/screen_maingame.dart';
 
 class MyFooterRoom extends StatefulWidget {
   const MyFooterRoom({super.key});
@@ -60,7 +61,11 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                             shadowColor:
                                 MaterialStateProperty.all(Colors.transparent),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pop(MaterialPageRoute(
+                              builder: (context) => ScreenMainGame(),
+                            ));
+                          },
                           child: Image.asset(
                             'assets/reply-message.png',
                             width: 45,
@@ -69,16 +74,32 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                     ),
                   ),
                 ),
-                ButtonFooterWidget(buttonfooter: ElavetedButon(text: "RANDOM")),
-                ButtonFooterWidget(buttonfooter: ElavetedButon(text: "3 VS 3"))
+                ButtonFooterWidget(
+                    buttonfooter: ElavetedButon(
+                  text: "RANDOM",
+                  page: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ScreenMainGame(),
+                    ));
+                  },
+                )),
+                ButtonFooterWidget(
+                    buttonfooter: ElavetedButon(
+                        text: "3 VS 3",
+                        page: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ScreenMainGame(),
+                          ));
+                        }))
               ],
             )));
   }
 }
 
 class ElavetedButon extends StatefulWidget {
-  const ElavetedButon({super.key, required this.text});
+  const ElavetedButon({super.key, required this.text, required this.page});
   final String text;
+  final page;
 
   @override
   State<ElavetedButon> createState() => _ElavetedButonState();
@@ -99,7 +120,7 @@ class _ElavetedButonState extends State<ElavetedButon> {
         // elevation: MaterialStateProperty.all(3),
         shadowColor: MaterialStateProperty.all(Colors.transparent),
       ),
-      onPressed: () {},
+      onPressed: widget.page,
       child: Padding(
         padding: const EdgeInsets.only(
           top: 10,
