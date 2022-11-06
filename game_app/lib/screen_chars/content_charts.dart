@@ -84,25 +84,36 @@ class _MyContentChartsState extends State<MyContentCharts> {
                       width: 10,
                     ),
                     Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment(2, 2),
-                            colors: <Color>[
-                              Color(0xfffece9e6),
-                              Color(0xfff8ca6db),
-                              Color(0xffffffcdc),
-                              Color(0xfffffedbc),
-                            ],
-                          ),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment(2, 2),
+                          colors: <Color>[
+                            Color(0xfffece9e6),
+                            Color(0xfff8ca6db),
+                            Color(0xffffffcdc),
+                            Color(0xfffffedbc),
+                          ],
                         ),
-                        child: IconButton(
-                            onPressed: (() {}),
-                            icon: Icon(
-                              Icons.search,
-                              size: 30,
-                            )))
+                      ),
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            minimumSize:
+                                MaterialStateProperty.all(Size(50, 50)),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.transparent),
+                            // elevation: MaterialStateProperty.all(3),
+                          ),
+                          onPressed: () {},
+                          child: Icon(Icons.search)),
+                    )
                   ],
                 ),
               ),
