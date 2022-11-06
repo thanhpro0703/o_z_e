@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class MyFooterChart extends StatefulWidget {
-  const MyFooterChart({super.key});
+class MyFooterRoom extends StatefulWidget {
+  const MyFooterRoom({super.key});
 
   @override
-  State<MyFooterChart> createState() => _MyFooterChartState();
+  State<MyFooterRoom> createState() => _MyFooterRoomState();
 }
 
-class _MyFooterChartState extends State<MyFooterChart> {
+class _MyFooterRoomState extends State<MyFooterRoom> {
   @override
   Widget build(BuildContext context) {
     return Expanded(

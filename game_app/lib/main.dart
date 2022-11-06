@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'screen_maingame/screen_maingame.dart';
 import 'screen_sign_in/form_sign_in.dart';
-import 'screen_chars/screen_chart.dart';
+import 'screen_room/screen_room.dart';
+import 'screen_setting/screen_seting.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: ScreenCharts(),
+      home: ScreenMainGame(),
     );
   }
 }

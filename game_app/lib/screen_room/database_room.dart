@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import '../model/dbcontext.dart';
 import '../model/entry.dart';
 
-class DatabaseChart extends StatefulWidget {
-  const DatabaseChart({super.key, required this.entry});
+class DatabaseRoom extends StatefulWidget {
+  const DatabaseRoom({super.key, required this.entry});
   final Entry entry;
   @override
-  State<DatabaseChart> createState() => _DatabaseChartState();
+  State<DatabaseRoom> createState() => _DatabaseRoomState();
 }
 
-class _DatabaseChartState extends State<DatabaseChart> {
+class _DatabaseRoomState extends State<DatabaseRoom> {
   @override
   Widget build(BuildContext context) {
     return Container(

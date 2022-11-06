@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../screen_chars/footer_chart.dart';
+import '../screen_room/footer_room.dart';
 
 class MyFooter extends StatefulWidget {
   const MyFooter({super.key});

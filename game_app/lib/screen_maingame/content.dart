@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import '../screen_chars/footer_chart.dart';
+import 'package:game_app/screen_room/screen_room.dart';
+import '../screen_room/footer_room.dart';
 
 class MyContent extends StatefulWidget {
   const MyContent({super.key});
@@ -51,7 +52,7 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(text: "P L A Y"),
                 ),
                 ButtonPlayWidget(
-                  buttonplay: ElavetedButonPlay(text: "R A N D O M"),
+                  buttonplay: ElavetedButonPlay(text: "R O O M"),
                 ),
                 ButtonPlayWidget(
                   buttonplay: ElavetedButonPlay(text: "1 vs 1"),
@@ -83,7 +84,11 @@ class _ElavetedButonPlayState extends State<ElavetedButonPlay> {
         // elevation: MaterialStateProperty.all(3),
         shadowColor: MaterialStateProperty.all(Colors.transparent),
       ),
-      onPressed: () {},
+      onPressed: () {
+        Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => ScreenRoom(),
+        ));
+      },
       child: Padding(
         padding: const EdgeInsets.only(
           top: 10,

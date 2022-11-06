@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/model/entry.dart';
-import "database_chart.dart";
+import 'database_room.dart';
 import '../model/dbcontext.dart';
-import 'footer_chart.dart';
+import 'footer_room.dart';
 
-class MyContentCharts extends StatefulWidget {
-  const MyContentCharts({super.key});
+class MyContentRoom extends StatefulWidget {
+  const MyContentRoom({super.key});
 
   @override
-  State<MyContentCharts> createState() => _MyContentChartsState();
+  State<MyContentRoom> createState() => _MyContentRoomState();
 }
 
-class _MyContentChartsState extends State<MyContentCharts> {
+class _MyContentRoomState extends State<MyContentRoom> {
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -175,7 +175,7 @@ class _MyContentChartsState extends State<MyContentCharts> {
                         child: ListView.builder(
                           itemCount: ListDB.listDb.length,
                           itemBuilder: ((context, index) {
-                            return DatabaseChart(entry: ListDB.listDb[index]);
+                            return DatabaseRoom(entry: ListDB.listDb[index]);
                           }),
                         ),
                       ),
