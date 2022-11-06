@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../screen_chars/footer_chart.dart';
 
 class MyContent extends StatefulWidget {
   const MyContent({super.key});
@@ -46,135 +47,91 @@ class _MyContentState extends State<MyContent> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 1.5),
-                          colors: <Color>[
-                            Color(0xffff95f9c3),
-                            Color(0xff696eff),
-                            Color(0xfffa8cff),
-                          ],
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(255, 255, 255, 255)
-                                .withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                          BoxShadow(
-                            color: Color.fromARGB(255, 255, 255, 255)
-                                .withOpacity(0.7),
-                            spreadRadius: 3,
-                            blurRadius: 4,
-                            offset: Offset(1, 3), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      padding: EdgeInsets.all(20),
-                      width: 200,
-                      child: Text(
-                        "Play",
-                        textAlign: TextAlign.center,
-                        style: TextStyle(fontSize: 25),
-                      ),
-                    ),
-                  ),
+                ButtonPlayWidget(
+                  buttonplay: ElavetedButonPlay(text: "P L A Y"),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 1.5),
-                          colors: <Color>[
-                            Color(0xffff95f9c3),
-                            Color(0xff696eff),
-                            Color(0xfffa8cff),
-                          ],
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(255, 255, 255, 255)
-                                .withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                          BoxShadow(
-                            color: Color.fromARGB(255, 255, 255, 255)
-                                .withOpacity(0.7),
-                            spreadRadius: 3,
-                            blurRadius: 4,
-                            offset: Offset(1, 3), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      padding: EdgeInsets.all(20),
-                      width: 200,
-                      child: Text(
-                        "Random",
-                        style: TextStyle(
-                          fontSize: 25,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
+                ButtonPlayWidget(
+                  buttonplay: ElavetedButonPlay(text: "R A N D O M"),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(15.0),
-                  child: Expanded(
-                    child: Container(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 2),
-                          colors: <Color>[
-                            Color(0xffff95f9c3),
-                            Color(0xff696eff),
-                            Color(0xfffa8cff),
-                          ],
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Color.fromARGB(255, 255, 255, 255)
-                                .withOpacity(0.5),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
-                          ),
-                          BoxShadow(
-                            color: Color.fromARGB(255, 255, 255, 255)
-                                .withOpacity(0.7),
-                            spreadRadius: 3,
-                            blurRadius: 4,
-                            offset: Offset(1, 3), // changes position of shadow
-                          ),
-                        ],
-                      ),
-                      padding: EdgeInsets.all(20),
-                      width: 200,
-                      child: Text(
-                        "1 vs 1",
-                        style: TextStyle(fontSize: 25),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                  ),
-                ),
+                ButtonPlayWidget(
+                  buttonplay: ElavetedButonPlay(text: "1 vs 1"),
+                )
               ],
             )));
+  }
+}
+
+class ElavetedButonPlay extends StatefulWidget {
+  const ElavetedButonPlay({super.key, required this.text});
+  final String text;
+  @override
+  State<ElavetedButonPlay> createState() => _ElavetedButonPlayState();
+}
+
+class _ElavetedButonPlayState extends State<ElavetedButonPlay> {
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      style: ButtonStyle(
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20.0),
+          ),
+        ),
+        minimumSize: MaterialStateProperty.all(Size(200, 80)),
+        backgroundColor: MaterialStateProperty.all(Colors.transparent),
+        // elevation: MaterialStateProperty.all(3),
+        shadowColor: MaterialStateProperty.all(Colors.transparent),
+      ),
+      onPressed: () {},
+      child: Padding(
+        padding: const EdgeInsets.only(
+          top: 10,
+          bottom: 10,
+        ),
+        child: Text(
+          widget.text,
+          style: TextStyle(
+            fontSize: 18,
+            // fontWeight: FontWeight.w700,
+            color: Colors.white,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ButtonPlayWidget extends StatefulWidget {
+  const ButtonPlayWidget({super.key, required this.buttonplay});
+  final Widget buttonplay;
+  @override
+  State<ButtonPlayWidget> createState() => _ButtonPlayWidgetState();
+}
+
+class _ButtonPlayWidgetState extends State<ButtonPlayWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
+      child: Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)
+            ],
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment(0.7, 1.5),
+              colors: <Color>[
+                Color(0xffff8e0e00),
+                Color(0xfff1f1c18),
+              ],
+            ),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: widget.buttonplay),
+    );
   }
 }

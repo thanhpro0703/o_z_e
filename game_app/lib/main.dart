@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'screen_maingame/screen_maingame.dart';
+import 'screen_chars/screen_chart.dart';
 
 void main() {
   runApp(const MyApp());
