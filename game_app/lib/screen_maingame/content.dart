@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_room/screen_room.dart';
 import '../screen_room/footer_room.dart';
+import '../screen_singler_play/screen_singler_play.dart';
 
 class MyContent extends StatefulWidget {
   const MyContent({super.key});
@@ -39,7 +40,7 @@ class _MyContentState extends State<MyContent> {
                     text: "P L A Y",
                     page: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ScreenRoom(),
+                        builder: (context) => ScreenSinglePlay(),
                       ));
                     },
                   ),
