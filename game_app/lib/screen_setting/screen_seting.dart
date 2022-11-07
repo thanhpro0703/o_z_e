@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
 import 'package:game_app/screen_maingame/screen_maingame.dart';
-=======
->>>>>>> main
 
 class ScreenSetting extends StatefulWidget {
   const ScreenSetting({super.key});
@@ -172,16 +169,12 @@ class _ScreenSettingState extends State<ScreenSetting> {
                                     shadowColor: MaterialStateProperty.all(
                                         Colors.transparent),
                                   ),
-<<<<<<< HEAD
                                   onPressed: () {
                                     Navigator.of(context)
                                         .push(MaterialPageRoute(
                                       builder: (context) => ScreenMainGame(),
                                     ));
                                   },
-=======
-                                  onPressed: () {},
->>>>>>> main
                                   child: Image.asset(
                                     'assets/reply-message.png',
                                   )),
