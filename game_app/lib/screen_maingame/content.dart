@@ -30,20 +30,6 @@ class _MyContentState extends State<MyContent> {
                   Color(0xfffff6cfbe),
                 ],
               ),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-                BoxShadow(
-                  color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.7),
-                  spreadRadius: 3,
-                  blurRadius: 4,
-                  offset: Offset(1, 3), // changes position of shadow
-                ),
-              ],
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
