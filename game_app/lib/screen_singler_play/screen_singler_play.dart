@@ -18,7 +18,7 @@ class _ScreenSinglePlayState extends State<ScreenSinglePlay> {
       body: SafeArea(
         child: Container(
           child: Column(
-            children: [MyHeader(), MyFooter()],
+            children: [MyHeader(), MyContentSinglePlay(), MyFooter()],
           ),
         ),
       ),
