@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:game_app/screen_setting/screen_seting.dart';
+=======
+>>>>>>> main
 
 class MyHeader extends StatefulWidget {
   const MyHeader({super.key});
@@ -140,11 +143,15 @@ class _MyHeaderState extends State<MyHeader> {
                             shadowColor:
                                 MaterialStateProperty.all(Colors.transparent),
                           ),
+<<<<<<< HEAD
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => ScreenSetting(),
                             ));
                           },
+=======
+                          onPressed: () {},
+>>>>>>> main
                           child: Image.asset(
                             'assets/settings.png',
                           )),

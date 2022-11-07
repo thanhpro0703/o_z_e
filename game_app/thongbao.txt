@@ -1,0 +1,2 @@
+Mỗi hình là 1 thư mục khác nhau nhé làm xong gọi ra main ngoài test thử ok rồi
+ để đấy sang hình khác cuối cùng ghép lại với nhau OK
