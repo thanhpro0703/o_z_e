@@ -20,9 +20,46 @@ class _MyContentSinglePlayState extends State<MyContentSinglePlay> {
                 fit: BoxFit.fill,
               ),
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [],
+            child: Container(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Color.fromARGB(255, 212, 18, 34),
+                    ),
+                    margin: EdgeInsets.only(top: 90, right: 120),
+                    child: Icon(
+                      Icons.star,
+                      size: 35,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: Colors.amberAccent,
+                    ),
+                    margin: EdgeInsets.only(top: 10, left: 300),
+                    child: Icon(
+                      Icons.star,
+                      size: 35,
+                    ),
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(width: 10, color: Colors.white),
+                      shape: BoxShape.circle,
+                      color: Color.fromARGB(255, 241, 120, 20),
+                    ),
+                    margin: EdgeInsets.only(top: 60, right: 120),
+                    child: Icon(
+                      Icons.star,
+                      size: 35,
+                    ),
+                  )
+                ],
+              ),
             )));
   }
 }
