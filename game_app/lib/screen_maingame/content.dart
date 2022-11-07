@@ -21,6 +21,29 @@ class _MyContentState extends State<MyContent> {
                 image: AssetImage("assets/background-home.png"),
                 fit: BoxFit.fill,
               ),
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment(0.7, 1.5),
+                colors: <Color>[
+                  Color(0xffff84ffc9),
+                  Color(0xffffebf4f5),
+                  Color(0xfffff6cfbe),
+                ],
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset: Offset(0, 3), // changes position of shadow
+                ),
+                BoxShadow(
+                  color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.7),
+                  spreadRadius: 3,
+                  blurRadius: 4,
+                  offset: Offset(1, 3), // changes position of shadow
+                ),
+              ],
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
