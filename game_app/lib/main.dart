@@ -5,6 +5,7 @@ import 'screen_sign_in/form_sign_in.dart';
 import 'screen_room/screen_room.dart';
 import 'screen_setting/screen_seting.dart';
 import 'screen_choose_level/screen_choose_level.dart';
+import 'screen_solo/screen_solo.dart';
 
 import 'screen_singler_play/screen_singler_play.dart';
 
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Screen_Choose_Level(),
+      home: Screen_Solo(),
     );
   }
 }
