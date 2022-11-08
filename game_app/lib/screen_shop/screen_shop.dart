@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_maingame/footer.dart';
+import 'package:game_app/screen_room/footer_room.dart';
 import 'package:game_app/screen_shop/conten_shop.dart';
 import '../screen_maingame/header.dart';
 
@@ -16,7 +18,7 @@ class _ScreenShopState extends State<ScreenShop> {
       body: SafeArea(
         child: Container(
           child: Column(
-            children: [MyHeader(), ContentShop()],
+            children: [MyHeader(), ContentShop(), MyFooterRoom()],
           ),
         ),
       ),
