@@ -156,6 +156,11 @@ class _MyScreenSolo extends State<Screen_Solo> {
                     end: Alignment(2, 0.5),
                   )),
               child: Center(
+                  child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    shadowColor: Colors.transparent),
+                onPressed: () {},
                 child: Text(
                   'Start',
                   style: TextStyle(
@@ -163,14 +168,18 @@ class _MyScreenSolo extends State<Screen_Solo> {
                     fontSize: 26,
                   ),
                 ),
-              )),
+              ))),
           Expanded(
-              flex: 2,
               child: Container(
-                height: 50,
-                width: 50,
-                child: Image(image: AssetImage('assets/reply-message.png')),
-              ))
+                  height: 100,
+                  width: 100,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent),
+                    onPressed: () {},
+                    child: Image(image: AssetImage('assets/reply-message.png')),
+                  )))
         ],
       ),
     );
