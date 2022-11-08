@@ -5,10 +5,10 @@ class Screen_Solo extends StatefulWidget {
   const Screen_Solo({super.key});
 
   @override
-  State<Screen_Solo> createState() => _MyScreenChooseLevel();
+  State<Screen_Solo> createState() => _MyScreenSolo();
 }
 
-class _MyScreenChooseLevel extends State<Screen_Solo> {
+class _MyScreenSolo extends State<Screen_Solo> {
   @override
   Widget build(BuildContext context) {
     return Container(
