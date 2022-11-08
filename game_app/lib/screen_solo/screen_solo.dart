@@ -143,7 +143,7 @@ class _MyScreenSolo extends State<Screen_Solo> {
               ))),
           Container(
               margin: EdgeInsets.only(top: 50),
-              width: MediaQuery.of(context).size.width / 3,
+              width: MediaQuery.of(context).size.width / 2.5,
               height: 50,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
