@@ -76,7 +76,7 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                 ),
                 ButtonFooterWidget(
                     buttonfooter: ElavetedButon(
-                  text: "RANDOM",
+                  text: "ROOM",
                   page: () {
                     Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => ScreenMainGame(),
@@ -85,7 +85,7 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                 )),
                 ButtonFooterWidget(
                     buttonfooter: ElavetedButon(
-                        text: "3 VS 3",
+                        text: "RANK",
                         page: () {
                           Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => ScreenMainGame(),

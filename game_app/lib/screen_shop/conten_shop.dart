@@ -24,6 +24,104 @@ class _ContentShopState extends State<ContentShop> {
             children: [
               Padding(
                 padding: const EdgeInsets.all(8),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(14),
+                    color: Colors.grey,
+                  ),
+                  width: MediaQuery.of(context).size.width / 1,
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          IconShop(
+                            color: Colors.red,
+                            title: 'IconMoney',
+                            price: '100',
+                          ),
+                          IconShop(
+                            color: Color.fromARGB(255, 16, 97, 129),
+                            title: 'IconMoney',
+                            price: '200',
+                          ),
+                          IconShop(
+                            color: Color.fromARGB(255, 191, 209, 26),
+                            title: 'IconMoney',
+                            price: '300',
+                          )
+                        ],
+                      ),
+                      Container(
+                        margin: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(14),
+                            color: Color.fromARGB(255, 204, 192, 203)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+                          children: [
+                            ButtonPlayWidget(
+                                buttonplay: ElavetedButonBuy(
+                                    page: () {}, text: "109.000"))
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8),
+                child: Expanded(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(14),
+                      color: Colors.grey,
+                    ),
+                    width: MediaQuery.of(context).size.width / 1,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          children: [
+                            IconShop(
+                              color: Colors.red,
+                              title: 'IconMoney',
+                              price: '100',
+                            ),
+                            IconShop(
+                              color: Color.fromARGB(255, 16, 97, 129),
+                              title: 'IconMoney',
+                              price: '200',
+                            ),
+                            IconShop(
+                              color: Color.fromARGB(255, 191, 209, 26),
+                              title: 'IconMoney',
+                              price: '300',
+                            )
+                          ],
+                        ),
+                        Container(
+                          margin: EdgeInsets.all(5),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(14),
+                              color: Color.fromARGB(255, 204, 192, 203)),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              ButtonPlayWidget(
+                                  buttonplay: ElavetedButonBuy(
+                                      page: () {}, text: "109.000"))
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8),
                 child: Expanded(
                   flex: 1,
                   child: Container(
@@ -37,41 +135,20 @@ class _ContentShopState extends State<ContentShop> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
+                            IconShop(
+                              color: Colors.red,
+                              title: 'IconMoney',
+                              price: '100',
                             ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
+                            IconShop(
+                              color: Color.fromARGB(255, 16, 97, 129),
+                              title: 'IconMoney',
+                              price: '200',
                             ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
+                            IconShop(
+                              color: Color.fromARGB(255, 191, 209, 26),
+                              title: 'IconMoney',
+                              price: '300',
                             )
                           ],
                         ),
@@ -94,148 +171,8 @@ class _ContentShopState extends State<ContentShop> {
                   ),
                 ),
               ),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      color: Colors.grey,
-                    ),
-                    width: MediaQuery.of(context).size.width / 1,
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              color: Color.fromARGB(255, 204, 192, 203)),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              ButtonPlayWidget(
-                                  buttonplay: ElavetedButonBuy(
-                                      page: () {}, text: "109.000"))
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8),
-                child: Expanded(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      color: Colors.grey,
-                    ),
-                    width: MediaQuery.of(context).size.width / 1,
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
-                            ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(8),
-                                    color: Colors.red,
-                                    child: Text("Icon Doloar"),
-                                  ),
-                                  Text("100")
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
-                        Container(
-                          margin: EdgeInsets.all(5),
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              color: Colors.amber),
-                          padding:
-                              EdgeInsets.only(top: 8, right: 20, bottom: 10),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [Text("106.000d")],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ),
               Container(
-                height: 50,
+                height: 80,
                 child: Expanded(
                   child: Container(
                     margin: EdgeInsets.all(10),
@@ -243,14 +180,20 @@ class _ContentShopState extends State<ContentShop> {
                         color: Colors.deepPurpleAccent,
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [Text("Icon"), Text("100"), Text("106.000d")],
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text("Icon"),
+                        Text("100"),
+                        ButtonPlayWidget(
+                            buttonplay:
+                                ElavetedButonBuy(page: () {}, text: "100000"))
+                      ],
                     ),
                   ),
                 ),
               ),
               Container(
-                height: 50,
+                height: 80,
                 child: Expanded(
                   child: Container(
                     margin: EdgeInsets.all(10),
@@ -258,8 +201,14 @@ class _ContentShopState extends State<ContentShop> {
                         color: Colors.deepPurpleAccent,
                         borderRadius: BorderRadius.circular(10)),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [Text("Icon"), Text("100"), Text("106.000d")],
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        Text("Icon"),
+                        Text("100"),
+                        ButtonPlayWidget(
+                            buttonplay:
+                                ElavetedButonBuy(page: () {}, text: "109.000"))
+                      ],
                     ),
                   ),
                 ),
@@ -291,7 +240,7 @@ class _ElavetedButonBuyState extends State<ElavetedButonBuy> {
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
-        minimumSize: MaterialStateProperty.all(Size(100, 40)),
+        minimumSize: MaterialStateProperty.all(Size(130, 50)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
         // elevation: MaterialStateProperty.all(3),
         shadowColor: MaterialStateProperty.all(Colors.transparent),
@@ -299,8 +248,8 @@ class _ElavetedButonBuyState extends State<ElavetedButonBuy> {
       onPressed: widget.page,
       child: Padding(
         padding: const EdgeInsets.only(
-          top: 10,
-          bottom: 10,
+          top: 5,
+          bottom: 5,
         ),
         child: Text(
           widget.text,
@@ -345,6 +294,38 @@ class _ButtonPlayWidgetState extends State<ButtonPlayWidget> {
             borderRadius: BorderRadius.circular(20),
           ),
           child: widget.buttonplay),
+    );
+  }
+}
+
+class IconShop extends StatelessWidget {
+  const IconShop(
+      {super.key,
+      required this.color,
+      required this.title,
+      required this.price});
+  final color;
+  final title;
+  final price;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.all(8),
+            color: color,
+            child: Text(
+              title,
+              style: TextStyle(fontSize: 20),
+            ),
+          ),
+          Text(
+            price,
+            style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_shop/screen_shop.dart';
 import '../screen_room/footer_room.dart';
 import '../screen_room/screen_room.dart';
 
@@ -128,7 +129,7 @@ class _MyFooterState extends State<MyFooter> {
                           text: "SHOP",
                           page: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenRoom(),
+                              builder: (context) => ScreenShop(),
                             ));
                           })),
                 ),
