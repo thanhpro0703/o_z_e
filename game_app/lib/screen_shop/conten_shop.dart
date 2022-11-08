@@ -26,8 +26,22 @@ class _ContentShopState extends State<ContentShop> {
                 padding: const EdgeInsets.all(8),
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(14),
-                    color: Colors.grey,
+                    boxShadow: [
+                      BoxShadow(
+                          color: Colors.black26,
+                          offset: Offset(0, 4),
+                          blurRadius: 5.0)
+                    ],
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment(0.7, 1.5),
+                      colors: <Color>[
+                        Color(0xffffeecda3),
+                        Color(0xfffef629f),
+                      ],
+                    ),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
                   ),
                   width: MediaQuery.of(context).size.width / 1,
                   child: Column(
@@ -36,27 +50,42 @@ class _ContentShopState extends State<ContentShop> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           IconShop(
-                            color: Colors.red,
                             title: 'IconMoney',
                             price: '100',
+                            image: 'assets/gold-bars.png',
                           ),
                           IconShop(
-                            color: Color.fromARGB(255, 16, 97, 129),
                             title: 'IconMoney',
                             price: '200',
+                            image: 'assets/money.png',
                           ),
                           IconShop(
-                            color: Color.fromARGB(255, 191, 209, 26),
                             title: 'IconMoney',
                             price: '300',
+                            image: 'assets/idea.png',
                           )
                         ],
                       ),
                       Container(
                         margin: EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            color: Color.fromARGB(255, 204, 192, 203)),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Colors.black26,
+                                offset: Offset(0, 4),
+                                blurRadius: 5.0)
+                          ],
+                          gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment(0.7, 1.5),
+                            colors: <Color>[
+                              Color(0xffffede574),
+                              Color(0xfffe1f5c4),
+                            ],
+                          ),
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(20),
+                        ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
@@ -75,8 +104,22 @@ class _ContentShopState extends State<ContentShop> {
                 child: Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      color: Colors.grey,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 4),
+                            blurRadius: 5.0)
+                      ],
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.7, 1.5),
+                        colors: <Color>[
+                          Color(0xffffeecda3),
+                          Color(0xfffef629f),
+                        ],
+                      ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     width: MediaQuery.of(context).size.width / 1,
                     child: Column(
@@ -85,27 +128,42 @@ class _ContentShopState extends State<ContentShop> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             IconShop(
-                              color: Colors.red,
                               title: 'IconMoney',
                               price: '100',
+                              image: 'assets/gold-bars.png',
                             ),
                             IconShop(
-                              color: Color.fromARGB(255, 16, 97, 129),
                               title: 'IconMoney',
                               price: '200',
+                              image: 'assets/money.png',
                             ),
                             IconShop(
-                              color: Color.fromARGB(255, 191, 209, 26),
                               title: 'IconMoney',
                               price: '300',
+                              image: 'assets/idea.png',
                             )
                           ],
                         ),
                         Container(
                           margin: EdgeInsets.all(5),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              color: Color.fromARGB(255, 204, 192, 203)),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black26,
+                                  offset: Offset(0, 4),
+                                  blurRadius: 5.0)
+                            ],
+                            gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment(0.7, 1.5),
+                              colors: <Color>[
+                                Color(0xffffede574),
+                                Color(0xfffe1f5c4),
+                              ],
+                            ),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -126,8 +184,22 @@ class _ContentShopState extends State<ContentShop> {
                   flex: 1,
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(14),
-                      color: Colors.grey,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 4),
+                            blurRadius: 5.0)
+                      ],
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.7, 1.5),
+                        colors: <Color>[
+                          Color(0xffffeecda3),
+                          Color(0xfffef629f),
+                        ],
+                      ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     width: MediaQuery.of(context).size.width / 1,
                     child: Column(
@@ -136,27 +208,42 @@ class _ContentShopState extends State<ContentShop> {
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
                             IconShop(
-                              color: Colors.red,
                               title: 'IconMoney',
                               price: '100',
+                              image: 'assets/gold-bars.png',
                             ),
                             IconShop(
-                              color: Color.fromARGB(255, 16, 97, 129),
                               title: 'IconMoney',
                               price: '200',
+                              image: 'assets/money.png',
                             ),
                             IconShop(
-                              color: Color.fromARGB(255, 191, 209, 26),
                               title: 'IconMoney',
                               price: '300',
+                              image: 'assets/idea.png',
                             )
                           ],
                         ),
                         Container(
                           margin: EdgeInsets.all(5),
                           decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(14),
-                              color: Color.fromARGB(255, 204, 192, 203)),
+                            boxShadow: [
+                              BoxShadow(
+                                  color: Colors.black26,
+                                  offset: Offset(0, 4),
+                                  blurRadius: 5.0)
+                            ],
+                            gradient: LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment(0.7, 1.5),
+                              colors: <Color>[
+                                Color(0xffffede574),
+                                Color(0xfffe1f5c4),
+                              ],
+                            ),
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(20),
+                          ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
@@ -177,13 +264,30 @@ class _ContentShopState extends State<ContentShop> {
                   child: Container(
                     margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: Colors.deepPurpleAccent,
-                        borderRadius: BorderRadius.circular(10)),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 4),
+                            blurRadius: 5.0)
+                      ],
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.7, 1.5),
+                        colors: <Color>[
+                          Color(0xffffaaffa9),
+                          Color(0xfff11ffbd),
+                        ],
+                      ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text("Icon"),
-                        Text("100"),
+                        IconShop2(
+                            title: '100',
+                            price: '100',
+                            image: 'assets/money.png'),
                         ButtonPlayWidget(
                             buttonplay:
                                 ElavetedButonBuy(page: () {}, text: "100000"))
@@ -198,13 +302,30 @@ class _ContentShopState extends State<ContentShop> {
                   child: Container(
                     margin: EdgeInsets.all(10),
                     decoration: BoxDecoration(
-                        color: Colors.deepPurpleAccent,
-                        borderRadius: BorderRadius.circular(10)),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 4),
+                            blurRadius: 5.0)
+                      ],
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.7, 1.5),
+                        colors: <Color>[
+                          Color(0xffffaaffa9),
+                          Color(0xfff11ffbd),
+                        ],
+                      ),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Text("Icon"),
-                        Text("100"),
+                        IconShop2(
+                            title: '100',
+                            price: '100',
+                            image: 'assets/idea.png'),
                         ButtonPlayWidget(
                             buttonplay:
                                 ElavetedButonBuy(page: () {}, text: "109.000"))
@@ -286,8 +407,9 @@ class _ButtonPlayWidgetState extends State<ButtonPlayWidget> {
               begin: Alignment.topLeft,
               end: Alignment(0.7, 1.5),
               colors: <Color>[
-                Color(0xffff8e0e00),
-                Color(0xfff1f1c18),
+                Color(0xffff5433ff),
+                Color(0xfff20bdff),
+                Color(0xfffa5fecb),
               ],
             ),
             color: Colors.white,
@@ -301,28 +423,64 @@ class _ButtonPlayWidgetState extends State<ButtonPlayWidget> {
 class IconShop extends StatelessWidget {
   const IconShop(
       {super.key,
-      required this.color,
       required this.title,
-      required this.price});
-  final color;
+      required this.price,
+      required this.image});
+
   final title;
   final price;
+  final image;
   @override
   Widget build(BuildContext context) {
     return Container(
       child: Column(
         children: [
           Container(
-            margin: const EdgeInsets.all(8),
-            color: color,
-            child: Text(
-              title,
-              style: TextStyle(fontSize: 20),
-            ),
-          ),
+              margin: const EdgeInsets.all(8),
+              child: Image(
+                image: AssetImage(image),
+                width: 50,
+                height: 50,
+              )),
           Text(
             price,
             style: TextStyle(fontSize: 20),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class IconShop2 extends StatelessWidget {
+  const IconShop2(
+      {super.key,
+      required this.title,
+      required this.price,
+      required this.image});
+
+  final title;
+  final price;
+  final image;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image(
+                image: AssetImage(image),
+                width: 50,
+                height: 50,
+              )),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "100000",
+              style: TextStyle(fontSize: 20),
+            ),
           ),
         ],
       ),
