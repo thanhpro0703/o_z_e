@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_playgame/screen_playgame.dart';
 import 'package:game_app/screen_room/screen_room.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import '../screen_room/footer_room.dart';
@@ -60,7 +61,7 @@ class _MyContentState extends State<MyContent> {
                     text: "R A N K",
                     page: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ScreenRoom(),
+                        builder: (context) => ScreenPlayGame(),
                       ));
                     },
                   ),
