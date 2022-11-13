@@ -25,7 +25,7 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                   padding: const EdgeInsets.all(0),
                   child: Container(
                     width: 100,
-                    height: 60,
+                    height: 40,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -54,7 +54,7 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                               ),
                             ),
                             minimumSize:
-                                MaterialStateProperty.all(Size(100, 60)),
+                                MaterialStateProperty.all(Size(100, 40)),
                             backgroundColor:
                                 MaterialStateProperty.all(Colors.transparent),
                             // elevation: MaterialStateProperty.all(3),
@@ -115,7 +115,7 @@ class _ElavetedButonState extends State<ElavetedButon> {
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
-        minimumSize: MaterialStateProperty.all(Size(120, 60)),
+        minimumSize: MaterialStateProperty.all(Size(100, 40)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
         // elevation: MaterialStateProperty.all(3),
         shadowColor: MaterialStateProperty.all(Colors.transparent),
