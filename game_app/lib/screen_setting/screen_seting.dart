@@ -228,7 +228,7 @@ class _ButtonSettingState extends State<ButtonSetting> {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                     ),
-                    minimumSize: MaterialStateProperty.all(Size(100, 60)),
+                    minimumSize: MaterialStateProperty.all(Size(100, 40)),
                     backgroundColor:
                         MaterialStateProperty.all(Colors.transparent),
                     // elevation: MaterialStateProperty.all(3),

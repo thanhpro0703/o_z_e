@@ -176,7 +176,7 @@ class _ElavetedButonState extends State<ElavetedButon> {
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
-        minimumSize: MaterialStateProperty.all(Size(100, 50)),
+        minimumSize: MaterialStateProperty.all(Size(80, 50)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
         elevation: MaterialStateProperty.all(3),
         shadowColor:
@@ -191,7 +191,7 @@ class _ElavetedButonState extends State<ElavetedButon> {
         child: Row(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(1.0),
               child: Container(
                   child: Container(
                 child: Icon(
@@ -201,7 +201,11 @@ class _ElavetedButonState extends State<ElavetedButon> {
                 ),
               )),
             ),
-            Container(child: Text(widget.text)),
+            Container(
+                child: Text(
+              widget.text,
+              style: TextStyle(fontSize: 15),
+            )),
           ],
         ),
       ),
@@ -223,6 +227,8 @@ class _ButtonHeaderWidget extends State<ButtonHeaderWidget> {
       padding: const EdgeInsets.all(1),
       child: Expanded(
         child: Container(
+            width: 90,
+            height: 50,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(

@@ -44,14 +44,25 @@ class _MyHeaderPlayGameState extends State<MyHeaderPlayGame> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            ButtonHeaderWidget(
-              buttonheader: ElavetedButon(text: "Avatar"),
-            ),
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Expanded(
+              child: Container(
+                height: 70,
+                width: 70,
+                child: Expanded(
+                  flex: 1,
+                  child: ButtonHeaderWidget(
+                    buttonheader: ElavetedButon(text: "A"),
+                  ),
+                ),
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.all(10),
                 child: Container(
-                  width: 100,
+                  width: 70,
                   height: 40,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
@@ -70,37 +81,45 @@ class _MyHeaderPlayGameState extends State<MyHeaderPlayGame> {
                           blurRadius: 5.0)
                     ],
                   ),
-                  child: Expanded(
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
-                            ),
+                  child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
                           ),
-                          minimumSize: MaterialStateProperty.all(Size(100, 30)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.transparent),
-                          // elevation: MaterialStateProperty.all(3),
-                          shadowColor:
-                              MaterialStateProperty.all(Colors.transparent),
                         ),
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text("data"),
-                            Text(":"),
-                            Text("data"),
-                          ],
-                        )),
-                  ),
+                        minimumSize: MaterialStateProperty.all(Size(100, 40)),
+                        backgroundColor:
+                            MaterialStateProperty.all(Colors.transparent),
+                        // elevation: MaterialStateProperty.all(3),
+                        shadowColor:
+                            MaterialStateProperty.all(Colors.transparent),
+                      ),
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text("data"),
+                          Text(":"),
+                          Text("data"),
+                        ],
+                      )),
                 ),
               ),
             ),
-            ButtonHeaderWidget(
-              buttonheader: ElavetedButon(text: "Avatar"),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 70,
+                width: 70,
+                child: Expanded(
+                  flex: 1,
+                  child: ButtonHeaderWidget(
+                    buttonheader: ElavetedButon(text: "A"),
+                  ),
+                ),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -136,7 +155,7 @@ class _MyHeaderPlayGameState extends State<MyHeaderPlayGame> {
                               ),
                             ),
                             minimumSize:
-                                MaterialStateProperty.all(Size(100, 100)),
+                                MaterialStateProperty.all(Size(100, 60)),
                             backgroundColor:
                                 MaterialStateProperty.all(Colors.transparent),
                             // elevation: MaterialStateProperty.all(3),
@@ -148,7 +167,9 @@ class _MyHeaderPlayGameState extends State<MyHeaderPlayGame> {
                               builder: (context) => ScreenSetting(),
                             ));
                           },
-                          child: Icon(Icons.close)),
+                          child: Image.asset(
+                            'assets/settings.png',
+                          )),
                     ),
                   )),
             ),
@@ -177,7 +198,6 @@ class _ElavetedButonState extends State<ElavetedButon> {
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
-        minimumSize: MaterialStateProperty.all(Size(70, 80)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
         elevation: MaterialStateProperty.all(3),
         shadowColor:
@@ -186,21 +206,20 @@ class _ElavetedButonState extends State<ElavetedButon> {
       onPressed: () {},
       child: Padding(
         padding: const EdgeInsets.only(
-          top: 10,
-          bottom: 10,
+          top: 5,
+          bottom: 5,
         ),
         child: Row(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(1.0),
               child: Container(
-                  child: Container(
                 child: Icon(
                   Icons.favorite_border_rounded,
                   size: 15,
                   color: Color.fromARGB(255, 0, 0, 0),
                 ),
-              )),
+              ),
             ),
             Container(child: Text(widget.text)),
           ],
@@ -221,10 +240,9 @@ class _ButtonHeaderWidget extends State<ButtonHeaderWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(1),
+      padding: const EdgeInsets.all(0),
       child: Expanded(
         child: Container(
-            height: 80,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               gradient: LinearGradient(
