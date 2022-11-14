@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:game_app/screen_room/screen_room.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import '../screen_room/footer_room.dart';
+import '../button_game/button_game.dart';
 import './pages_question/page_question1.dart';
 import './pages_question/page_question2.dart';
 import './pages_question/page_question3.dart';
@@ -80,8 +81,8 @@ class _MyContentPlayGameState extends State<MyContentPlayGame> {
                           ),
                           height: 60,
                           width: 100,
-                          child: ButtonFooterWidget(
-                              buttonfooter: ElavetedButon(
+                          child: ButtonWidget(
+                              button: ElavetedButon(
                                   text: "Back",
                                   page: () {
                                     tr.previousPage(
@@ -126,8 +127,8 @@ class _MyContentPlayGameState extends State<MyContentPlayGame> {
                           ),
                           height: 60,
                           width: 100,
-                          child: ButtonFooterWidget(
-                              buttonfooter: ElavetedButon(
+                          child: ButtonWidget(
+                              button: ElavetedButon(
                             text: "Next",
                             page: () {
                               tr.nextPage(duration: _kDuration, curve: _kCurve);
