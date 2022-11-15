@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:game_app/screen_playgame/screen_playgame.dart';
+import '../screen_playgame/screen_playgame.dart';
 import 'package:game_app/screen_shop/screen_shop.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import 'screen_maingame/screen_maingame.dart';
