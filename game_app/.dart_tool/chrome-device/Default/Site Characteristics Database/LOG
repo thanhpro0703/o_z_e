@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2022/11/15-22:08:59.051 3f68 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.89f2e98d\flutter_tools_chrome_device.532fcc3\Default\Site Characteristics Database/MANIFEST-000001
 2022/11/15-22:08:59.052 3f68 Recovering log #10
 2022/11/15-22:08:59.053 3f68 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.89f2e98d\flutter_tools_chrome_device.532fcc3\Default\Site Characteristics Database/000010.log 
@@ -5,3 +6,9 @@
 2022/11/15-22:08:59.056 3f68 Delete type=2 #4
 2022/11/15-22:08:59.056 3f68 Delete type=0 #6
 2022/11/15-22:08:59.056 3f68 Delete type=2 #7
+=======
+2022/11/08-19:15:13.261 16c4 Reusing MANIFEST C:\Users\ASUS\AppData\Local\Temp\flutter_tools.8c23e3fd\flutter_tools_chrome_device.8a1744f2\Default\Site Characteristics Database/MANIFEST-000001
+2022/11/08-19:15:13.262 16c4 Recovering log #6
+2022/11/08-19:15:13.262 16c4 Reusing old log C:\Users\ASUS\AppData\Local\Temp\flutter_tools.8c23e3fd\flutter_tools_chrome_device.8a1744f2\Default\Site Characteristics Database/000006.log 
+2022/11/08-19:15:13.264 16c4 Delete type=0 #3
+>>>>>>> Tâm

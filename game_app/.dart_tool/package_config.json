@@ -266,7 +266,11 @@
       "languageVersion": "2.18"
     }
   ],
+<<<<<<< HEAD
   "generated": "2022-11-15T15:27:43.765925Z",
+=======
+  "generated": "2022-11-08T09:40:15.414226Z",
+>>>>>>> Tâm
   "generator": "pub",
   "generatorVersion": "2.18.4"
 }

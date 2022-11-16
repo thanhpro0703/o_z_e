@@ -5,14 +5,14 @@ class Screen_Solo extends StatefulWidget {
   const Screen_Solo({super.key});
 
   @override
-  State<Screen_Solo> createState() => _MyScreenChooseLevel();
+  State<Screen_Solo> createState() => _MyScreenSolo();
 }
 
-class _MyScreenChooseLevel extends State<Screen_Solo> {
+class _MyScreenSolo extends State<Screen_Solo> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
         image: AssetImage("assets/background-home.png"),
         fit: BoxFit.fill,
@@ -35,7 +35,7 @@ class _MyScreenChooseLevel extends State<Screen_Solo> {
                         gradient: const LinearGradient(
                           colors: [Color(0xfff32e20), Color(0xff171717)],
                           begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
+                          end: Alignment.topRight,
                         )),
                     child: Center()),
                 Padding(padding: EdgeInsets.only(top: 50)),
@@ -45,6 +45,7 @@ class _MyScreenChooseLevel extends State<Screen_Solo> {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Color(0xffff6633CC).withOpacity(0.7)),
+                    margin: EdgeInsets.only(top: 10),
                     child: Center(
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -73,8 +74,10 @@ class _MyScreenChooseLevel extends State<Screen_Solo> {
                     )),
               ]),
               Container(
-                  margin: EdgeInsets.only(top: 20),
-                  child: Text('Vs', style: TextStyle(fontSize: 25))),
+                  margin: EdgeInsets.only(top: 70),
+                  child: Text('VS',
+                      style:
+                          TextStyle(fontSize: 40, color: Colors.cyanAccent))),
               Column(children: [
                 Padding(padding: EdgeInsets.only(top: 40)),
                 Container(
@@ -117,138 +120,66 @@ class _MyScreenChooseLevel extends State<Screen_Solo> {
                     )),
               ])
             ],
-          )
-          // ,
-          // Padding(padding: EdgeInsets.fromLTRB(0, 20, 0, 20)),
-          // Container(
-          //   width: MediaQuery.of(context).size.width / 2.5,
-          //   height: 50,
-          //   decoration: BoxDecoration(
-          //       borderRadius: BorderRadius.circular(50),
-          //       gradient: const LinearGradient(
-          //         colors: [Color(0xfff32e20), Color(0xff171717)],
-          //         begin: Alignment.centerLeft,
-          //         end: Alignment.centerRight,
-          //       )),
-          //   child: Center(
-          //     child: Text(
-          //       'Arena',
-          //       style: TextStyle(
-          //         color: Colors.greenAccent,
-          //         fontSize: 26,
-          //       ),
-          //     ),
-          //   ),
-          // ),
-
-          // Padding(padding: EdgeInsets.only(top: 50)),
-          // Container(
-          //     width: MediaQuery.of(context).size.width / 2.2,
-          //     height: 40,
-          //     decoration: BoxDecoration(
-          //         borderRadius: BorderRadius.circular(50),
-          //         color: Color(0xffff6633CC).withOpacity(0.7)),
-          //     child: Center(
-          //       child: Text(
-          //         'Name',
-          //         style: TextStyle(
-          //             color: Colors.cyanAccent.withOpacity(0.8), fontSize: 19),
-          //       ),
-          //     )),
-          // Padding(padding: EdgeInsets.only(top: 50)),
-          // Container(
-          //     width: MediaQuery.of(context).size.width / 1.3,
-          //     height: 100,
-          //     decoration: BoxDecoration(
-          //         borderRadius: BorderRadius.circular(30),
-          //         color: Color(0xffff6633CC).withOpacity(0.7)),
-          //     child: Center(
-          //       child: Column(
-          //           mainAxisAlignment: MainAxisAlignment.center,
-          //           children: [
-          //             Text(
-          //               'Rank: 1000',
-          //               style: TextStyle(
-          //                   color: Colors.cyanAccent.withOpacity(0.8),
-          //                   fontSize: 19),
-          //             ),
-          //             Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10)),
-          //             Text(
-          //               'Point: 198',
-          //               style: TextStyle(
-          //                   color: Colors.cyanAccent.withOpacity(0.8),
-          //                   fontSize: 19),
-          //             )
-          //           ]),
-          //     )),
-          // Padding(padding: EdgeInsets.only(top: 70)),
-          // Row(
-          //   mainAxisAlignment: MainAxisAlignment.center,
-          //   children: [
-          //     Container(
-          //         width: MediaQuery.of(context).size.width / 3.5,
-          //         height: 50,
-          //         decoration: BoxDecoration(
-          //             borderRadius: BorderRadius.circular(50),
-          //             gradient: const LinearGradient(
-          //               colors: [Color(0xfff32e20), Color(0xff171717)],
-          //               begin: Alignment.centerLeft,
-          //               end: Alignment.centerRight,
-          //             )),
-          //         child: Center(
-          //           child: Text(
-          //             '3 vs 3',
-          //             style: TextStyle(
-          //               color: Colors.greenAccent,
-          //               fontSize: 26,
-          //             ),
-          //           ),
-          //         )),
-          //     Container(
-          //         width: MediaQuery.of(context).size.width / 3.5,
-          //         height: 50,
-          //         decoration: BoxDecoration(
-          //             borderRadius: BorderRadius.circular(50),
-          //             gradient: const LinearGradient(
-          //               colors: [Color(0xfff32e20), Color(0xff171717)],
-          //               begin: Alignment.centerLeft,
-          //               end: Alignment.centerRight,
-          //             )),
-          //         child: Center(
-          //           child: Text(
-          //             '1 vs 1',
-          //             style: TextStyle(
-          //               color: Colors.greenAccent,
-          //               fontSize: 26,
-          //             ),
-          //           ),
-          //         )),
-          //     Container(
-          //         width: MediaQuery.of(context).size.width / 3.5,
-          //         height: 50,
-          //         decoration: BoxDecoration(
-          //             borderRadius: BorderRadius.circular(50),
-          //             gradient: const LinearGradient(
-          //               colors: [Color(0xfff32e20), Color(0xff171717)],
-          //               begin: Alignment.centerLeft,
-          //               end: Alignment.centerRight,
-          //             )),
-          //         child: Center(
-          //           child: Text(
-          //             'Random',
-          //             style: TextStyle(
-          //               color: Colors.greenAccent,
-          //               fontSize: 26,
-          //             ),
-          //           ),
-          //         ))
-          //   ],
-          // ),
-          // Container(
-          //   height: 50,
-          //   width: 50,
-          //   child: Image(image: AssetImage('assets/reply-message.png')),
-          // )
+          ),
+          Padding(padding: EdgeInsets.only(top: 50)),
+          Container(
+              width: MediaQuery.of(context).size.width / 1.3,
+              height: 120,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Color.fromARGB(255, 187, 133, 222).withOpacity(0.6)),
+              child: Center(
+                  child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Topic',
+                    style: TextStyle(fontSize: 30, color: Colors.cyan),
+                  ),
+                  Padding(padding: EdgeInsets.only(top: 15)),
+                  Text('Grade 9 math',
+                      style: TextStyle(fontSize: 25, color: Colors.cyan))
+                ],
+              ))),
+          Container(
+              margin: EdgeInsets.only(top: 50),
+              width: MediaQuery.of(context).size.width / 2.5,
+              height: 50,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(50),
+                  gradient: const LinearGradient(
+                    colors: [
+                      Color.fromARGB(255, 6, 171, 53),
+                      Color.fromARGB(255, 224, 193, 193)
+                    ],
+                    begin: Alignment.centerLeft,
+                    end: Alignment(2, 0.5),
+                  )),
+              child: Center(
+                  child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    shadowColor: Colors.transparent),
+                onPressed: () {},
+                child: Text(
+                  'Start',
+                  style: TextStyle(
+                    color: Colors.yellowAccent,
+                    fontSize: 26,
+                  ),
+                ),
+              ))),
+          Expanded(
+              child: Container(
+                  height: 100,
+                  width: 100,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent),
+                    onPressed: () {},
+                    child: Image(image: AssetImage('assets/reply-message.png')),
+                  )))
         ],
       ),
     );

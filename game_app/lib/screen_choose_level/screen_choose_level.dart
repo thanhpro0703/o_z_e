@@ -126,14 +126,19 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                         end: Alignment.centerRight,
                       )),
                   child: Center(
+                      child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent),
+                    onPressed: () {},
                     child: Text(
-                      '3 vs 3',
+                      '3 VS 3',
                       style: TextStyle(
                         color: Colors.greenAccent,
-                        fontSize: 26,
+                        fontSize: 20,
                       ),
                     ),
-                  )),
+                  ))),
               Container(
                   width: MediaQuery.of(context).size.width / 3.5,
                   height: 50,
@@ -145,14 +150,19 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                         end: Alignment.centerRight,
                       )),
                   child: Center(
+                      child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent),
+                    onPressed: () {},
                     child: Text(
-                      '1 vs 1',
+                      '1 VS 1',
                       style: TextStyle(
                         color: Colors.greenAccent,
-                        fontSize: 26,
+                        fontSize: 20,
                       ),
                     ),
-                  )),
+                  ))),
               Container(
                   width: MediaQuery.of(context).size.width / 3.5,
                   height: 50,
@@ -164,21 +174,31 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                         end: Alignment.centerRight,
                       )),
                   child: Center(
+                      child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent),
+                    onPressed: () {},
                     child: Text(
                       'Random',
                       style: TextStyle(
                         color: Colors.greenAccent,
-                        fontSize: 26,
+                        fontSize: 20,
                       ),
                     ),
-                  ))
+                  )))
             ],
           ),
           Container(
-            height: 50,
-            width: 50,
-            child: Image(image: AssetImage('assets/reply-message.png')),
-          )
+              height: 100,
+              width: 100,
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    shadowColor: Colors.transparent),
+                onPressed: () {},
+                child: Image(image: AssetImage('assets/reply-message.png')),
+              ))
         ],
       ),
     );
