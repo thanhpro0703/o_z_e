@@ -18,9 +18,9 @@ class _MyScreenSolo extends State<Screen_Solo> {
         fit: BoxFit.fill,
       )),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(margin: EdgeInsets.only(top: 120)),
+          // Container(margin: EdgeInsets.only(top: 70)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -29,11 +29,14 @@ class _MyScreenSolo extends State<Screen_Solo> {
                 Padding(padding: EdgeInsets.only(top: 40)),
                 Container(
                     width: MediaQuery.of(context).size.width / 6,
-                    height: 60,
+                    height: MediaQuery.of(context).size.width / 6,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         gradient: const LinearGradient(
-                          colors: [Color(0xfff32e20), Color(0xff171717)],
+                          colors: [
+                            Color(0xfff32e20),
+                            Color.fromARGB(200, 0, 0, 0)
+                          ],
                           begin: Alignment.topLeft,
                           end: Alignment.topRight,
                         )),
@@ -79,10 +82,10 @@ class _MyScreenSolo extends State<Screen_Solo> {
                       style:
                           TextStyle(fontSize: 40, color: Colors.cyanAccent))),
               Column(children: [
-                Padding(padding: EdgeInsets.only(top: 40)),
+                Padding(padding: EdgeInsets.only(top: 50)),
                 Container(
                   width: MediaQuery.of(context).size.width / 6,
-                  height: 70,
+                  height: MediaQuery.of(context).size.width / 6,
                   child: Image(image: AssetImage('assets/add-user.png')),
                 ),
                 Padding(padding: EdgeInsets.only(top: 50)),
@@ -171,8 +174,8 @@ class _MyScreenSolo extends State<Screen_Solo> {
               ))),
           Expanded(
               child: Container(
-                  height: 100,
-                  width: 100,
+                  height: MediaQuery.of(context).size.height / 4,
+                  width: MediaQuery.of(context).size.width / 4,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         primary: Colors.transparent,

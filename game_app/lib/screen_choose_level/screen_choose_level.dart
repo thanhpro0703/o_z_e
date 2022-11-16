@@ -40,10 +40,10 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
               ),
             ),
           ),
-          Padding(padding: EdgeInsets.only(top: 50)),
+          Padding(padding: EdgeInsets.only(top: 20)),
           Container(
               width: MediaQuery.of(context).size.width / 1.4,
-              height: 50,
+              height: MediaQuery.of(context).size.height / 10,
               // color: Colors.grey.withOpacity(0.4),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
@@ -55,10 +55,10 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                       color: Colors.cyanAccent.withOpacity(0.8), fontSize: 19),
                 ),
               )),
-          Padding(padding: EdgeInsets.only(top: 40)),
+          Padding(padding: EdgeInsets.only(top: 30)),
           Container(
-            width: MediaQuery.of(context).size.width / 4.5,
-            height: 80,
+            width: MediaQuery.of(context).size.height / 9,
+            height: MediaQuery.of(context).size.height / 9,
             // color: Colors.grey.withOpacity(0.4),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
@@ -69,10 +69,10 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                 )),
             child: Center(),
           ),
-          Padding(padding: EdgeInsets.only(top: 50)),
+          Padding(padding: EdgeInsets.only(top: 30)),
           Container(
               width: MediaQuery.of(context).size.width / 2.2,
-              height: 40,
+              height: MediaQuery.of(context).size.height / 14,
               // color: Colors.grey.withOpacity(0.4),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(50),
@@ -84,7 +84,7 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                       color: Colors.cyanAccent.withOpacity(0.8), fontSize: 19),
                 ),
               )),
-          Padding(padding: EdgeInsets.only(top: 50)),
+          Padding(padding: EdgeInsets.only(top: 30)),
           Container(
               width: MediaQuery.of(context).size.width / 1.3,
               height: 100,
@@ -111,13 +111,13 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                       )
                     ]),
               )),
-          Padding(padding: EdgeInsets.only(top: 70)),
+          Padding(padding: EdgeInsets.only(top: 40)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                  width: MediaQuery.of(context).size.width / 3.5,
-                  height: 50,
+                  width: MediaQuery.of(context).size.width / 5,
+                  height: MediaQuery.of(context).size.width / 5,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50),
                       gradient: const LinearGradient(
@@ -189,16 +189,6 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                   )))
             ],
           ),
-          Container(
-              height: 100,
-              width: 100,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    primary: Colors.transparent,
-                    shadowColor: Colors.transparent),
-                onPressed: () {},
-                child: Image(image: AssetImage('assets/reply-message.png')),
-              ))
         ],
       ),
     );
