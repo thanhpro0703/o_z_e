@@ -12,14 +12,15 @@ import 'screen_play_group/screen_play_group.dart';
 void main() {
   runApp(const MyApp());
 }
-
+d
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Screen_Choose_Level(),
+      debugShowCheckedModeBanner: false,
+      home: Screen_Team(),
     );
   }
 }

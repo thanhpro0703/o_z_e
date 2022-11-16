@@ -1,4 +1,3 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -27,12 +26,10 @@ class _MyScreen_Team extends State<Screen_Team> {
                   flex: 2,
                   child: Column(
                     children: [
-                      Padding(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width / 7)),
+                      Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
-                          width: MediaQuery.of(context).size.width / 6,
-                          height: 60,
+                          width: MediaQuery.of(context).size.width / 7,
+                          height: MediaQuery.of(context).size.width / 7,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               gradient: const LinearGradient(
@@ -44,7 +41,7 @@ class _MyScreen_Team extends State<Screen_Team> {
                       Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
-                        height: 70,
+                        height: MediaQuery.of(context).size.width / 7,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -55,12 +52,12 @@ class _MyScreen_Team extends State<Screen_Team> {
                             Text(
                               'Name',
                               style: TextStyle(
-                                  color: Colors.cyanAccent, fontSize: 17),
+                                  color: Colors.cyanAccent, fontSize: 13),
                             ),
                             Padding(padding: EdgeInsets.only(top: 10)),
                             Text('Rank: 360',
                                 style: TextStyle(
-                                    color: Colors.cyanAccent, fontSize: 17))
+                                    color: Colors.cyanAccent, fontSize: 13))
                           ],
                         )),
                       ),
@@ -70,10 +67,10 @@ class _MyScreen_Team extends State<Screen_Team> {
                         height: 60,
                         child: Image(image: AssetImage('assets/add-user.png')),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
+                      Padding(padding: EdgeInsets.only(top: 5)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
-                        height: 70,
+                        height: MediaQuery.of(context).size.width / 7,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -84,12 +81,12 @@ class _MyScreen_Team extends State<Screen_Team> {
                             Text(
                               'Name',
                               style: TextStyle(
-                                  color: Colors.cyanAccent, fontSize: 17),
+                                  color: Colors.cyanAccent, fontSize: 13),
                             ),
-                            Padding(padding: EdgeInsets.only(top: 5)),
+                            Padding(padding: EdgeInsets.only(top: 10)),
                             Text('Rank: 360',
                                 style: TextStyle(
-                                    color: Colors.cyanAccent, fontSize: 17))
+                                    color: Colors.cyanAccent, fontSize: 13))
                           ],
                         )),
                       ),
@@ -99,10 +96,10 @@ class _MyScreen_Team extends State<Screen_Team> {
                         height: 60,
                         child: Image(image: AssetImage('assets/add-user.png')),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
+                      Padding(padding: EdgeInsets.only(top: 5)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
-                        height: 70,
+                        height: MediaQuery.of(context).size.width / 7,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -113,12 +110,12 @@ class _MyScreen_Team extends State<Screen_Team> {
                             Text(
                               'Name',
                               style: TextStyle(
-                                  color: Colors.cyanAccent, fontSize: 17),
+                                  color: Colors.cyanAccent, fontSize: 13),
                             ),
                             Padding(padding: EdgeInsets.only(top: 10)),
                             Text('Rank: 360',
                                 style: TextStyle(
-                                    color: Colors.cyanAccent, fontSize: 17))
+                                    color: Colors.cyanAccent, fontSize: 13))
                           ],
                         )),
                       ),
@@ -129,7 +126,7 @@ class _MyScreen_Team extends State<Screen_Team> {
                   child: Column(
                     children: [
                       Container(
-                        margin: EdgeInsets.only(top: 270),
+                        margin: EdgeInsets.only(top: 100),
                       ),
                       Text('VS')
                     ],
@@ -138,12 +135,10 @@ class _MyScreen_Team extends State<Screen_Team> {
                   flex: 2,
                   child: Column(
                     children: [
-                      Padding(
-                          padding: EdgeInsets.only(
-                              top: MediaQuery.of(context).size.width / 7)),
+                      Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
-                          width: MediaQuery.of(context).size.width / 6,
-                          height: 60,
+                          width: MediaQuery.of(context).size.width / 7,
+                          height: MediaQuery.of(context).size.width / 7,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
                               gradient: const LinearGradient(
@@ -155,7 +150,7 @@ class _MyScreen_Team extends State<Screen_Team> {
                       Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
-                        height: 70,
+                        height: MediaQuery.of(context).size.width / 7,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -166,12 +161,13 @@ class _MyScreen_Team extends State<Screen_Team> {
                             Text(
                               'Name',
                               style: TextStyle(
-                                  color: Colors.cyanAccent, fontSize: 17),
+                                  color: Colors.cyanAccent, fontSize: 13,
+                                  ),
                             ),
                             Padding(padding: EdgeInsets.only(top: 10)),
                             Text('Rank: 360',
                                 style: TextStyle(
-                                    color: Colors.cyanAccent, fontSize: 17))
+                                    color: Colors.cyanAccent, fontSize: 13))
                           ],
                         )),
                       ),
@@ -181,10 +177,10 @@ class _MyScreen_Team extends State<Screen_Team> {
                         height: 60,
                         child: Image(image: AssetImage('assets/add-user.png')),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
+                      Padding(padding: EdgeInsets.only(top: 5)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
-                        height: 70,
+                        height: MediaQuery.of(context).size.width / 7,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -195,12 +191,12 @@ class _MyScreen_Team extends State<Screen_Team> {
                             Text(
                               'Name',
                               style: TextStyle(
-                                  color: Colors.cyanAccent, fontSize: 17),
+                                  color: Colors.cyanAccent, fontSize: 13),
                             ),
-                            Padding(padding: EdgeInsets.only(top: 5)),
+                            Padding(padding: EdgeInsets.only(top: 10)),
                             Text('Rank: 360',
                                 style: TextStyle(
-                                    color: Colors.cyanAccent, fontSize: 17))
+                                    color: Colors.cyanAccent, fontSize: 13))
                           ],
                         )),
                       ),
@@ -210,10 +206,10 @@ class _MyScreen_Team extends State<Screen_Team> {
                         height: 60,
                         child: Image(image: AssetImage('assets/add-user.png')),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 10)),
+                      Padding(padding: EdgeInsets.only(top: 5)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
-                        height: 70,
+                        height: MediaQuery.of(context).size.width / 7,
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(20),
                             color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -224,12 +220,12 @@ class _MyScreen_Team extends State<Screen_Team> {
                             Text(
                               'Name',
                               style: TextStyle(
-                                  color: Colors.cyanAccent, fontSize: 17),
+                                  color: Colors.cyanAccent, fontSize: 13),
                             ),
                             Padding(padding: EdgeInsets.only(top: 10)),
                             Text('Rank: 360',
                                 style: TextStyle(
-                                    color: Colors.cyanAccent, fontSize: 17))
+                                    color: Colors.cyanAccent, fontSize: 13))
                           ],
                         )),
                       ),
@@ -238,9 +234,9 @@ class _MyScreen_Team extends State<Screen_Team> {
             ],
           ),
           Container(
-              margin: EdgeInsets.only(top: 40),
-              width: MediaQuery.of(context).size.width / 1.5,
-              height: MediaQuery.of(context).size.width / 3.5,
+              margin: EdgeInsets.only(top: 20),
+              width: MediaQuery.of(context).size.width / 2,
+              height: MediaQuery.of(context).size.width / 6,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -248,14 +244,14 @@ class _MyScreen_Team extends State<Screen_Team> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text('Topic',
-                      style: TextStyle(fontSize: 40, color: Colors.cyanAccent)),
+                      style: TextStyle(fontSize: 22, color: Colors.cyanAccent)),
                   Padding(padding: EdgeInsets.only(top: 10)),
                   Text('9th grade math',
                       style: TextStyle(fontSize: 17, color: Colors.cyanAccent))
                 ],
               )),
           Container(
-              margin: EdgeInsets.only(top: 50),
+              margin: EdgeInsets.only(top: 20),
               width: MediaQuery.of(context).size.width / 2.5,
               height: 50,
               decoration: BoxDecoration(
@@ -268,8 +264,12 @@ class _MyScreen_Team extends State<Screen_Team> {
                     begin: Alignment.centerLeft,
                     end: Alignment(2, 0.5),
                   )),
-              child: Center(
-                child: Text(
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    shadowColor: Colors.transparent),
+                child: const Text(
                   'Start',
                   style: TextStyle(
                     color: Colors.yellowAccent,

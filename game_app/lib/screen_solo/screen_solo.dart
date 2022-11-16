@@ -26,7 +26,7 @@ class _MyScreenSolo extends State<Screen_Solo> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Column(children: [
-                Padding(padding: EdgeInsets.only(top: 40)),
+                Padding(padding: EdgeInsets.only(top: 50)),
                 Container(
                     width: MediaQuery.of(context).size.width / 6,
                     height: MediaQuery.of(context).size.width / 6,
@@ -41,7 +41,7 @@ class _MyScreenSolo extends State<Screen_Solo> {
                           end: Alignment.topRight,
                         )),
                     child: Center()),
-                Padding(padding: EdgeInsets.only(top: 50)),
+                Padding(padding: EdgeInsets.only(top: 40)),
                 Container(
                     width: MediaQuery.of(context).size.width / 2.6,
                     height: 140,
