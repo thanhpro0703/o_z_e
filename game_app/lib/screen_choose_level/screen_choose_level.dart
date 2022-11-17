@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_play_group/screen_play_group.dart';
+import 'package:game_app/screen_solo/screen_solo.dart';
 import '../screen_maingame/screen_maingame.dart';
 
 class Screen_Choose_Level extends StatefulWidget {
@@ -121,7 +123,11 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Screen_Team(),
+                    ));
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: Colors.transparent,
                       shadowColor: Colors.transparent),
@@ -145,7 +151,11 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                         ),
                       ))),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => Screen_Solo(),
+                    ));
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: Colors.transparent,
                       shadowColor: Colors.transparent),
@@ -169,7 +179,11 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                         ),
                       ))),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => ScreenMainGame(),
+                    ));
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: Colors.transparent,
                       shadowColor: Colors.transparent),
