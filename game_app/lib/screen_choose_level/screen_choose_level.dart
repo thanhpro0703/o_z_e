@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../screen_maingame/screen_maingame.dart';
 
 class Screen_Choose_Level extends StatefulWidget {
   const Screen_Choose_Level({super.key});
@@ -55,21 +56,25 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                       color: Colors.cyanAccent.withOpacity(0.8), fontSize: 19),
                 ),
               )),
-          Padding(padding: EdgeInsets.only(top: 30)),
-          Container(
-            width: MediaQuery.of(context).size.height / 9,
-            height: MediaQuery.of(context).size.height / 9,
-            // color: Colors.grey.withOpacity(0.4),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                gradient: const LinearGradient(
-                  colors: [Color(0xfff32e20), Color(0xff171717)],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                )),
-            child: Center(),
-          ),
-          Padding(padding: EdgeInsets.only(top: 30)),
+          Padding(padding: EdgeInsets.only(top: 20)),
+          ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent, shadowColor: Colors.transparent),
+              child: Container(
+                width: MediaQuery.of(context).size.height / 9,
+                height: MediaQuery.of(context).size.height / 9,
+                // color: Colors.grey.withOpacity(0.4),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    gradient: const LinearGradient(
+                      colors: [Color(0xfff32e20), Color(0xff171717)],
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                    )),
+                child: Center(),
+              )),
+          Padding(padding: EdgeInsets.only(top: 10)),
           Container(
               width: MediaQuery.of(context).size.width / 2.2,
               height: MediaQuery.of(context).size.height / 14,
@@ -111,7 +116,7 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                       )
                     ]),
               )),
-          Padding(padding: EdgeInsets.only(top: 40)),
+          Padding(padding: EdgeInsets.only(top: 20)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -191,13 +196,17 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
           ),
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ScreenMainGame(),
+                  ));
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.transparent,
                     shadowColor: Colors.transparent),
                 child: Container(
-                  width: MediaQuery.of(context).size.width / 7,
-                  height: MediaQuery.of(context).size.width / 7,
+                  width: 70,
+                  height: 70,
                   child: Image(image: AssetImage('assets/reply-message.png')),
                 ))
           ])

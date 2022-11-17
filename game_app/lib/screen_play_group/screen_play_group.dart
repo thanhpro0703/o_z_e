@@ -1,5 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import '../screen_maingame/screen_maingame.dart';
+import '../screen_play_group/screen_play_group.dart';
+import '../screen_room/screen_room.dart';
 
 class Screen_Team extends StatefulWidget {
   const Screen_Team({super.key});
@@ -320,7 +323,11 @@ class _MyScreen_Team extends State<Screen_Team> {
               )),
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ScreenRoom(),
+                  ));
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.transparent,
                     shadowColor: Colors.transparent),

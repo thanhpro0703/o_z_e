@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import '../screen_maingame/screen_maingame.dart';
 
 class Screen_Solo extends StatefulWidget {
   const Screen_Solo({super.key});
@@ -46,10 +47,10 @@ class _MyScreenSolo extends State<Screen_Solo> {
                               end: Alignment.topRight,
                             )),
                         child: Center())),
-                Padding(padding: EdgeInsets.only(top: 40)),
+                Padding(padding: EdgeInsets.only(top: 10)),
                 Container(
-                    width: MediaQuery.of(context).size.width / 2.6,
-                    height: 140,
+                    width: MediaQuery.of(context).size.width / 3.5,
+                    height: MediaQuery.of(context).size.width / 3.5,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -62,21 +63,21 @@ class _MyScreenSolo extends State<Screen_Solo> {
                               'Name',
                               style: TextStyle(
                                   color: Colors.cyanAccent.withOpacity(0.8),
-                                  fontSize: 19),
+                                  fontSize: 12),
                             ),
-                            Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10)),
+                            Padding(padding: EdgeInsets.only(top: 10)),
                             Text(
                               'Point: 198',
                               style: TextStyle(
                                   color: Colors.cyanAccent.withOpacity(0.8),
-                                  fontSize: 19),
+                                  fontSize: 12),
                             ),
-                            Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10)),
+                            Padding(padding: EdgeInsets.only(top: 10)),
                             Text(
                               'Rank: 1000',
                               style: TextStyle(
                                   color: Colors.cyanAccent.withOpacity(0.8),
-                                  fontSize: 19),
+                                  fontSize: 12),
                             ),
                           ]),
                     )),
@@ -98,10 +99,10 @@ class _MyScreenSolo extends State<Screen_Solo> {
                       height: MediaQuery.of(context).size.width / 6,
                       child: Image(image: AssetImage('assets/add-user.png')),
                     )),
-                Padding(padding: EdgeInsets.only(top: 50)),
+                Padding(padding: EdgeInsets.only(top: 20)),
                 Container(
-                    width: MediaQuery.of(context).size.width / 2.6,
-                    height: 140,
+                    width: MediaQuery.of(context).size.width / 3.5,
+                    height: MediaQuery.of(context).size.width / 3.5,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(30),
                         color: Color(0xffff6633CC).withOpacity(0.7)),
@@ -113,31 +114,31 @@ class _MyScreenSolo extends State<Screen_Solo> {
                               'Name',
                               style: TextStyle(
                                   color: Colors.cyanAccent.withOpacity(0.8),
-                                  fontSize: 19),
+                                  fontSize: 12),
                             ),
-                            Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10)),
+                            Padding(padding: EdgeInsets.only(top: 10)),
                             Text(
                               'Point: 198',
                               style: TextStyle(
                                   color: Colors.cyanAccent.withOpacity(0.8),
-                                  fontSize: 19),
+                                  fontSize: 12),
                             ),
-                            Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10)),
+                            Padding(padding: EdgeInsets.only(top: 10)),
                             Text(
                               'Rank: 1000',
                               style: TextStyle(
                                   color: Colors.cyanAccent.withOpacity(0.8),
-                                  fontSize: 19),
+                                  fontSize: 12),
                             ),
                           ]),
                     )),
               ])
             ],
           ),
-          Padding(padding: EdgeInsets.only(top: 50)),
+          Padding(padding: EdgeInsets.only(top: 20)),
           Container(
-              width: MediaQuery.of(context).size.width / 1.3,
-              height: 120,
+              width: MediaQuery.of(context).size.width / 1.5,
+              height: (MediaQuery.of(context).size.width / 4.5),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
                   color: Color.fromARGB(255, 187, 133, 222).withOpacity(0.6)),
@@ -147,11 +148,11 @@ class _MyScreenSolo extends State<Screen_Solo> {
                 children: [
                   Text(
                     'Topic',
-                    style: TextStyle(fontSize: 30, color: Colors.cyan),
+                    style: TextStyle(fontSize: 20, color: Colors.cyan),
                   ),
                   Padding(padding: EdgeInsets.only(top: 15)),
                   Text('Grade 9 math',
-                      style: TextStyle(fontSize: 25, color: Colors.cyan))
+                      style: TextStyle(fontSize: 12, color: Colors.cyan))
                 ],
               ))),
           ElevatedButton(
@@ -177,14 +178,18 @@ class _MyScreenSolo extends State<Screen_Solo> {
                       'Start',
                       style: TextStyle(
                         color: Colors.yellowAccent,
-                        fontSize: 26,
+                        fontSize: 20,
                       ),
                     ),
                   ))),
 
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ScreenMainGame(),
+                  ));
+                },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.transparent,
                     shadowColor: Colors.transparent),
