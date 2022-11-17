@@ -47,93 +47,21 @@ class _MyFooterPlayGameState extends State<MyFooterPlayGame> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0, 4),
-                              blurRadius: 5.0)
-                        ],
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 1.5),
-                          colors: <Color>[
-                            Color(0xffff8e0e00),
-                            Color(0xfff1f1c18),
-                          ],
-                        ),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: ElavetedButon(
-                          text: "FRIENDS",
-                          page: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenRoom(),
-                            ));
-                          })),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0, 4),
-                              blurRadius: 5.0)
-                        ],
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 1.5),
-                          colors: <Color>[
-                            Color(0xffff8e0e00),
-                            Color(0xfff1f1c18),
-                          ],
-                        ),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: ElavetedButon(
-                          text: "EVENT",
-                          page: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenRoom(),
-                            ));
-                          })),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0, 4),
-                              blurRadius: 5.0)
-                        ],
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 1.5),
-                          colors: <Color>[
-                            Color(0xffff8e0e00),
-                            Color(0xfff1f1c18),
-                          ],
-                        ),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: ElavetedButon(
-                          text: "SHOP",
-                          page: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenShop(),
-                            ));
-                          })),
-                ),
+                ButtonWidget(
+                    button: ElavetedButon(
+                  page: () {},
+                  text: "Trí tuệ",
+                )),
+                ButtonWidget(
+                    button: ElavetedButon(
+                  page: () {},
+                  text: "50%",
+                )),
+                ButtonWidget(
+                    button: ElavetedButon(
+                  page: () {},
+                  text: "NEXT",
+                )),
               ],
             )));
   }

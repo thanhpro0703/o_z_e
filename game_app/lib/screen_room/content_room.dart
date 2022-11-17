@@ -173,6 +173,8 @@ class _MyContentRoomState extends State<MyContentRoom> {
                       child: Container(
                         padding: EdgeInsets.all(8),
                         child: ListView.builder(
+                          keyboardDismissBehavior:
+                              ScrollViewKeyboardDismissBehavior.onDrag,
                           itemCount: ListDB.listDb.length,
                           itemBuilder: ((context, index) {
                             return DatabaseRoom(entry: ListDB.listDb[index]);

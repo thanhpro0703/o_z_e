@@ -22,6 +22,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                   ),
                   fit: BoxFit.fill)),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -118,17 +119,20 @@ class _ScreenSettingState extends State<ScreenSetting> {
                   ),
                 ),
               ),
-              Row(
-                children: [
-                  ButtonWidget(
-                    button: ElavetedButon(
-                      text: "BACK",
-                      page: () {
-                        Navigator.of(context).pop();
-                      },
+              Container(
+                width: 160,
+                child: Row(
+                  children: [
+                    ButtonWidget(
+                      button: ElavetedButon(
+                        text: "BACK",
+                        page: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ],
           ),
