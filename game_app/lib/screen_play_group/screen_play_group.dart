@@ -27,17 +27,25 @@ class _MyScreen_Team extends State<Screen_Team> {
                   child: Column(
                     children: [
                       Padding(padding: EdgeInsets.only(top: 10)),
-                      Container(
-                          width: MediaQuery.of(context).size.width / 7,
-                          height: MediaQuery.of(context).size.width / 7,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: const LinearGradient(
-                                colors: [Color(0xfff32e20), Color(0xff171717)],
-                                begin: Alignment.topLeft,
-                                end: Alignment.topRight,
-                              )),
-                          child: Center()),
+                      ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.transparent,
+                              shadowColor: Colors.transparent),
+                          child: Container(
+                              width: MediaQuery.of(context).size.width / 7,
+                              height: MediaQuery.of(context).size.width / 7,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xfff32e20),
+                                      Color(0xff171717)
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.topRight,
+                                  )),
+                              child: Center())),
                       Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
@@ -62,11 +70,17 @@ class _MyScreen_Team extends State<Screen_Team> {
                         )),
                       ),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      Container(
-                        width: MediaQuery.of(context).size.width / 7,
-                        height: 60,
-                        child: Image(image: AssetImage('assets/add-user.png')),
-                      ),
+                      ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.transparent,
+                              shadowColor: Colors.transparent),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 7,
+                            height: 60,
+                            child:
+                                Image(image: AssetImage('assets/add-user.png')),
+                          )),
                       Padding(padding: EdgeInsets.only(top: 5)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
@@ -91,11 +105,17 @@ class _MyScreen_Team extends State<Screen_Team> {
                         )),
                       ),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      Container(
-                        width: MediaQuery.of(context).size.width / 7,
-                        height: 60,
-                        child: Image(image: AssetImage('assets/add-user.png')),
-                      ),
+                      ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.transparent,
+                              shadowColor: Colors.transparent),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 7,
+                            height: 60,
+                            child:
+                                Image(image: AssetImage('assets/add-user.png')),
+                          )),
                       Padding(padding: EdgeInsets.only(top: 5)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
@@ -136,17 +156,25 @@ class _MyScreen_Team extends State<Screen_Team> {
                   child: Column(
                     children: [
                       Padding(padding: EdgeInsets.only(top: 10)),
-                      Container(
-                          width: MediaQuery.of(context).size.width / 7,
-                          height: MediaQuery.of(context).size.width / 7,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              gradient: const LinearGradient(
-                                colors: [Color(0xfff32e20), Color(0xff171717)],
-                                begin: Alignment.topLeft,
-                                end: Alignment.topRight,
-                              )),
-                          child: Center()),
+                      ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.transparent,
+                              shadowColor: Colors.transparent),
+                          child: Container(
+                              width: MediaQuery.of(context).size.width / 7,
+                              height: MediaQuery.of(context).size.width / 7,
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  gradient: const LinearGradient(
+                                    colors: [
+                                      Color(0xfff32e20),
+                                      Color(0xff171717)
+                                    ],
+                                    begin: Alignment.topLeft,
+                                    end: Alignment.topRight,
+                                  )),
+                              child: Center())),
                       Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
@@ -161,8 +189,9 @@ class _MyScreen_Team extends State<Screen_Team> {
                             Text(
                               'Name',
                               style: TextStyle(
-                                  color: Colors.cyanAccent, fontSize: 13,
-                                  ),
+                                color: Colors.cyanAccent,
+                                fontSize: 13,
+                              ),
                             ),
                             Padding(padding: EdgeInsets.only(top: 10)),
                             Text('Rank: 360',
@@ -172,11 +201,17 @@ class _MyScreen_Team extends State<Screen_Team> {
                         )),
                       ),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      Container(
-                        width: MediaQuery.of(context).size.width / 7,
-                        height: 60,
-                        child: Image(image: AssetImage('assets/add-user.png')),
-                      ),
+                      ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.transparent,
+                              shadowColor: Colors.transparent),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 7,
+                            height: 60,
+                            child:
+                                Image(image: AssetImage('assets/add-user.png')),
+                          )),
                       Padding(padding: EdgeInsets.only(top: 5)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
@@ -201,11 +236,17 @@ class _MyScreen_Team extends State<Screen_Team> {
                         )),
                       ),
                       Padding(padding: EdgeInsets.only(top: 5)),
-                      Container(
-                        width: MediaQuery.of(context).size.width / 7,
-                        height: 60,
-                        child: Image(image: AssetImage('assets/add-user.png')),
-                      ),
+                      ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              primary: Colors.transparent,
+                              shadowColor: Colors.transparent),
+                          child: Container(
+                            width: MediaQuery.of(context).size.width / 7,
+                            height: 60,
+                            child:
+                                Image(image: AssetImage('assets/add-user.png')),
+                          )),
                       Padding(padding: EdgeInsets.only(top: 5)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
@@ -277,12 +318,18 @@ class _MyScreen_Team extends State<Screen_Team> {
                   ),
                 ),
               )),
-          Expanded(
-              child: Container(
-            height: 50,
-            width: 50,
-            child: Image(image: AssetImage('assets/reply-message.png')),
-          ))
+          Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+            ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    shadowColor: Colors.transparent),
+                child: Container(
+                  height: 50,
+                  width: 50,
+                  child: Image(image: AssetImage('assets/reply-message.png')),
+                ))
+          ])
         ]));
   }
 }

@@ -115,80 +115,92 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                  width: MediaQuery.of(context).size.width / 5,
-                  height: MediaQuery.of(context).size.width / 5,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      gradient: const LinearGradient(
-                        colors: [Color(0xfff32e20), Color(0xff171717)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      )),
-                  child: Center(
-                      child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        shadowColor: Colors.transparent),
-                    onPressed: () {},
-                    child: Text(
-                      '3 VS 3',
-                      style: TextStyle(
-                        color: Colors.greenAccent,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ))),
-              Container(
-                  width: MediaQuery.of(context).size.width / 3.5,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      gradient: const LinearGradient(
-                        colors: [Color(0xfff32e20), Color(0xff171717)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      )),
-                  child: Center(
-                      child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        shadowColor: Colors.transparent),
-                    onPressed: () {},
-                    child: Text(
-                      '1 VS 1',
-                      style: TextStyle(
-                        color: Colors.greenAccent,
-                        fontSize: 20,
-                      ),
-                    ),
-                  ))),
-              Container(
-                  width: MediaQuery.of(context).size.width / 3.5,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                      gradient: const LinearGradient(
-                        colors: [Color(0xfff32e20), Color(0xff171717)],
-                        begin: Alignment.centerLeft,
-                        end: Alignment.centerRight,
-                      )),
-                  child: Center(
-                      child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        shadowColor: Colors.transparent),
-                    onPressed: () {},
-                    child: Text(
-                      'Random',
-                      style: TextStyle(
-                        color: Colors.greenAccent,
-                        fontSize: 20,
-                      ),
-                    ),
-                  )))
+              ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.transparent,
+                      shadowColor: Colors.transparent),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width / 4.3,
+                      height: MediaQuery.of(context).size.width / 6,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xfff32e20), Color(0xff171717)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )),
+                      child: Center(
+                        child: Text(
+                          '3 VS 3',
+                          style: TextStyle(
+                            color: Colors.greenAccent,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ))),
+              ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.transparent,
+                      shadowColor: Colors.transparent),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width / 4.3,
+                      height: MediaQuery.of(context).size.width / 6,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xfff32e20), Color(0xff171717)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )),
+                      child: Center(
+                        child: Text(
+                          '1 VS 1',
+                          style: TextStyle(
+                            color: Colors.greenAccent,
+                            fontSize: 17,
+                          ),
+                        ),
+                      ))),
+              ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.transparent,
+                      shadowColor: Colors.transparent),
+                  child: Container(
+                      width: MediaQuery.of(context).size.width / 4.3,
+                      height: MediaQuery.of(context).size.width / 6,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(40),
+                          gradient: const LinearGradient(
+                            colors: [Color(0xfff32e20), Color(0xff171717)],
+                            begin: Alignment.centerLeft,
+                            end: Alignment.centerRight,
+                          )),
+                      child: Center(
+                        child: Text(
+                          'Random',
+                          style: TextStyle(
+                            color: Colors.greenAccent,
+                            fontSize: 17,
+                          ),
+                        ),
+                      )))
             ],
           ),
+          Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+            ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                    primary: Colors.transparent,
+                    shadowColor: Colors.transparent),
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 7,
+                  height: MediaQuery.of(context).size.width / 7,
+                  child: Image(image: AssetImage('assets/reply-message.png')),
+                ))
+          ])
         ],
       ),
     );

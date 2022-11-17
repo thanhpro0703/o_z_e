@@ -27,20 +27,25 @@ class _MyScreenSolo extends State<Screen_Solo> {
             children: [
               Column(children: [
                 Padding(padding: EdgeInsets.only(top: 50)),
-                Container(
-                    width: MediaQuery.of(context).size.width / 6,
-                    height: MediaQuery.of(context).size.width / 6,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: const LinearGradient(
-                          colors: [
-                            Color(0xfff32e20),
-                            Color.fromARGB(200, 0, 0, 0)
-                          ],
-                          begin: Alignment.topLeft,
-                          end: Alignment.topRight,
-                        )),
-                    child: Center()),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent),
+                    onPressed: () {},
+                    child: Container(
+                        width: MediaQuery.of(context).size.width / 6,
+                        height: MediaQuery.of(context).size.width / 6,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            gradient: const LinearGradient(
+                              colors: [
+                                Color(0xfff32e20),
+                                Color.fromARGB(200, 0, 0, 0)
+                              ],
+                              begin: Alignment.topLeft,
+                              end: Alignment.topRight,
+                            )),
+                        child: Center())),
                 Padding(padding: EdgeInsets.only(top: 40)),
                 Container(
                     width: MediaQuery.of(context).size.width / 2.6,
@@ -83,11 +88,16 @@ class _MyScreenSolo extends State<Screen_Solo> {
                           TextStyle(fontSize: 40, color: Colors.cyanAccent))),
               Column(children: [
                 Padding(padding: EdgeInsets.only(top: 50)),
-                Container(
-                  width: MediaQuery.of(context).size.width / 6,
-                  height: MediaQuery.of(context).size.width / 6,
-                  child: Image(image: AssetImage('assets/add-user.png')),
-                ),
+                ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        primary: Colors.transparent,
+                        shadowColor: Colors.transparent),
+                    onPressed: () {},
+                    child: Container(
+                      width: MediaQuery.of(context).size.width / 6,
+                      height: MediaQuery.of(context).size.width / 6,
+                      child: Image(image: AssetImage('assets/add-user.png')),
+                    )),
                 Padding(padding: EdgeInsets.only(top: 50)),
                 Container(
                     width: MediaQuery.of(context).size.width / 2.6,
@@ -144,45 +154,46 @@ class _MyScreenSolo extends State<Screen_Solo> {
                       style: TextStyle(fontSize: 25, color: Colors.cyan))
                 ],
               ))),
-          Container(
-              margin: EdgeInsets.only(top: 50),
-              width: MediaQuery.of(context).size.width / 2.5,
-              height: 50,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  gradient: const LinearGradient(
-                    colors: [
-                      Color.fromARGB(255, 6, 171, 53),
-                      Color.fromARGB(255, 224, 193, 193)
-                    ],
-                    begin: Alignment.centerLeft,
-                    end: Alignment(2, 0.5),
-                  )),
-              child: Center(
-                  child: ElevatedButton(
+          ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                  primary: Colors.transparent, shadowColor: Colors.transparent),
+              child: Container(
+                  margin: EdgeInsets.only(top: 50),
+                  width: MediaQuery.of(context).size.width / 2.5,
+                  height: MediaQuery.of(context).size.width / 7.5,
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(50),
+                      gradient: const LinearGradient(
+                        colors: [
+                          Color.fromARGB(255, 6, 171, 53),
+                          Color.fromARGB(255, 224, 193, 193)
+                        ],
+                        begin: Alignment.centerLeft,
+                        end: Alignment(2, 0.5),
+                      )),
+                  child: Center(
+                    child: Text(
+                      'Start',
+                      style: TextStyle(
+                        color: Colors.yellowAccent,
+                        fontSize: 26,
+                      ),
+                    ),
+                  ))),
+
+          Row(mainAxisAlignment: MainAxisAlignment.start, children: [
+            ElevatedButton(
+                onPressed: () {},
                 style: ElevatedButton.styleFrom(
                     primary: Colors.transparent,
                     shadowColor: Colors.transparent),
-                onPressed: () {},
-                child: Text(
-                  'Start',
-                  style: TextStyle(
-                    color: Colors.yellowAccent,
-                    fontSize: 26,
-                  ),
-                ),
-              ))),
-          Expanded(
-              child: Container(
-                  height: MediaQuery.of(context).size.height / 4,
-                  width: MediaQuery.of(context).size.width / 4,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        shadowColor: Colors.transparent),
-                    onPressed: () {},
-                    child: Image(image: AssetImage('assets/reply-message.png')),
-                  )))
+                child: Container(
+                  width: MediaQuery.of(context).size.width / 7,
+                  height: MediaQuery.of(context).size.width / 7,
+                  child: Image(image: AssetImage('assets/reply-message.png')),
+                ))
+          ])
         ],
       ),
     );
