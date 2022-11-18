@@ -62,14 +62,16 @@ class _MyHeaderState extends State<MyHeader> {
               width: 100,
               img: 'assets/account.png',
             ),
-            ButtonWidget(
-              button: ElavetedButon(
-                  text: "Coins",
-                  page: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => ScreenMainGame(),
-                    ));
-                  }),
+            Container(
+              child: ButtonWidget(
+                button: ElavetedButon(
+                    text: "Coins",
+                    page: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => ScreenMainGame(),
+                      ));
+                    }),
+              ),
             ),
             ButtonSetting(
               img: 'assets/settings.png',

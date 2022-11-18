@@ -19,7 +19,6 @@ class _ElavetedButonState extends State<ElavetedButon> {
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
-        minimumSize: MaterialStateProperty.all(Size(100, 50)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
         elevation: MaterialStateProperty.all(3),
         shadowColor:
@@ -40,7 +39,9 @@ class _ElavetedButonState extends State<ElavetedButon> {
             Container(
                 child: Text(
               widget.text,
-              style: TextStyle(fontSize: 15, letterSpacing: 3),
+              style: TextStyle(
+                fontSize: 15,
+              ),
               textAlign: TextAlign.center,
             )),
           ],
@@ -61,26 +62,31 @@ class ButtonWidget extends StatefulWidget {
 class _ButtonWidgetState extends State<ButtonWidget> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(1.0),
-      child: Container(
-          decoration: BoxDecoration(
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black26, offset: Offset(0, 4), blurRadius: 5.0)
-            ],
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment(0.7, 1.5),
-              colors: <Color>[
-                Color(0xffff8e0e00),
-                Color(0xfff1f1c18),
+    return Expanded(
+      flex: 2,
+      child: Padding(
+        padding: const EdgeInsets.all(0.0),
+        child: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                    color: Colors.black26,
+                    offset: Offset(0, 4),
+                    blurRadius: 5.0)
               ],
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment(0.7, 1.5),
+                colors: <Color>[
+                  Color(0xffff8e0e00),
+                  Color(0xfff1f1c18),
+                ],
+              ),
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(20),
             ),
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: widget.button),
+            child: widget.button),
+      ),
     );
   }
 }

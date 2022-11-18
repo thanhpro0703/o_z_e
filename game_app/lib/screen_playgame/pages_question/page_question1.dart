@@ -110,14 +110,14 @@ class _PageQuestion1State extends State<PageQuestion1> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: GestureDetector(
                                       onTap: _Pressed1,
                                       child: ButtonPressed1
                                           ? ButtonPlayWidgetTapped()
                                           : ButtonPlayWidget())),
                               Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: GestureDetector(
                                       onTap: _Pressed2,
                                       child: ButtonPressed2
@@ -129,14 +129,14 @@ class _PageQuestion1State extends State<PageQuestion1> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: GestureDetector(
                                       onTap: _Pressed3,
                                       child: ButtonPressed3
                                           ? ButtonPlayWidgetTapped()
                                           : ButtonPlayWidget())),
                               Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: GestureDetector(
                                       onTap: _Pressed4,
                                       child: ButtonPressed4
@@ -183,18 +183,12 @@ class _ElavetedButonPlayState extends State<ElavetedButonPlay> {
         shadowColor: MaterialStateProperty.all(Colors.transparent),
       ),
       onPressed: widget.page,
-      child: Padding(
-        padding: const EdgeInsets.only(
-          top: 10,
-          bottom: 10,
-        ),
-        child: Text(
-          widget.text,
-          style: TextStyle(
-            fontSize: 18,
-            // fontWeight: FontWeight.w700,
-            color: Colors.white,
-          ),
+      child: Text(
+        widget.text,
+        style: TextStyle(
+          fontSize: 18,
+          // fontWeight: FontWeight.w700,
+          color: Colors.white,
         ),
       ),
     );
@@ -298,9 +292,11 @@ class _ButtonPlayWidgetTappedState extends State<ButtonPlayWidgetTapped> {
           color: Colors.grey[300],
           borderRadius: BorderRadius.circular(20),
         ),
-        child: Icon(
-          Icons.favorite_border,
-          size: 50,
+        child: Container(
+          child: Icon(
+            Icons.favorite_border,
+            size: 30,
+          ),
         ),
       ),
     );

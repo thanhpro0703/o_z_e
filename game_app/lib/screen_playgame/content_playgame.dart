@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_playgame/pages_question/page_win.dart';
 import 'package:game_app/screen_room/screen_room.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import '../screen_room/footer_room.dart';
@@ -35,6 +36,7 @@ class _MyContentPlayGameState extends State<MyContentPlayGame> {
                     PageQuestion1(),
                     PageQuestion2(),
                     PageQuestion3(),
+                    PageWin()
                   ],
                 ),
               ),
@@ -79,7 +81,7 @@ class _MyContentPlayGameState extends State<MyContentPlayGame> {
                                   spreadRadius: 1.0)
                             ],
                           ),
-                          height: 60,
+                          height: 40,
                           width: 100,
                           child: ButtonWidget(
                               button: ElavetedButon(
@@ -125,7 +127,7 @@ class _MyContentPlayGameState extends State<MyContentPlayGame> {
                                   spreadRadius: 1.0)
                             ],
                           ),
-                          height: 60,
+                          height: 40,
                           width: 100,
                           child: ButtonWidget(
                               button: ElavetedButon(

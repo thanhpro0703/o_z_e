@@ -110,14 +110,14 @@ class _PageQuestion3State extends State<PageQuestion3> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: GestureDetector(
                                       onTap: _Pressed1,
                                       child: ButtonPressed1
                                           ? ButtonPlayWidgetTapped()
                                           : ButtonPlayWidget())),
                               Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: GestureDetector(
                                       onTap: _Pressed2,
                                       child: ButtonPressed2
@@ -129,14 +129,14 @@ class _PageQuestion3State extends State<PageQuestion3> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: GestureDetector(
                                       onTap: _Pressed3,
                                       child: ButtonPressed3
                                           ? ButtonPlayWidgetTapped()
                                           : ButtonPlayWidget())),
                               Padding(
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding: const EdgeInsets.all(2.0),
                                   child: GestureDetector(
                                       onTap: _Pressed4,
                                       child: ButtonPressed4
@@ -300,7 +300,7 @@ class _ButtonPlayWidgetTappedState extends State<ButtonPlayWidgetTapped> {
         ),
         child: Icon(
           Icons.favorite_border,
-          size: 50,
+          size: 30,
         ),
       ),
     );
