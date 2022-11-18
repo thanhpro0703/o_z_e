@@ -74,7 +74,12 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                       begin: Alignment.topLeft,
                       end: Alignment.bottomRight,
                     )),
-                child: Center(),
+                child: Center(
+                    child: Image.asset(
+                  'assets/account.png',
+                  width: 45,
+                  height: 50,
+                )),
               )),
           Padding(padding: EdgeInsets.only(top: 10)),
           Container(

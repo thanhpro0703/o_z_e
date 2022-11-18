@@ -8,6 +8,7 @@ import 'screen_choose_level/screen_choose_level.dart';
 import 'screen_solo/screen_solo.dart';
 import 'screen_singler_play/screen_singler_play.dart';
 import 'screen_play_group/screen_play_group.dart';
+import 'screen_account/screen_account.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Screen_Choose_Level(),
+      home: Screen_Acount(),
     );
   }
 }

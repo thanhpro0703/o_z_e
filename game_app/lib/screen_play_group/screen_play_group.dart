@@ -36,19 +36,25 @@ class _MyScreen_Team extends State<Screen_Team> {
                               primary: Colors.transparent,
                               shadowColor: Colors.transparent),
                           child: Container(
-                              width: MediaQuery.of(context).size.width / 7,
-                              height: MediaQuery.of(context).size.width / 7,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  gradient: const LinearGradient(
-                                    colors: [
-                                      Color(0xfff32e20),
-                                      Color(0xff171717)
-                                    ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.topRight,
-                                  )),
-                              child: Center())),
+                            width: MediaQuery.of(context).size.width / 7,
+                            height: MediaQuery.of(context).size.width / 7,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xfff32e20),
+                                    Color(0xff171717)
+                                  ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.topRight,
+                                )),
+                            child: Center(
+                                child: Image.asset(
+                              'assets/account.png',
+                              width: 45,
+                              height: 50,
+                            )),
+                          )),
                       Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,
@@ -165,19 +171,25 @@ class _MyScreen_Team extends State<Screen_Team> {
                               primary: Colors.transparent,
                               shadowColor: Colors.transparent),
                           child: Container(
-                              width: MediaQuery.of(context).size.width / 7,
-                              height: MediaQuery.of(context).size.width / 7,
-                              decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(10),
-                                  gradient: const LinearGradient(
-                                    colors: [
-                                      Color(0xfff32e20),
-                                      Color(0xff171717)
-                                    ],
-                                    begin: Alignment.topLeft,
-                                    end: Alignment.topRight,
-                                  )),
-                              child: Center())),
+                            width: MediaQuery.of(context).size.width / 7,
+                            height: MediaQuery.of(context).size.width / 7,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10),
+                                gradient: const LinearGradient(
+                                  colors: [
+                                    Color(0xfff32e20),
+                                    Color(0xff171717)
+                                  ],
+                                  begin: Alignment.topLeft,
+                                  end: Alignment.topRight,
+                                )),
+                            child: Center(
+                                child: Image.asset(
+                              'assets/account.png',
+                              width: 45,
+                              height: 50,
+                            )),
+                          )),
                       Padding(padding: EdgeInsets.only(top: 10)),
                       Container(
                         width: MediaQuery.of(context).size.width / 3,

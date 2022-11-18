@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_account/screen_account.dart';
 import 'package:game_app/screen_setting/screen_seting.dart';
 
 class MyHeader extends StatefulWidget {
@@ -86,7 +87,11 @@ class _MyHeaderState extends State<MyHeader> {
                           shadowColor:
                               MaterialStateProperty.all(Colors.transparent),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Screen_Acount(),
+                          ));
+                        },
                         child: Image.asset(
                           'assets/account.png',
                           width: 45,
