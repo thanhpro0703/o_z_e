@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_maingame/screen_maingame.dart';
+import '../button_game/button_game.dart';
 
 class ScreenSetting extends StatefulWidget {
   const ScreenSetting({super.key});
@@ -21,6 +22,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                   ),
                   fit: BoxFit.fill)),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -117,61 +119,20 @@ class _ScreenSettingState extends State<ScreenSetting> {
                   ),
                 ),
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(top: 50, left: 10),
-                    child: Expanded(
-                        flex: 1,
-                        child: Container(
-                          width: 90,
-                          height: 60,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            gradient: LinearGradient(
-                              begin: Alignment.topLeft,
-                              end: Alignment(0.7, 1.5),
-                              colors: <Color>[
-                                Color(0xffff2193b0),
-                                Color(0xfff6dd5ed),
-                              ],
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Colors.black26,
-                                  offset: Offset(0, 4),
-                                  blurRadius: 5.0)
-                            ],
-                          ),
-                          child: Expanded(
-                            child: ElevatedButton(
-                                style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(20.0),
-                                    ),
-                                  ),
-                                  minimumSize:
-                                      MaterialStateProperty.all(Size(100, 60)),
-                                  backgroundColor: MaterialStateProperty.all(
-                                      Colors.transparent),
-                                  // elevation: MaterialStateProperty.all(3),
-                                  shadowColor: MaterialStateProperty.all(
-                                      Colors.transparent),
-                                ),
-                                onPressed: () {
-                                  Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => ScreenMainGame(),
-                                  ));
-                                },
-                                child: Image.asset(
-                                  'assets/reply-message.png',
-                                )),
-                          ),
-                        )),
-                  ),
-                ],
+              Container(
+                width: 160,
+                child: Row(
+                  children: [
+                    ButtonWidget(
+                      button: ElavetedButon(
+                        text: "BACK",
+                        page: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
@@ -228,7 +189,7 @@ class _ButtonSettingState extends State<ButtonSetting> {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                     ),
-                    minimumSize: MaterialStateProperty.all(Size(100, 60)),
+                    minimumSize: MaterialStateProperty.all(Size(100, 40)),
                     backgroundColor:
                         MaterialStateProperty.all(Colors.transparent),
                     // elevation: MaterialStateProperty.all(3),
