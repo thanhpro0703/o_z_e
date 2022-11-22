@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/button_game/button_game.dart';
+import 'package:game_app/screen_maingame/screen_maingame.dart';
 
 class PageWin extends StatefulWidget {
   const PageWin({super.key});
@@ -65,7 +66,11 @@ class _PageWinState extends State<PageWin> {
                       padding: const EdgeInsets.all(8.0),
                       child: ButtonWidget(
                           button: ElavetedButon(
-                        page: () {},
+                        page: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ScreenMainGame(),
+                          ));
+                        },
                         text: "OK",
                       )),
                     ),
