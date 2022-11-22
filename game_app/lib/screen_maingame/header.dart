@@ -50,61 +50,65 @@ class _MyHeaderState extends State<MyHeader> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            ButtonHeaderWidget(
-              buttonheader: ElavetedButon(text: "Hears"),
+            ButtonWidget(
+              button: ElavetedButon(
+                page: () {},
+                text: "Hears",
+              ),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Expanded(
-                child: Container(
-                  width: 80,
-                  height: 80,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20),
-                    gradient: LinearGradient(
-                      begin: Alignment.topLeft,
-                      end: Alignment(0.7, 1.5),
-                      colors: <Color>[
-                        Color(0xffff8e0e00),
-                        Color(0xfff1f1c18),
+                padding: const EdgeInsets.all(8.0),
+                child: Expanded(
+                  child: Container(
+                    width: 80,
+                    height: 80,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment(0.7, 1.5),
+                        colors: <Color>[
+                          Color(0xffff8e0e00),
+                          Color(0xfff1f1c18),
+                        ],
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.black26,
+                            offset: Offset(0, 4),
+                            blurRadius: 5.0)
                       ],
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Colors.black26,
-                          offset: Offset(0, 4),
-                          blurRadius: 5.0)
-                    ],
-                  ),
-                  child: Expanded(
-                    child: ElevatedButton(
-                        style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                            RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20.0),
+                    child: Expanded(
+                      child: ElevatedButton(
+                          style: ButtonStyle(
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
                             ),
+                            minimumSize:
+                                MaterialStateProperty.all(Size(100, 60)),
+                            backgroundColor:
+                                MaterialStateProperty.all(Colors.transparent),
+                            // elevation: MaterialStateProperty.all(3),
+                            shadowColor:
+                                MaterialStateProperty.all(Colors.transparent),
                           ),
-                          minimumSize: MaterialStateProperty.all(Size(100, 60)),
-                          backgroundColor:
-                              MaterialStateProperty.all(Colors.transparent),
-                          // elevation: MaterialStateProperty.all(3),
-                          shadowColor:
-                              MaterialStateProperty.all(Colors.transparent),
-                        ),
-                        onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Screen_Acount(),
-                          ));
-                        },
-                        child: Image.asset(
-                          'assets/account.png',
-                          width: 45,
-                          height: 40,
-                        )),
+                          onPressed: () {
+                            Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => Screen_Acount(),
+                            ));
+                          },
+                          child: Image.asset(
+                            'assets/account.png',
+                            width: 45,
+                            height: 40,
+                          )),
+                    ),
                   ),
-                ),
-
+                )),
             ButtonWidget(
               button: ElavetedButon(
                 text: "Hear",
@@ -113,28 +117,8 @@ class _MyHeaderState extends State<MyHeader> {
                     builder: (context) => ScreenMainGame(),
                   ));
                 },
-
               ),
             ),
-            ButtonAvatar(
-              height: 100,
-              width: 100,
-              img: 'assets/account.png',
-            ),
-            Container(
-              child: ButtonWidget(
-                button: ElavetedButon(
-                    text: "Coins",
-                    page: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ScreenMainGame(),
-                      ));
-                    }),
-              ),
-            ),
-            ButtonSetting(
-              img: 'assets/settings.png',
-            )
           ],
         ),
       ),
