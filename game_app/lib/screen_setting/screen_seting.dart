@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_maingame/screen_maingame.dart';
+import '../button_game/button_game.dart';
 
 class ScreenSetting extends StatefulWidget {
   const ScreenSetting({super.key});
@@ -14,177 +15,126 @@ class _ScreenSettingState extends State<ScreenSetting> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
-                    "assets/background-index.jpg",
+                    "assets/background-setting.jpeg",
                   ),
                   fit: BoxFit.fill)),
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height / 2,
-            decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage('assets/background-setting.jpeg'))),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    flex: 1,
-                    child: Container(
-                      margin: EdgeInsets.only(top: 180),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          ButtonSetting(
-                            width: 65,
-                            height: 65,
-                            img: 'assets/musical-note.png',
-                            colors: [
-                              Color(0xffff2980b9),
-                              Color(0xfff6dd5fa),
-                              Color(0xffffffff),
-                            ],
-                          ),
-                          ButtonSetting(
-                            width: 65,
-                            height: 65,
-                            img: 'assets/sound.png',
-                            colors: [
-                              Color(0xffff2980b9),
-                              Color(0xfff6dd5fa),
-                              Color(0xffffffff),
-                            ],
-                          ),
-                          ButtonSetting(
-                            width: 65,
-                            height: 65,
-                            img: 'assets/vibration.png',
-                            colors: [
-                              Color(0xffff2980b9),
-                              Color(0xfff6dd5fa),
-                              Color(0xffffffff),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    flex: 2,
-                    child: Container(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          ButtonSetting(
-                            width: 90,
-                            height: 90,
-                            img: 'assets/account.png',
-                            colors: [
-                              Color(0xffffd53369),
-                              Color(0xfffcabd6d),
-                            ],
-                          ),
-                          ButtonSetting(
-                            width: 190,
-                            height: 60,
-                            img: 'assets/textmyaccount.png',
-                            colors: [
-                              Color(0xffff2193b0),
-                              Color(0xfff6dd5ed),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Expanded(
-                    flex: 1,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Expanded(
+                  flex: 1,
+                  child: Container(
+                    margin: EdgeInsets.only(top: 180),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ButtonSetting(
-                          width: 200,
-                          height: 30,
-                          img: 'assets/howtoplay.png',
+                          width: 65,
+                          height: 65,
+                          img: 'assets/musical-note.png',
                           colors: [
-                            Color(0xffff83a4d4),
-                            Color(0xfff6bfbff),
+                            Color(0xffff2980b9),
+                            Color(0xfff6dd5fa),
+                            Color(0xffffffff),
+                          ],
+                        ),
+                        ButtonSetting(
+                          width: 65,
+                          height: 65,
+                          img: 'assets/sound.png',
+                          colors: [
+                            Color(0xffff2980b9),
+                            Color(0xfff6dd5fa),
+                            Color(0xffffffff),
+                          ],
+                        ),
+                        ButtonSetting(
+                          width: 65,
+                          height: 65,
+                          img: 'assets/vibration.png',
+                          colors: [
+                            Color(0xffff2980b9),
+                            Color(0xfff6dd5fa),
+                            Color(0xffffffff),
                           ],
                         ),
                       ],
                     ),
                   ),
                 ),
-                Row(
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Expanded(
+                  flex: 2,
+                  child: Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ButtonSetting(
+                          width: 90,
+                          height: 90,
+                          img: 'assets/account.png',
+                          colors: [
+                            Color(0xffffd53369),
+                            Color(0xfffcabd6d),
+                          ],
+                        ),
+                        ButtonSetting(
+                          width: 190,
+                          height: 60,
+                          img: 'assets/textmyaccount.png',
+                          colors: [
+                            Color(0xffff2193b0),
+                            Color(0xfff6dd5ed),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Expanded(
+                  flex: 1,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      ButtonSetting(
+                        width: 200,
+                        height: 30,
+                        img: 'assets/howtoplay.png',
+                        colors: [
+                          Color(0xffff83a4d4),
+                          Color(0xfff6bfbff),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                width: 160,
+                child: Row(
                   children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 50, left: 10),
-                      child: Expanded(
-                          flex: 1,
-                          child: Container(
-                            width: 90,
-                            height: 60,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              gradient: LinearGradient(
-                                begin: Alignment.topLeft,
-                                end: Alignment(0.7, 1.5),
-                                colors: <Color>[
-                                  Color(0xffff2193b0),
-                                  Color(0xfff6dd5ed),
-                                ],
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Colors.black26,
-                                    offset: Offset(0, 4),
-                                    blurRadius: 5.0)
-                              ],
-                            ),
-                            child: Expanded(
-                              child: ElevatedButton(
-                                  style: ButtonStyle(
-                                    shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
-                                      RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(20.0),
-                                      ),
-                                    ),
-                                    minimumSize: MaterialStateProperty.all(
-                                        Size(100, 60)),
-                                    backgroundColor: MaterialStateProperty.all(
-                                        Colors.transparent),
-                                    // elevation: MaterialStateProperty.all(3),
-                                    shadowColor: MaterialStateProperty.all(
-                                        Colors.transparent),
-                                  ),
-                                  onPressed: () {
-                                    Navigator.of(context)
-                                        .push(MaterialPageRoute(
-                                      builder: (context) => ScreenMainGame(),
-                                    ));
-                                  },
-                                  child: Image.asset(
-                                    'assets/reply-message.png',
-                                  )),
-                            ),
-                          )),
+                    ButtonWidget(
+                      button: ElavetedButon(
+                        text: "BACK",
+                        page: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
                     ),
                   ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
@@ -239,7 +189,7 @@ class _ButtonSettingState extends State<ButtonSetting> {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                     ),
-                    minimumSize: MaterialStateProperty.all(Size(100, 60)),
+                    minimumSize: MaterialStateProperty.all(Size(100, 40)),
                     backgroundColor:
                         MaterialStateProperty.all(Colors.transparent),
                     // elevation: MaterialStateProperty.all(3),

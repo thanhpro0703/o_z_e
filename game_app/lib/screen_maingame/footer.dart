@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '../screen_room/footer_room.dart';
+import 'package:game_app/screen_shop/screen_shop.dart';
+import '../screen_maingame/screen_maingame.dart';
+import '../button_game/button_game.dart';
 import '../screen_room/screen_room.dart';
 
 class MyFooter extends StatefulWidget {
@@ -45,92 +47,44 @@ class _MyFooterState extends State<MyFooter> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0, 4),
-                              blurRadius: 5.0)
-                        ],
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 1.5),
-                          colors: <Color>[
-                            Color(0xffff8e0e00),
-                            Color(0xfff1f1c18),
-                          ],
-                        ),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: ElavetedButon(
-                          text: "FRIENDS",
-                          page: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenRoom(),
-                            ));
-                          })),
+                Container(
+                  height: 60,
+                  child: ButtonWidget(
+                    button: ElavetedButon(
+                      text: "FRIEND",
+                      page: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ScreenMainGame(),
+                        ));
+                      },
+                    ),
+                  ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0, 4),
-                              blurRadius: 5.0)
-                        ],
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 1.5),
-                          colors: <Color>[
-                            Color(0xffff8e0e00),
-                            Color(0xfff1f1c18),
-                          ],
-                        ),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: ElavetedButon(
-                          text: "EVENT",
-                          page: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenRoom(),
-                            ));
-                          })),
+                Container(
+                  height: 60,
+                  child: ButtonWidget(
+                    button: ElavetedButon(
+                      text: "EVENT",
+                      page: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ScreenMainGame(),
+                        ));
+                      },
+                    ),
+                  ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(1.0),
-                  child: Container(
-                      decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black26,
-                              offset: Offset(0, 4),
-                              blurRadius: 5.0)
-                        ],
-                        gradient: LinearGradient(
-                          begin: Alignment.topLeft,
-                          end: Alignment(0.7, 1.5),
-                          colors: <Color>[
-                            Color(0xffff8e0e00),
-                            Color(0xfff1f1c18),
-                          ],
-                        ),
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: ElavetedButon(
-                          text: "SHOP",
-                          page: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenRoom(),
-                            ));
-                          })),
+                Container(
+                  height: 60,
+                  child: ButtonWidget(
+                    button: ElavetedButon(
+                      text: "SHOP",
+                      page: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ScreenShop(),
+                        ));
+                      },
+                    ),
+                  ),
                 ),
               ],
             )));
