@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/model/dbcontext.dart';
+import 'package:game_app/model/entry.dart';
+import 'package:game_app/screen_playgame/screen_playgame.dart';
 import '../button_game/button_game.dart';
 
 class MyContentSinglePlay extends StatefulWidget {
@@ -28,9 +31,11 @@ class _MyContentSinglePlayState extends State<MyContentSinglePlay> {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 primary: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: 8,
+                itemCount: ListDbPlayLevels.listPlayLevels.length,
                 itemBuilder: ((context, index) {
-                  return MySquare();
+                  return MySquare(
+                    playlevel: ListDbPlayLevels.listPlayLevels[index],
+                  );
                 })),
           )),
     );
@@ -38,8 +43,8 @@ class _MyContentSinglePlayState extends State<MyContentSinglePlay> {
 }
 
 class MySquare extends StatefulWidget {
-  const MySquare({super.key});
-
+  const MySquare({super.key, required this.playlevel});
+  final PlayLevels playlevel;
   @override
   State<MySquare> createState() => _MySquareState();
 }
@@ -90,7 +95,7 @@ class _MySquareState extends State<MySquare> {
                         heightCC = 20;
                       });
                     },
-                    child: Text("Cửa 1"),
+                    child: Text(widget.playlevel.Level),
                   ),
                 ),
               ),
@@ -155,7 +160,7 @@ class _MySquareState extends State<MySquare> {
                               child: ButtonWidget(
                                   button: ElavetedButon(
                                 page: () {},
-                                text: "Chọn chủ đề",
+                                text: widget.playlevel.Topic,
                               )),
                             ),
                           ),
@@ -165,7 +170,11 @@ class _MySquareState extends State<MySquare> {
                               padding: const EdgeInsets.all(8.0),
                               child: ButtonWidget(
                                   button: ElavetedButon(
-                                page: () {},
+                                page: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ScreenPlayGame(),
+                                  ));
+                                },
                                 text: "Play",
                               )),
                             ),

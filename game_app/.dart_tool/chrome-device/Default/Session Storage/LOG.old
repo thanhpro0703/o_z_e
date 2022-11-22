@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 2022/11/17-23:14:52.285 3784 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.337db330\flutter_tools_chrome_device.6ea79997\Default\Session Storage/MANIFEST-000001
 2022/11/17-23:14:52.287 3784 Recovering log #12
@@ -29,4 +30,18 @@
 <<<<<<< HEAD
 =======
 >>>>>>> main
+>>>>>>> Thạnh
+=======
+2022/11/19-23:54:13.615 2bdc Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.d2828110\flutter_tools_chrome_device.e8c8a182\Default\Session Storage/MANIFEST-000001
+2022/11/19-23:54:13.616 2bdc Recovering log #3
+2022/11/19-23:54:13.616 2bdc Level-0 table #3: started
+2022/11/19-23:54:13.621 2bdc Level-0 table #3: 236 bytes OK
+2022/11/19-23:54:13.621 2bdc Recovering log #12
+2022/11/19-23:54:13.622 2bdc Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.d2828110\flutter_tools_chrome_device.e8c8a182\Default\Session Storage/000012.log 
+2022/11/19-23:54:13.624 2bdc Delete type=0 #3
+2022/11/19-23:54:13.624 2bdc Delete type=2 #5
+2022/11/19-23:54:13.624 2bdc Delete type=2 #7
+2022/11/19-23:54:13.624 2bdc Delete type=2 #9
+2022/11/19-23:54:13.624 2bdc Delete type=2 #11
+2022/11/19-23:54:13.624 2bdc Delete type=2 #13
 >>>>>>> Thạnh
