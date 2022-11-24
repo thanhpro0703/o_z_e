@@ -1,47 +1,45 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
-=======
-2022/11/17-23:14:52.285 3784 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.337db330\flutter_tools_chrome_device.6ea79997\Default\Session Storage/MANIFEST-000001
-2022/11/17-23:14:52.287 3784 Recovering log #12
-2022/11/17-23:14:52.288 3784 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.337db330\flutter_tools_chrome_device.6ea79997\Default\Session Storage/000012.log 
-2022/11/17-23:14:52.289 3784 Delete type=0 #3
-=======
 <<<<<<< HEAD
->>>>>>> Thạnh
-2022/11/14-17:16:34.387 1e34 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.8089f220\flutter_tools_chrome_device.28a199d0\Default\Session Storage/MANIFEST-000001
-2022/11/14-17:16:34.403 1e34 Recovering log #12
-2022/11/14-17:16:34.404 1e34 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.8089f220\flutter_tools_chrome_device.28a199d0\Default\Session Storage/000012.log 
-2022/11/14-17:16:34.418 1e34 Delete type=0 #3
+2022/11/15-22:08:59.180 3b4c Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.89f2e98d\flutter_tools_chrome_device.532fcc3\Default\Session Storage/MANIFEST-000001
+2022/11/15-22:08:59.191 3b4c Recovering log #12
+2022/11/15-22:08:59.193 3b4c Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.89f2e98d\flutter_tools_chrome_device.532fcc3\Default\Session Storage/000012.log 
+2022/11/15-22:08:59.195 3b4c Delete type=0 #3
 =======
-2022/11/08-18:48:32.554 4760 Reusing MANIFEST C:\Users\ASUS\AppData\Local\Temp\flutter_tools.bc5617e4\flutter_tools_chrome_device.524c0542\Default\Session Storage/MANIFEST-000001
-2022/11/08-18:48:32.556 4760 Recovering log #3
-2022/11/08-18:48:32.556 4760 Level-0 table #3: started
-2022/11/08-18:48:32.618 4760 Level-0 table #3: 236 bytes OK
-2022/11/08-18:48:32.619 4760 Recovering log #12
-2022/11/08-18:48:32.619 4760 Reusing old log C:\Users\ASUS\AppData\Local\Temp\flutter_tools.bc5617e4\flutter_tools_chrome_device.524c0542\Default\Session Storage/000012.log 
-2022/11/08-18:48:32.623 4760 Delete type=0 #3
-2022/11/08-18:48:32.623 4760 Delete type=2 #5
-2022/11/08-18:48:32.623 4760 Delete type=2 #7
-2022/11/08-18:48:32.623 4760 Delete type=2 #9
-2022/11/08-18:48:32.624 4760 Delete type=2 #11
-2022/11/08-18:48:32.624 4760 Delete type=2 #13
+2022/11/08-19:15:13.458 4a08 Reusing MANIFEST C:\Users\ASUS\AppData\Local\Temp\flutter_tools.8c23e3fd\flutter_tools_chrome_device.8a1744f2\Default\Session Storage/MANIFEST-000001
+2022/11/08-19:15:13.460 4a08 Recovering log #12
+2022/11/08-19:15:13.461 4a08 Reusing old log C:\Users\ASUS\AppData\Local\Temp\flutter_tools.8c23e3fd\flutter_tools_chrome_device.8a1744f2\Default\Session Storage/000012.log 
+2022/11/08-19:15:13.462 4a08 Delete type=0 #3
+2022/11/08-19:15:13.462 4a08 Delete type=2 #5
+2022/11/08-19:15:13.462 4a08 Delete type=2 #7
+2022/11/08-19:15:13.462 4a08 Delete type=2 #9
+2022/11/08-19:15:13.462 4a08 Delete type=2 #11
+2022/11/08-19:15:13.462 4a08 Delete type=2 #13
 >>>>>>> Tâm
-<<<<<<< HEAD
 =======
->>>>>>> main
+2022/11/18-01:58:07.000 3984 Creating DB C:\Users\Admin\AppData\Local\Temp\flutter_tools.41bb38e4\flutter_tools_chrome_device.75f95cc0\Default\Session Storage since it was missing.
+2022/11/18-01:58:07.015 3984 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.41bb38e4\flutter_tools_chrome_device.75f95cc0\Default\Session Storage/MANIFEST-000001
 >>>>>>> Thạnh
 =======
-2022/11/19-23:54:13.615 2bdc Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.d2828110\flutter_tools_chrome_device.e8c8a182\Default\Session Storage/MANIFEST-000001
-2022/11/19-23:54:13.616 2bdc Recovering log #3
-2022/11/19-23:54:13.616 2bdc Level-0 table #3: started
-2022/11/19-23:54:13.621 2bdc Level-0 table #3: 236 bytes OK
-2022/11/19-23:54:13.621 2bdc Recovering log #12
-2022/11/19-23:54:13.622 2bdc Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.d2828110\flutter_tools_chrome_device.e8c8a182\Default\Session Storage/000012.log 
-2022/11/19-23:54:13.624 2bdc Delete type=0 #3
-2022/11/19-23:54:13.624 2bdc Delete type=2 #5
-2022/11/19-23:54:13.624 2bdc Delete type=2 #7
-2022/11/19-23:54:13.624 2bdc Delete type=2 #9
-2022/11/19-23:54:13.624 2bdc Delete type=2 #11
-2022/11/19-23:54:13.624 2bdc Delete type=2 #13
+2022/11/20-23:44:09.889 3d10 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.f23d27e\flutter_tools_chrome_device.af66851d\Default\Session Storage/MANIFEST-000001
+2022/11/20-23:44:09.890 3d10 Recovering log #12
+2022/11/20-23:44:09.892 3d10 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.f23d27e\flutter_tools_chrome_device.af66851d\Default\Session Storage/000012.log 
+2022/11/20-23:44:09.893 3d10 Delete type=0 #3
+2022/11/20-23:44:09.893 3d10 Delete type=2 #5
+2022/11/20-23:44:09.893 3d10 Delete type=2 #7
+2022/11/20-23:44:09.893 3d10 Delete type=2 #9
+2022/11/20-23:44:09.893 3d10 Delete type=2 #11
+2022/11/20-23:44:09.893 3d10 Delete type=2 #13
+>>>>>>> Thạnh
+=======
+2022/11/23-21:11:13.222 3594 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.bf32e283\flutter_tools_chrome_device.13239e66\Default\Session Storage/MANIFEST-000001
+2022/11/23-21:11:13.223 3594 Recovering log #12
+2022/11/23-21:11:13.230 3594 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.bf32e283\flutter_tools_chrome_device.13239e66\Default\Session Storage/000012.log 
+2022/11/23-21:11:13.231 3594 Delete type=0 #3
+2022/11/23-21:11:13.231 3594 Delete type=2 #5
+2022/11/23-21:11:13.231 3594 Delete type=2 #7
+2022/11/23-21:11:13.231 3594 Delete type=2 #9
+2022/11/23-21:11:13.231 3594 Delete type=2 #11
+2022/11/23-21:11:13.231 3594 Delete type=2 #13
 >>>>>>> Thạnh
