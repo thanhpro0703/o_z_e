@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "417057139993",
+    "project_id": "ozeapp-74d75",
+    "storage_bucket": "ozeapp-74d75.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:417057139993:android:c63344132b3540e971a988",
+        "android_client_info": {
+          "package_name": "com.example.game_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "417057139993-9rmkds7tj4mf35ibjm1mkqfoqkm89ejq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD6rWvDe8HfVdDhc8ZGumzJXtoBdIbh-jQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "417057139993-9rmkds7tj4mf35ibjm1mkqfoqkm89ejq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

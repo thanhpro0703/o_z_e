@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_shop/screen_shop.dart';
 import '../screen_maingame/screen_maingame.dart';
@@ -51,11 +52,9 @@ class _MyFooterState extends State<MyFooter> {
                   height: 60,
                   child: ButtonWidget(
                     button: ElavetedButon(
-                      text: "FRIEND",
+                      text: "Log Out",
                       page: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ScreenMainGame(),
-                        ));
+                        FirebaseAuth.instance.signOut();
                       },
                     ),
                   ),

@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:game_app/screen_maingame/screen_maingame.dart';
 import 'sign-up-form.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class LoginX extends StatefulWidget {
+  const LoginX({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginX> createState() => _LoginXState();
 }
 
-class _LoginState extends State<Login> {
+class _LoginXState extends State<LoginX> {
   final _formKey = GlobalKey<FormState>();
   String username = '';
   String password = '';
@@ -140,7 +140,7 @@ class _LoginState extends State<Login> {
                                     onTap: () {
                                       Navigator.of(context).push(
                                           MaterialPageRoute(
-                                              builder: (context) => SignUp()));
+                                              builder: (context) => SignUpX()));
                                     },
                                     child: Container(
                                       padding:

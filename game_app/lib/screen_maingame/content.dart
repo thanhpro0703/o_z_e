@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_playgame/screen_playgame.dart';
 import 'package:game_app/screen_room/screen_room.dart';
@@ -23,19 +24,29 @@ class _MyContentState extends State<MyContent> {
                 image: AssetImage("assets/background-home.png"),
                 fit: BoxFit.fill,
               ),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment(0.7, 1.5),
-                colors: <Color>[
-                  Color(0xffff84ffc9),
-                  Color(0xffffebf4f5),
-                  Color(0xfffff6cfbe),
-                ],
-              ),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Row(children: [
+                  Container(
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topLeft,
+                            end: Alignment(0.7, 1.5),
+                            colors: <Color>[
+                          Color(0xffff84ffc9),
+                          Color(0xffffebf4f5),
+                          Color(0xfffff6cfbe),
+                        ])),
+                    child: ButtonPlayWidget(
+                      buttonplay: ElavetedButonPlay(
+                        text: FirebaseAuth.instance.currentUser!.email!,
+                        page: () {},
+                      ),
+                    ),
+                  ),
+                ]),
                 ButtonPlayWidget(
                   buttonplay: ElavetedButonPlay(
                     text: "P L A Y",
