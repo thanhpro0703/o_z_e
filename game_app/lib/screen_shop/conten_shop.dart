@@ -1,13 +1,15 @@
+import 'package:bottom_drawer/bottom_drawer.dart';
 import 'package:flutter/material.dart';
 
 class ContentShop extends StatefulWidget {
-  const ContentShop({super.key});
+  ContentShop({super.key});
 
   @override
   State<ContentShop> createState() => _ContentShopState();
 }
 
 class _ContentShopState extends State<ContentShop> {
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -91,7 +93,12 @@ class _ContentShopState extends State<ContentShop> {
                           children: [
                             ButtonPlayWidget(
                                 buttonplay: ElavetedButonBuy(
-                                    page: () {}, text: "109.000"))
+                                    page: () {
+
+                                      setState(() {
+
+                                      });
+                                      }, text: "109.000"))
                           ],
                         ),
                       )
