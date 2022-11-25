@@ -39,7 +39,7 @@ class _AddPayMethodState extends State<AddPayMethod> {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: Image.asset('images/momo.png',width: 60,),
+                      child: Image.asset('assets/momo.png',width: 60,),
                     ),
                     SizedBox(width: 10,),
                     Text('MoMo e-wallet: ****123',style:GoogleFonts.alegreya(fontSize: 18))
@@ -54,7 +54,7 @@ class _AddPayMethodState extends State<AddPayMethod> {
             SizedBox(height: 10,),
             Row(
               children: [
-                Image(image: AssetImage('images/momo.png'),width: 30,),
+                Image(image: AssetImage('assets/momo.png'),width: 30,),
                 SizedBox(width: 10,),
                 Text('Add a MoMo e-wallet',style: GoogleFonts.alegreya(fontSize: 16),)
               ],
@@ -67,4 +67,3 @@ class _AddPayMethodState extends State<AddPayMethod> {
     );
   }
 }
-//sdsd
