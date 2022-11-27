@@ -18,24 +18,24 @@ import 'screen_singler_play/screen_singler_play.dart';
 import './screen_play_group/screen_play_group.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-// Future main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
-//   runApp(const MyApp());
-// }
-
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const MyApp());
 }
+
+// void main() {
+//   runApp(const MyApp());
+// }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ScreenMainGame(),
+      home: MainPage(),
     );
   }
 }
