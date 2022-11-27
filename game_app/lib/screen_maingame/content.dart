@@ -41,7 +41,7 @@ class _MyContentState extends State<MyContent> {
                         ])),
                     child: ButtonPlayWidget(
                       buttonplay: ElavetedButonPlay(
-                        text: FirebaseAuth.instance.currentUser!.email!,
+                        text: "FirebaseAuth.instance.currentUser!.email!",
                         page: () {},
                       ),
                     ),

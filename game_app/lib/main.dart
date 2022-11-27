@@ -5,7 +5,6 @@ import 'package:game_app/auth/main_page.dart';
 import 'package:game_app/page/add-pay-method.dart';
 import 'package:game_app/screen_friends/screen_friends.dart';
 import 'package:game_app/user_page/login_page.dart';
-import 'package:game_app/user/login-form.dart';
 import '../screen_playgame/screen_playgame.dart';
 import 'package:game_app/screen_shop/screen_shop.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
@@ -19,15 +18,15 @@ import 'screen_singler_play/screen_singler_play.dart';
 import './screen_play_group/screen_play_group.dart';
 import 'package:firebase_core/firebase_core.dart';
 
-Future main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
-  runApp(const MyApp());
-}
-
-// void main() {
+// Future main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp();
 //   runApp(const MyApp());
 // }
+
+void main() {
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -36,7 +35,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: MainPage(),
+      home: ScreenMainGame(),
     );
   }
 }

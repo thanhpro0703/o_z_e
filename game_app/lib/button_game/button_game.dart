@@ -29,13 +29,6 @@ class _ElavetedButonState extends State<ElavetedButon> {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: <Widget>[
-            // Container(
-            //   child: Icon(
-            //     Icons.favorite_border_rounded,
-            //     size: 15,
-            //     color: Color.fromARGB(255, 0, 0, 0),
-            //   ),
-            // ),
             Container(
                 child: Text(
               widget.text,
