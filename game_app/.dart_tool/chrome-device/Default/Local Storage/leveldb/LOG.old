@@ -2,6 +2,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 2022/11/15-22:08:59.118 3b4c Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.89f2e98d\flutter_tools_chrome_device.532fcc3\Default\Local Storage\leveldb/MANIFEST-000001
 2022/11/15-22:08:59.119 3b4c Recovering log #4
 2022/11/15-22:08:59.121 3b4c Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.89f2e98d\flutter_tools_chrome_device.532fcc3\Default\Local Storage\leveldb/000004.log 
@@ -34,3 +35,10 @@
 2022/11/23-21:11:13.197 3594 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.bf32e283\flutter_tools_chrome_device.13239e66\Default\Local Storage\leveldb/000004.log 
 2022/11/23-21:11:13.198 3594 Delete type=2 #5
 >>>>>>> Thạnh
+=======
+2022/11/27-17:34:38.113 380c Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.63b41526\flutter_tools_chrome_device.3a48d157\Default\Local Storage\leveldb/MANIFEST-000001
+2022/11/27-17:34:38.117 380c Recovering log #4
+2022/11/27-17:34:38.119 380c Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.63b41526\flutter_tools_chrome_device.3a48d157\Default\Local Storage\leveldb/000004.log 
+2022/11/27-17:34:38.120 380c Delete type=0 #3
+2022/11/27-17:34:38.120 380c Delete type=2 #5
+>>>>>>> origin/Thạnh

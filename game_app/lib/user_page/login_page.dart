@@ -1,12 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:game_app/user/sign-up-form.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
   LoginPage({super.key, required this.showRegisterPage});
-
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -41,10 +40,8 @@ class _LoginPageState extends State<LoginPage> {
           child: SingleChildScrollView(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Icon(
-                Icons.android,
-                size: 100,
-              ),
+              Lottie.asset("109272-lolo-new-branding.json",
+                  width: 180, height: 180),
               SizedBox(height: 25),
               Text(
                 "Hello Again!",
