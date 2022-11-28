@@ -15,6 +15,9 @@ import 'screen_setting/screen_seting.dart';
 import 'screen_choose_level/screen_choose_level.dart';
 import 'screen_solo/screen_solo.dart';
 import 'screen_singler_play/screen_singler_play.dart';
+
+import 'screen_play_group/screen_play_group.dart';
+
 import './screen_play_group/screen_play_group.dart';
 import 'package:firebase_core/firebase_core.dart';
 
