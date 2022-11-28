@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -52,11 +53,8 @@ class _RegisterPageState extends State<RegisterPage> {
           child: SingleChildScrollView(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Icon(
-                Icons.android,
-                size: 100,
-              ),
-              SizedBox(height: 25),
+              Lottie.asset("assets/124429-vito-englishvit.json",
+                  width: 200, height: 200),
               Text(
                 "Hello There!",
                 style: GoogleFonts.bebasNeue(
@@ -188,6 +186,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     ),
                   )
                 ],
+              ),
+              SizedBox(
+                height: 20,
               )
             ]),
           ),

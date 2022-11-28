@@ -368,7 +368,11 @@
       "languageVersion": "2.18"
     }
   ],
+<<<<<<< HEAD
   "generated": "2022-11-28T13:54:17.094560Z",
+=======
+  "generated": "2022-11-28T13:44:50.372251Z",
+>>>>>>> Thạnh
   "generator": "pub",
   "generatorVersion": "2.18.4"
 }

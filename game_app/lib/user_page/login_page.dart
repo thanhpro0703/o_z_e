@@ -40,7 +40,7 @@ class _LoginPageState extends State<LoginPage> {
           child: SingleChildScrollView(
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Lottie.asset("109272-lolo-new-branding.json",
+              Lottie.asset("assets/109272-lolo-new-branding.json",
                   width: 180, height: 180),
               SizedBox(height: 25),
               Text(
@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: TextField(
                     controller: _emailController,
                     decoration: InputDecoration(
-                      hintText: "Emai",
+                      hintText: "Email",
                       fillColor: Colors.grey[200],
                       filled: true,
                       enabledBorder: OutlineInputBorder(

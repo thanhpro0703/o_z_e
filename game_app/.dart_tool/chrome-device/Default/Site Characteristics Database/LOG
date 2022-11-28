@@ -1,4 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+2022/11/27-17:38:26.166 2d84 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.a9d63c25\flutter_tools_chrome_device.1bc12954\Default\Site Characteristics Database/MANIFEST-000001
+2022/11/27-17:38:26.169 2d84 Recovering log #6
+2022/11/27-17:38:26.170 2d84 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.a9d63c25\flutter_tools_chrome_device.1bc12954\Default\Site Characteristics Database/000006.log 
+2022/11/27-17:38:26.170 2d84 Delete type=0 #3
+=======
+>>>>>>> Thạnh
 2022/11/24-22:34:50.121 3558 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.5bf28ab8\flutter_tools_chrome_device.1802a979\Default\Site Characteristics Database/MANIFEST-000001
 2022/11/24-22:34:50.122 3558 Recovering log #10
 2022/11/24-22:34:50.122 3558 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.5bf28ab8\flutter_tools_chrome_device.1802a979\Default\Site Characteristics Database/000010.log 
@@ -6,9 +14,13 @@
 2022/11/24-22:34:50.123 3558 Delete type=2 #4
 2022/11/24-22:34:50.123 3558 Delete type=0 #6
 2022/11/24-22:34:50.123 3558 Delete type=2 #7
+<<<<<<< HEAD
 =======
 2022/11/27-17:38:26.166 2d84 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.a9d63c25\flutter_tools_chrome_device.1bc12954\Default\Site Characteristics Database/MANIFEST-000001
 2022/11/27-17:38:26.169 2d84 Recovering log #6
 2022/11/27-17:38:26.170 2d84 Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.a9d63c25\flutter_tools_chrome_device.1bc12954\Default\Site Characteristics Database/000006.log 
 2022/11/27-17:38:26.170 2d84 Delete type=0 #3
 >>>>>>> origin/Thạnh
+=======
+>>>>>>> main
+>>>>>>> Thạnh
