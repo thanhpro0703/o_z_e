@@ -20,7 +20,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                   image: AssetImage(
                     "assets/background-setting.jpeg",
                   ),
-                  fit: BoxFit.fill)),
+                  fit: BoxFit.cover)),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -34,6 +34,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         ButtonSetting(
+                          onPressed: () {},
                           width: 65,
                           height: 65,
                           img: 'assets/musical-note.png',
@@ -44,6 +45,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                           ],
                         ),
                         ButtonSetting(
+                          onPressed: () {},
                           width: 65,
                           height: 65,
                           img: 'assets/sound.png',
@@ -54,6 +56,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                           ],
                         ),
                         ButtonSetting(
+                          onPressed: () {},
                           width: 65,
                           height: 65,
                           img: 'assets/vibration.png',
@@ -77,6 +80,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         ButtonSetting(
+                          onPressed: () {},
                           width: 90,
                           height: 90,
                           img: 'assets/account.png',
@@ -86,6 +90,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                           ],
                         ),
                         ButtonSetting(
+                          onPressed: () {},
                           width: 190,
                           height: 60,
                           img: 'assets/textmyaccount.png',
@@ -107,6 +112,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ButtonSetting(
+                        onPressed: () {},
                         width: 200,
                         height: 30,
                         img: 'assets/howtoplay.png',
@@ -148,11 +154,13 @@ class ButtonSetting extends StatefulWidget {
       required this.width,
       required this.height,
       required this.img,
-      required this.colors});
+      required this.colors,
+      required this.onPressed});
   final double width;
   final double height;
   final String img;
   final List<Color> colors;
+  final void Function()? onPressed;
 
   @override
   State<ButtonSetting> createState() => _ButtonSettingState();
@@ -195,7 +203,7 @@ class _ButtonSettingState extends State<ButtonSetting> {
                     // elevation: MaterialStateProperty.all(3),
                     shadowColor: MaterialStateProperty.all(Colors.transparent),
                   ),
-                  onPressed: () {},
+                  onPressed: widget.onPressed,
                   child: Container(
                       margin: EdgeInsets.only(top: 5),
                       child: Image.asset(
