@@ -65,7 +65,7 @@ class _LoginPageState extends State<LoginPage> {
                   child: TextField(
                     controller: _emailController,
                     decoration: InputDecoration(
-                      hintText: "Emai",
+                      hintText: "Email",
                       fillColor: Colors.grey[200],
                       filled: true,
                       enabledBorder: OutlineInputBorder(
