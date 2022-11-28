@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_choose_level/screen_choose_level.dart';
 import '../screen_maingame/screen_maingame.dart';
 
 class Screen_Solo extends StatefulWidget {
@@ -192,9 +193,7 @@ class _MyScreenSolo extends State<Screen_Solo> {
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ScreenMainGame(),
-                  ));
+                  Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.transparent,
