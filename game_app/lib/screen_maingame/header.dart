@@ -3,6 +3,7 @@ import '../screen_maingame/screen_maingame.dart';
 import '../button_game/button_game.dart';
 import '../button_game/button_avatar.dart';
 import '../button_game/button_setting.dart';
+import 'package:lottie/lottie.dart';
 
 class MyHeader extends StatefulWidget {
   const MyHeader({super.key});
@@ -62,15 +63,14 @@ class _MyHeaderState extends State<MyHeader> {
               width: 100,
               img: 'assets/account.png',
             ),
-            Container(
-              child: ButtonWidget(
-                button: ElavetedButon(
-                    text: "Coins",
-                    page: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ScreenMainGame(),
-                      ));
-                    }),
+            ButtonWidget(
+              button: ElavetedButon(
+                text: "Hear",
+                page: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ScreenMainGame(),
+                  ));
+                },
               ),
             ),
             ButtonSetting(
