@@ -1,7 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_account/screen_account.dart';
 import 'package:game_app/screen_maingame/content.dart';
 import 'package:game_app/screen_maingame/screen_maingame.dart';
+import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import '../button_game/button_game.dart';
 
 class ScreenSetting extends StatefulWidget {
@@ -98,7 +100,13 @@ class _ScreenSettingState extends State<ScreenSetting> {
                           ],
                         ),
                         ButtonSetting(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => Screen_Acount(),
+                                ));
+                          },
                           width: 190,
                           height: 60,
                           img: 'assets/textmyaccount.png',

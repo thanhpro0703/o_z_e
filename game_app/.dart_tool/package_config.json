@@ -26,6 +26,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "bottom_drawer",
+      "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/bottom_drawer-0.0.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "carousel_slider",
       "rootUri": "file:///C:/flutter/.pub-cache/hosted/pub.dartlang.org/carousel_slider-4.1.1",
       "packageUri": "lib/",
@@ -368,7 +374,7 @@
       "languageVersion": "2.18"
     }
   ],
-  "generated": "2022-11-29T12:22:56.721559Z",
+  "generated": "2022-11-29T14:38:39.842864Z",
   "generator": "pub",
   "generatorVersion": "2.18.4"
 }

@@ -1,6 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_play_group/screen_play_group.dart';
+import 'package:game_app/screen_playgame/screen_playgame.dart';
+import 'package:game_app/screen_room/screen_room.dart';
 import 'package:game_app/screen_solo/screen_solo.dart';
 import '../screen_maingame/screen_maingame.dart';
 
@@ -14,7 +16,8 @@ class Screen_Choose_Level extends StatefulWidget {
 class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Scaffold(
+        body: Container(
       decoration: BoxDecoration(
           image: DecorationImage(
         image: AssetImage("assets/background-home.png"),
@@ -186,7 +189,7 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
               ElevatedButton(
                   onPressed: () {
                     Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => ScreenMainGame(),
+                      builder: (context) => ScreenRoom(),
                     ));
                   },
                   style: ElevatedButton.styleFrom(
@@ -216,9 +219,7 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
           Row(mainAxisAlignment: MainAxisAlignment.start, children: [
             ElevatedButton(
                 onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => ScreenMainGame(),
-                  ));
+                  Navigator.pop(context);
                 },
                 style: ElevatedButton.styleFrom(
                     primary: Colors.transparent,
@@ -231,6 +232,6 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
           ])
         ],
       ),
-    );
+    ));
   }
 }

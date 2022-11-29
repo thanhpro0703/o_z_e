@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_shop/screen_shop.dart';
+import 'package:game_app/screen_toprank/screen_toprank.dart';
 import '../screen_maingame/screen_maingame.dart';
 import '../button_game/button_game.dart';
 import '../screen_room/screen_room.dart';
@@ -41,7 +42,7 @@ class _MyFooterState extends State<MyFooter> {
                       text: "TOP RANK",
                       page: () {
                         Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ScreenMainGame(),
+                          builder: (context) => TopRank(),
                         ));
                       },
                     ),
