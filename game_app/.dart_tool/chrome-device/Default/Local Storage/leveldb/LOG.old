@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 2022/11/27-17:34:38.113 380c Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.63b41526\flutter_tools_chrome_device.3a48d157\Default\Local Storage\leveldb/MANIFEST-000001
 2022/11/27-17:34:38.117 380c Recovering log #4
@@ -17,11 +18,14 @@
 2022/11/15-22:08:59.121 3b4c Reusing old log C:\Users\Admin\AppData\Local\Temp\flutter_tools.89f2e98d\flutter_tools_chrome_device.532fcc3\Default\Local Storage\leveldb/000004.log 
 2022/11/15-22:08:59.122 3b4c Delete type=0 #3
 =======
+=======
+>>>>>>> Tâm
 2022/11/08-19:15:13.446 4a08 Reusing MANIFEST C:\Users\ASUS\AppData\Local\Temp\flutter_tools.8c23e3fd\flutter_tools_chrome_device.8a1744f2\Default\Local Storage\leveldb/MANIFEST-000001
 2022/11/08-19:15:13.447 4a08 Recovering log #3
 2022/11/08-19:15:13.448 4a08 Recovering log #4
 2022/11/08-19:15:13.449 4a08 Reusing old log C:\Users\ASUS\AppData\Local\Temp\flutter_tools.8c23e3fd\flutter_tools_chrome_device.8a1744f2\Default\Local Storage\leveldb/000004.log 
 2022/11/08-19:15:13.449 4a08 Delete type=2 #5
+<<<<<<< HEAD
 >>>>>>> Tâm
 =======
 2022/11/18-01:58:06.918 3984 Reusing MANIFEST C:\Users\Admin\AppData\Local\Temp\flutter_tools.41bb38e4\flutter_tools_chrome_device.75f95cc0\Default\Local Storage\leveldb/MANIFEST-000001
@@ -55,3 +59,5 @@
 =======
 >>>>>>> main
 >>>>>>> Thạnh
+=======
+>>>>>>> Tâm
