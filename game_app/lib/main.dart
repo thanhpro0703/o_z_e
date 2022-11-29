@@ -16,12 +16,10 @@ import 'screen_choose_level/screen_choose_level.dart';
 import 'screen_solo/screen_solo.dart';
 import 'screen_singler_play/screen_singler_play.dart';
 import 'screen_play_group/screen_play_group.dart';
-<<<<<<< HEAD
 import './screen_play_group/screen_play_group.dart';
 import 'package:firebase_core/firebase_core.dart';
-=======
+
 import 'screen_account/screen_account.dart';
->>>>>>> Tâm
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,15 +36,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: MainPage(),
-=======
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ScreenSinglePlay(),
->>>>>>> Tâm
     );
   }
 }
