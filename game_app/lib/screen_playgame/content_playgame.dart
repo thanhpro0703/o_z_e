@@ -145,8 +145,8 @@ class _MyContentPlayGameState extends State<MyContentPlayGame> {
                                                 .answers!
                                                 .values
                                                 .toList()[i]
-                                            ? Color.fromARGB(255, 142, 226, 45)
-                                            : Color.fromARGB(255, 207, 35, 23)
+                                            ? Color.fromARGB(255, 90, 165, 4)
+                                            : Color.fromARGB(255, 216, 25, 12)
                                         : AppColor.secondaryColor,
                                     onPressed: !answered
                                         ? () {
@@ -203,8 +203,8 @@ class _MyContentPlayGameState extends State<MyContentPlayGame> {
                                 }
                               },
                               shape: StadiumBorder(),
-                              fillColor: Colors.blue,
-                              padding: EdgeInsets.all(1.0),
+                              fillColor: Colors.blueGrey,
+                              padding: EdgeInsets.all(10.0),
                               elevation: 0.0,
                               child: Text(
                                 btnText,

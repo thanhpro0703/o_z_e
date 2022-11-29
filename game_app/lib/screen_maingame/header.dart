@@ -21,15 +21,6 @@ class _MyHeaderState extends State<MyHeader> {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/header.jpg"), fit: BoxFit.cover),
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment(0.7, 1.5),
-            colors: <Color>[
-              Color(0xfff9c58d),
-              Color(0xfffa8cff),
-              Color(0xffffebf4f5),
-            ],
-          ),
           boxShadow: [
             BoxShadow(
               color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),

@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_maingame/content.dart';
 import 'package:game_app/screen_maingame/screen_maingame.dart';
 import '../button_game/button_game.dart';
 
@@ -24,50 +26,56 @@ class _ScreenSettingState extends State<ScreenSetting> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Container(
+                margin: EdgeInsets.only(top: 140),
+                height: 70,
+                child: ButtonPlayWidget(
+                  buttonplay: ElavetedButonPlay(
+                    text: FirebaseAuth.instance.currentUser!.email!,
+                    page: () {},
+                  ),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Expanded(
-                  flex: 1,
-                  child: Container(
-                    margin: EdgeInsets.only(top: 180),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        ButtonSetting(
-                          onPressed: () {},
-                          width: 65,
-                          height: 65,
-                          img: 'assets/musical-note.png',
-                          colors: [
-                            Color(0xffff2980b9),
-                            Color(0xfff6dd5fa),
-                            Color(0xffffffff),
-                          ],
-                        ),
-                        ButtonSetting(
-                          onPressed: () {},
-                          width: 65,
-                          height: 65,
-                          img: 'assets/sound.png',
-                          colors: [
-                            Color(0xffff2980b9),
-                            Color(0xfff6dd5fa),
-                            Color(0xffffffff),
-                          ],
-                        ),
-                        ButtonSetting(
-                          onPressed: () {},
-                          width: 65,
-                          height: 65,
-                          img: 'assets/vibration.png',
-                          colors: [
-                            Color(0xffff2980b9),
-                            Color(0xfff6dd5fa),
-                            Color(0xffffffff),
-                          ],
-                        ),
-                      ],
-                    ),
+                child: Container(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      ButtonSetting(
+                        onPressed: () {},
+                        width: 65,
+                        height: 65,
+                        img: 'assets/musical-note.png',
+                        colors: [
+                          Color(0xffff2980b9),
+                          Color(0xfff6dd5fa),
+                          Color(0xffffffff),
+                        ],
+                      ),
+                      ButtonSetting(
+                        onPressed: () {},
+                        width: 65,
+                        height: 65,
+                        img: 'assets/sound.png',
+                        colors: [
+                          Color(0xffff2980b9),
+                          Color(0xfff6dd5fa),
+                          Color(0xffffffff),
+                        ],
+                      ),
+                      ButtonSetting(
+                        onPressed: () {},
+                        width: 65,
+                        height: 65,
+                        img: 'assets/vibration.png',
+                        colors: [
+                          Color(0xffff2980b9),
+                          Color(0xfff6dd5fa),
+                          Color(0xffffffff),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
@@ -127,6 +135,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
               ),
               Container(
                 width: 160,
+                height: 40,
                 child: Row(
                   children: [
                     ButtonWidget(
@@ -135,6 +144,26 @@ class _ScreenSettingState extends State<ScreenSetting> {
                         page: () {
                           Navigator.of(context).pop();
                         },
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Spacer(),
+              Padding(
+                padding: const EdgeInsets.all(10.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      height: 60,
+                      child: ButtonWidget(
+                        button: ElavetedButon(
+                          text: "Log Out",
+                          page: () {
+                            FirebaseAuth.instance.signOut();
+                          },
+                        ),
                       ),
                     ),
                   ],

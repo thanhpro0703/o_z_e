@@ -28,25 +28,6 @@ class _MyContentState extends State<MyContent> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Row(children: [
-                  Container(
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.topLeft,
-                            end: Alignment(0.7, 1.5),
-                            colors: <Color>[
-                          Color(0xffff84ffc9),
-                          Color(0xffffebf4f5),
-                          Color(0xfffff6cfbe),
-                        ])),
-                    child: ButtonPlayWidget(
-                      buttonplay: ElavetedButonPlay(
-                        text: FirebaseAuth.instance.currentUser!.email!,
-                        page: () {},
-                      ),
-                    ),
-                  ),
-                ]),
                 ButtonPlayWidget(
                   buttonplay: ElavetedButonPlay(
                     text: "P L A Y",
@@ -103,7 +84,6 @@ class _ElavetedButonPlayState extends State<ElavetedButonPlay> {
         ),
         minimumSize: MaterialStateProperty.all(Size(200, 80)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
-        // elevation: MaterialStateProperty.all(3),
         shadowColor: MaterialStateProperty.all(Colors.transparent),
       ),
       onPressed: widget.page,
@@ -116,7 +96,6 @@ class _ElavetedButonPlayState extends State<ElavetedButonPlay> {
           widget.text,
           style: TextStyle(
             fontSize: 18,
-            // fontWeight: FontWeight.w700,
             color: Colors.white,
           ),
         ),

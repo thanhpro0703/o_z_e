@@ -19,6 +19,7 @@ class _ElavetedButonState extends State<ElavetedButon> {
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
+        minimumSize: MaterialStateProperty.all(Size(100, 50)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
         elevation: MaterialStateProperty.all(3),
         shadowColor:

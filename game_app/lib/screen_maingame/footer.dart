@@ -21,29 +21,6 @@ class _MyFooterState extends State<MyFooter> {
             decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage('assets/footer.jpg'), fit: BoxFit.cover),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment(0.7, 1.5),
-                colors: <Color>[
-                  Color(0xff696eff),
-                  Color(0xfffa8cff),
-                  Color(0xffffebf4f5),
-                ],
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
-                  spreadRadius: 5,
-                  blurRadius: 7,
-                  offset: Offset(0, 3), // changes position of shadow
-                ),
-                BoxShadow(
-                  color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.7),
-                  spreadRadius: 3,
-                  blurRadius: 4,
-                  offset: Offset(1, 3), // changes position of shadow
-                ),
-              ],
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -52,10 +29,8 @@ class _MyFooterState extends State<MyFooter> {
                   height: 60,
                   child: ButtonWidget(
                     button: ElavetedButon(
-                      text: "Log Out",
-                      page: () {
-                        FirebaseAuth.instance.signOut();
-                      },
+                      text: "FRIENDS",
+                      page: () {},
                     ),
                   ),
                 ),
@@ -63,7 +38,7 @@ class _MyFooterState extends State<MyFooter> {
                   height: 60,
                   child: ButtonWidget(
                     button: ElavetedButon(
-                      text: "EVENT",
+                      text: "TOP RANK",
                       page: () {
                         Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => ScreenMainGame(),
