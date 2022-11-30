@@ -117,7 +117,7 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                     text: "RANK",
                     page: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ScreenMainGame(),
+                        builder: (context) => Screen_Solo(),
                       ));
                     },
                   ),

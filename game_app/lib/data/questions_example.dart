@@ -2,25 +2,25 @@ import '../model/question_model.dart';
 
 List<QuestionModel> questions = [
   QuestionModel(
-    "How Many Whiskers does the average cat have on each side of its face ?",
+    "Ai là nhà vật lý nổi tiếng ?",
     {
-      "1": false,
-      "3": false,
-      "12": true,
-      "5,007": false,
+      "Thạnh": false,
+      "Minh Tâm": false,
+      "Thanh Khoái": false,
+      "Albert Eisntein": true,
     },
   ),
-  QuestionModel("When does a cat purr ?", {
-    "When it cares for its kittens": false,
-    "When it needs confort": false,
-    "When it feels content": false,
-    "All of the above": true,
+  QuestionModel("Ai là cha đẻ của hình học ?", {
+    "Sonya Kovalevsky": false,
+    "Ecuclid": false,
+    "Issac Newton": false,
+    "Sophie Germain": true,
   }),
-  QuestionModel("What is the averge nulber of kittens in a litter ?", {
-    "1 to 2": false,
-    "3 to 5": true,
-    "8 to 10": false,
-    "12 to 14": false,
+  QuestionModel("Hình tròn có bao nhiêu góc ?", {
+    "1": false,
+    "3": false,
+    "Vô số": false,
+    "Không có góc nào": true,
   }),
   QuestionModel("How many moons does Mars have ?", {
     "1": false,

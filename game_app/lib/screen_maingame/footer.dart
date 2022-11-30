@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_friends/screen_friends.dart';
 import 'package:game_app/screen_shop/screen_shop.dart';
 import 'package:game_app/screen_toprank/screen_toprank.dart';
 import '../screen_maingame/screen_maingame.dart';
@@ -31,7 +32,10 @@ class _MyFooterState extends State<MyFooter> {
                   child: ButtonWidget(
                     button: ElavetedButon(
                       text: "FRIENDS",
-                      page: () {},
+                      page: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ScreenFriends()));
+                      },
                     ),
                   ),
                 ),

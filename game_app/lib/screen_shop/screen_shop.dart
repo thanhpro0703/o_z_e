@@ -788,7 +788,12 @@ class _ScreenShopState extends State<ScreenShop> {
               SizedBox(
                 height: 10,
               ),
-              ButtonGreen(() => () {}, 'Buy ')
+              ButtonGreen(
+                  () => () {
+                        _controller.close();
+                        setState(() {});
+                      },
+                  'Buy ')
             ],
           ),
         ),

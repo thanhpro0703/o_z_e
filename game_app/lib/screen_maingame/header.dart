@@ -56,7 +56,7 @@ class _MyHeaderState extends State<MyHeader> {
             ),
             ButtonWidget(
               button: ElavetedButon(
-                text: "Hear",
+                text: "Golds",
                 page: () {
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => ScreenMainGame(),
