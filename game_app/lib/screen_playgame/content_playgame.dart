@@ -194,7 +194,7 @@ class _MyContentPlayGameState extends State<MyContentPlayGame> {
                                               ResultScreen(score)));
                                 } else {
                                   _controller!.nextPage(
-                                      duration: Duration(milliseconds: 1000),
+                                      duration: Duration(milliseconds: 300),
                                       curve: Curves.linear);
 
                                   setState(() {

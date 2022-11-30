@@ -19,7 +19,7 @@ class _MyScreen_Team extends State<Screen_Team> {
             decoration: const BoxDecoration(
                 image: DecorationImage(
               image: AssetImage("assets/background-home.png"),
-              fit: BoxFit.fill,
+              fit: BoxFit.cover,
             )),
             child: Column(children: [
               Row(

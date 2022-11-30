@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_playgame/screen_playgame.dart';
 import '../model/dbcontext.dart';
 import '../model/entry.dart';
 
@@ -42,10 +43,14 @@ class _DatabaseRoomState extends State<DatabaseRoom> {
                   Container(
                     padding: const EdgeInsets.all(8.0),
                     child: Expanded(
-                        child: Image(
-                      image: AssetImage(widget.entry.Room),
-                      width: 20,
-                      height: 20,
+                        child: IconButton(
+                      icon: Icon(
+                        Icons.ac_unit,
+                      ),
+                      onPressed: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => ScreenPlayGame()));
+                      },
                     )),
                   ),
                 ],

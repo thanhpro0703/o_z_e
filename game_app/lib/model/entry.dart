@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
+
 class Entry {
   final String Id;
   final String Subject;
   final String Grade;
   final String Amount;
-  final String Room;
+  void Function()? Room;
   Entry(
       {required this.Id,
       required this.Subject,

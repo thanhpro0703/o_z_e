@@ -1,8 +1,13 @@
 import 'dart:ui';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/button_game/button_avatar.dart';
+import 'package:game_app/button_game/button_game.dart';
 import 'package:game_app/history/history_game.dart';
+import 'package:game_app/screen_maingame/content.dart';
 import 'package:game_app/screen_play_group/screen_play_group.dart';
+import 'package:game_app/screen_setting/screen_seting.dart';
 import 'package:game_app/screen_solo/screen_solo.dart';
 import '../screen_maingame/screen_maingame.dart';
 
@@ -28,22 +33,10 @@ class _MyScreenAccount extends State<Screen_Acount> {
               Padding(padding: EdgeInsets.only(top: 30)),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
                 Column(children: [
-                  Container(
-                    width: MediaQuery.of(context).size.width / 5,
-                    height: MediaQuery.of(context).size.width / 5,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        gradient: const LinearGradient(
-                          colors: [Color(0xfff32e20), Color(0xff171717)],
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                        )),
-                    child: Center(
-                        child: Image.asset(
-                      'assets/account.png',
-                      width: 45,
-                      height: 50,
-                    )),
+                  ButtonAvatar(
+                    height: 100,
+                    width: 100,
+                    img: 'assets/account.png',
                   ),
                   Container(
                       child: Center(
@@ -63,25 +56,22 @@ class _MyScreenAccount extends State<Screen_Acount> {
                         end: Alignment.centerRight,
                       ))),
                 ]),
-                Container(
-                    margin: EdgeInsets.only(bottom: 20),
-                    child: Container(
-                        width: MediaQuery.of(context).size.width / 1.5,
-                        height: MediaQuery.of(context).size.width / 6,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(30),
-                            gradient: const LinearGradient(
-                              colors: [
-                                Color.fromARGB(255, 156, 188, 243),
-                                Color.fromARGB(255, 0, 37, 110)
-                              ],
-                              begin: Alignment.topCenter,
-                              end: Alignment.bottomCenter,
-                            )),
-                        child: Center(
-                            child: Image(
-                                image:
-                                    AssetImage('assets/textmyaccount.png'))))),
+                ButtonSetting(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Screen_Acount(),
+                        ));
+                  },
+                  width: 190,
+                  height: 60,
+                  img: 'assets/textmyaccount.png',
+                  colors: [
+                    Color(0xffff2193b0),
+                    Color(0xfff6dd5ed),
+                  ],
+                ),
               ]),
               Padding(padding: EdgeInsets.only(top: 10)),
               Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -120,72 +110,44 @@ class _MyScreenAccount extends State<Screen_Acount> {
               Text('Win streak: 2',
                   style: TextStyle(color: Colors.white, fontSize: 25)),
               Padding(padding: EdgeInsets.only(top: 30)),
-              ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => History(),
-                        ));
-                  },
-                  style: ElevatedButton.styleFrom(
-                      primary: Colors.transparent,
-                      shadowColor: Colors.transparent),
-                  child: Container(
-                    width: MediaQuery.of(context).size.width / 2,
-                    height: MediaQuery.of(context).size.width / 8,
-                    decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30),
-                        color: Colors.white),
-                    child: Center(
-                        child: Text(
-                      'History',
-                      style: TextStyle(color: Colors.black, fontSize: 17),
-                    )),
-                  )),
+              Container(
+                height: 50,
+                width: 150,
+                child: ButtonWidget(
+                  button: ElavetedButon(
+                    text: "History",
+                    page: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => History(),
+                      ));
+                    },
+                  ),
+                ),
+              ),
+              SizedBox(height: 30),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  ElevatedButton(
-                      onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                          builder: (context) => ScreenMainGame(),
-                        ));
-                      },
-                      style: ElevatedButton.styleFrom(
-                          primary: Colors.transparent,
-                          shadowColor: Colors.transparent),
-                      child: Container(
-                          width: MediaQuery.of(context).size.width / 8,
-                          height: MediaQuery.of(context).size.width / 8,
-                          child: Image(
-                              image: AssetImage('assets/reply-message.png')))),
-                  Padding(
-                      padding: EdgeInsets.fromLTRB(
-                          MediaQuery.of(context).size.width / 5, 30, 0, 0)),
                   Container(
-                    width: MediaQuery.of(context).size.width / 2.6,
-                    height: MediaQuery.of(context).size.width / 13,
-                    decoration: BoxDecoration(color: Colors.white),
-                    child: Center(
-                        child: Row(
-                      children: [
-                        Text(
-                          'Id: 653MdjinD',
-                          style: TextStyle(color: Colors.black, fontSize: 13),
-                        ),
-                        ElevatedButton(
-                            onPressed: () {},
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.transparent,
-                                shadowColor: Colors.transparent),
-                            child: Icon(
-                              Icons.copy,
-                              color: Colors.black,
-                              size: 13,
-                            ))
-                      ],
-                    )),
-                  )
+                    width: 120,
+                    child: ButtonWidget(
+                      button: ElavetedButon(
+                        text: "BACK",
+                        page: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
+                    ),
+                  ),
+                  Container(
+                    height: 70,
+                    child: ButtonPlayWidget(
+                      buttonplay: ElavetedButonPlay(
+                        text: "ID: HXJSNEJ5G",
+                        page: () {},
+                      ),
+                    ),
+                  ),
                 ],
               )
             ])));

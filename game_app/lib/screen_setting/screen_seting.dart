@@ -1,9 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/auth/main_page.dart';
 import 'package:game_app/screen_account/screen_account.dart';
+import 'package:game_app/screen_choose_level/screen_choose_level.dart';
 import 'package:game_app/screen_maingame/content.dart';
 import 'package:game_app/screen_maingame/screen_maingame.dart';
+import 'package:game_app/screen_play_group/screen_play_group.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
+import 'package:game_app/screen_solo/screen_solo.dart';
 import '../button_game/button_game.dart';
 
 class ScreenSetting extends StatefulWidget {
@@ -128,7 +132,11 @@ class _ScreenSettingState extends State<ScreenSetting> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       ButtonSetting(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => Screen_Solo(),
+                          ));
+                        },
                         width: 200,
                         height: 30,
                         img: 'assets/howtoplay.png',
@@ -167,11 +175,13 @@ class _ScreenSettingState extends State<ScreenSetting> {
                       height: 60,
                       child: ButtonWidget(
                         button: ElavetedButon(
-                          text: "Log Out",
-                          page: () {
-                            FirebaseAuth.instance.signOut();
-                          },
-                        ),
+                            text: "Log Out",
+                            page: () async {
+                              await FirebaseAuth.instance.signOut();
+                              Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => MainPage(),
+                              ));
+                            }),
                       ),
                     ),
                   ],

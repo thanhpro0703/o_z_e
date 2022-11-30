@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
+import 'package:email_validator/email_validator.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -84,10 +85,17 @@ class _RegisterPageState extends State<RegisterPage> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: TextField(
+                  child: TextFormField(
+                    textInputAction: TextInputAction.next,
                     controller: _emailController,
+                    cursorColor: Colors.white,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    validator: (email) =>
+                        email != null && !EmailValidator.validate(email)
+                            ? 'Enter a valid email'
+                            : null,
                     decoration: InputDecoration(
-                      hintText: "Emai",
+                      hintText: "Email",
                       fillColor: Colors.grey[200],
                       filled: true,
                       enabledBorder: OutlineInputBorder(
@@ -108,19 +116,27 @@ class _RegisterPageState extends State<RegisterPage> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: TextField(
+                  child: TextFormField(
+                    obscureText: true,
+                    textInputAction: TextInputAction.next,
                     controller: _passwordController,
+                    cursorColor: Colors.white,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    validator: (value) => value != null && value.length < 6
+                        ? 'Enter min. 6 chacracters'
+                        : null,
                     decoration: InputDecoration(
-                        fillColor: Colors.grey[200],
-                        filled: true,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.deepPurple),
-                        ),
-                        hintText: "Password"),
+                      hintText: "Password",
+                      fillColor: Colors.grey[200],
+                      filled: true,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepPurple),
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -131,19 +147,27 @@ class _RegisterPageState extends State<RegisterPage> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: TextField(
+                  child: TextFormField(
+                    obscureText: true,
+                    textInputAction: TextInputAction.next,
                     controller: _confimpasswordController,
+                    cursorColor: Colors.white,
+                    autovalidateMode: AutovalidateMode.onUserInteraction,
+                    validator: (value) => value != null && value.length < 6
+                        ? 'Enter min. 6 chacracters'
+                        : null,
                     decoration: InputDecoration(
-                        fillColor: Colors.grey[200],
-                        filled: true,
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.deepPurple),
-                        ),
-                        hintText: "Confim Password"),
+                      hintText: "Confirm password",
+                      fillColor: Colors.grey[200],
+                      filled: true,
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white),
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.deepPurple),
+                      ),
+                    ),
                   ),
                 ),
               ),
