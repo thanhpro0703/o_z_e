@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+
+import 'package:game_app/model/question_model.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:game_app/screen_maingame/content.dart';
 import 'header_playgame.dart';
 import 'content_playgame.dart';
 import 'footer_playgame.dart';
@@ -17,11 +22,7 @@ class _ScreenPlayGameState extends State<ScreenPlayGame> {
       body: SafeArea(
         child: Container(
           child: Column(
-            children: [
-              MyHeaderPlayGame(),
-              MyContentPlayGame(),
-              MyFooterPlayGame()
-            ],
+            children: [QuizScreen(), MyFooterPlayGame()],
           ),
         ),
       ),

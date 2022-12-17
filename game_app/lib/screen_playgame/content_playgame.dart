@@ -1,231 +1,266 @@
+import 'dart:async';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:game_app/screen_playgame/pages_question/page_win.dart';
+import 'package:game_app/api_services.dart';
+import 'package:game_app/screen_maingame/screen_maingame.dart';
 import 'package:game_app/screen_result/screen_result.dart';
-import 'package:game_app/screen_room/screen_room.dart';
-import 'package:game_app/screen_singler_play/screen_singler_play.dart';
-import '../screen_room/footer_room.dart';
-import '../button_game/button_game.dart';
-import './pages_question/page_question1.dart';
-import './pages_question/page_question2.dart';
-import './pages_question/page_question3.dart';
-import '../model/question_model.dart';
-import '../data/questions_example.dart';
-import '../button_game/color.dart';
+import '../const/colors.dart';
+import '../const/images.dart';
 
-class MyContentPlayGame extends StatefulWidget {
-  const MyContentPlayGame({super.key});
+import '../const/text_style.dart';
+
+class QuizScreen extends StatefulWidget {
+  const QuizScreen({Key? key}) : super(key: key);
 
   @override
-  State<MyContentPlayGame> createState() => _MyContentPlayGameState();
+  State<QuizScreen> createState() => _QuizScreenState();
 }
 
-class _MyContentPlayGameState extends State<MyContentPlayGame> {
-  final tr = PageController();
-  static const _kDuration = const Duration(milliseconds: 300);
-  static const _kCurve = Curves.ease;
-  int question_pos = 0;
-  int score = 0;
-  bool btnPressed = false;
-  PageController? _controller;
-  String btnText = "Next Question";
-  bool answered = false;
+class _QuizScreenState extends State<QuizScreen> {
+  var currentQuestionIndex = 0;
+  int seconds = 60;
+  Timer? timer;
+  late Future quiz;
+
+  int points = 0;
+
+  var isLoaded = false;
+  var hardQuestionsList = [];
+  var optionsList = [];
+
+  var optionsColor = [
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+    Colors.white,
+  ];
+
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    _controller = PageController(initialPage: 0);
+    quiz = getQuiz();
+    startTimer();
+  }
+
+  @override
+  void dispose() {
+    timer!.cancel();
+    super.dispose();
+  }
+
+  resetColors() {
+    optionsColor = [
+      Colors.white,
+      Colors.white,
+      Colors.white,
+      Colors.white,
+      Colors.white,
+    ];
+  }
+
+  startTimer() {
+    timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      setState(() {
+        if (seconds > 0) {
+          seconds--;
+        } else {
+          gotoNextQuestion();
+        }
+      });
+    });
+  }
+
+  gotoNextQuestion() {
+    isLoaded = false;
+    currentQuestionIndex++;
+    resetColors();
+    timer!.cancel();
+    seconds = 60;
+    startTimer();
   }
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Expanded(
-      flex: 4,
-      child: Column(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment(0.8, 1),
-                  colors: <Color>[
-                    Color(0xfff134E5E),
-                    Color(0xffff71B280),
-                  ],
-                  tileMode: TileMode.mirror,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                      color: Colors.grey.shade600,
-                      offset: Offset(4.0, 4.0),
-                      blurRadius: 15.0,
-                      spreadRadius: 1.0),
-                  BoxShadow(
-                      color: Colors.grey.shade600,
-                      offset: Offset(-4.0, -4.0),
-                      blurRadius: 15.0,
-                      spreadRadius: 1.0)
-                ],
-              ),
-              child: SizedBox(
-                child: PageView.builder(
-                  controller: _controller!,
-                  onPageChanged: (page) {
-                    if (page == questions.length - 1) {
-                      setState(() {
-                        btnText = "See Results";
-                      });
+        flex: 4,
+        child: Container(
+          width: double.infinity,
+          height: double.infinity,
+          padding: const EdgeInsets.all(12),
+          decoration: const BoxDecoration(
+              gradient: LinearGradient(
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [blue, darkBlue],
+          )),
+          child: FutureBuilder(
+            future: quiz,
+            builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                var data = snapshot.data["results"];
+                int hardQuestionsCount = 0;
+                for (var item in data) {
+                  if (item["difficulty"] == "hard") {
+                    hardQuestionsCount++;
+                    if (hardQuestionsList.length < hardQuestionsCount) {
+                      hardQuestionsList.add(item);
+                    } else {
+                      break;
                     }
-                    setState(() {
-                      answered = false;
-                    });
-                  },
-                  physics: new NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) {
-                    return Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.center,
+                  }
+                }
+                if (isLoaded == false) {
+                  optionsList = hardQuestionsList[currentQuestionIndex]
+                      ["incorrect_answers"];
+                  optionsList.add(hardQuestionsList[currentQuestionIndex]
+                      ["correct_answer"]);
+                  optionsList.shuffle();
+                  isLoaded = true;
+                }
+
+                return SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SizedBox(
-                              width: double.infinity,
-                              child: Text(
-                                "Question ${index + 1}/10",
-                                textAlign: TextAlign.start,
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                  fontSize: 20.0,
-                                ),
-                              ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              border: Border.all(color: lightgrey, width: 2),
                             ),
-                          ),
-                          Divider(
-                            thickness: 2,
-                            color: Color.fromARGB(255, 0, 0, 0),
-                          ),
-                          SizedBox(height: 20),
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: SingleChildScrollView(
-                              child: Text(
-                                "${questions[index].question}",
-                                style: TextStyle(
-                                  color: Color.fromARGB(255, 0, 0, 0),
-                                  fontSize: 18.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                          for (int i = 0;
-                              i < questions[index].answers!.length;
-                              i++)
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(5),
-                                child: Container(
-                                  width: double.infinity,
-                                  height: 30.0,
-                                  margin: EdgeInsets.only(
-                                      bottom: 4.0, left: 12.0, right: 12.0),
-                                  child: RawMaterialButton(
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                    splashColor:
-                                        Color.fromARGB(255, 243, 243, 134),
-                                    animationDuration: kThemeAnimationDuration,
-                                    focusElevation: 10,
-                                    hoverColor: Colors.transparent,
-                                    fillColor: btnPressed
-                                        ? questions[index]
-                                                .answers!
-                                                .values
-                                                .toList()[i]
-                                            ? Color.fromARGB(255, 90, 165, 4)
-                                            : Color.fromARGB(255, 216, 25, 12)
-                                        : AppColor.secondaryColor,
-                                    onPressed: !answered
-                                        ? () {
-                                            if (questions[index]
-                                                .answers!
-                                                .values
-                                                .toList()[i]) {
-                                              score += 10;
-                                              print("yes");
-                                            } else {
-                                              print("no");
-                                            }
-                                            setState(() {
-                                              btnPressed = true;
-                                              answered = true;
-                                            });
-                                          }
-                                        : null,
-                                    child: Text(
-                                        questions[index]
-                                            .answers!
-                                            .keys
-                                            .toList()[i],
-                                        style: TextStyle(
-                                          color: Color.fromARGB(255, 8, 0, 0),
-                                          fontSize: 18.0,
-                                        )),
-                                  ),
-                                ),
-                              ),
-                            ),
-                          SizedBox(
-                            height: 10.0,
-                          ),
-                          Padding(
-                            padding: EdgeInsets.all(2),
-                            child: RawMaterialButton(
-                              onPressed: () {
-                                if (_controller!.page?.toInt() ==
-                                    questions.length - 1) {
+                            child: IconButton(
+                                onPressed: () {
+                                  Navigator.pop(context);
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) =>
-                                              ResultScreen(score)));
-                                } else {
-                                  _controller!.nextPage(
-                                      duration: Duration(milliseconds: 300),
-                                      curve: Curves.linear);
-
-                                  setState(() {
-                                    btnPressed = false;
-                                  });
-                                }
-                              },
-                              shape: StadiumBorder(),
-                              fillColor: Colors.blueGrey,
-                              padding: EdgeInsets.all(10.0),
-                              elevation: 0.0,
-                              child: Text(
-                                btnText,
-                                style: TextStyle(color: Colors.white),
-                              ),
-                            ),
+                                        builder: (context) => ScreenMainGame(),
+                                      ));
+                                },
+                                icon: const Icon(
+                                  CupertinoIcons.xmark,
+                                  color: Colors.white,
+                                  size: 28,
+                                )),
                           ),
-                          SizedBox(
-                            height: 20,
-                          )
+                          Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              normalText(
+                                  color: Colors.white,
+                                  size: 24,
+                                  text: "$seconds"),
+                              SizedBox(
+                                width: 80,
+                                height: 80,
+                                child: CircularProgressIndicator(
+                                  value: seconds / 60,
+                                  valueColor: const AlwaysStoppedAnimation(
+                                      Colors.white),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(16),
+                              border: Border.all(color: lightgrey, width: 2),
+                            ),
+                            child: TextButton.icon(
+                                onPressed: null,
+                                icon: const Icon(CupertinoIcons.heart_fill,
+                                    color: Colors.white, size: 18),
+                                label: normalText(
+                                    color: Colors.white,
+                                    size: 14,
+                                    text: "Like")),
+                          ),
                         ],
                       ),
-                    );
-                  },
-                  itemCount: questions.length,
-                ),
-              ),
-            ),
+                      const SizedBox(height: 20),
+                      Align(
+                          alignment: Alignment.centerLeft,
+                          child: normalText(
+                              color: lightgrey,
+                              size: 18,
+                              text:
+                                  "Question ${currentQuestionIndex + 1} of ${hardQuestionsList.length}")),
+                      const SizedBox(height: 20),
+                      normalText(
+                          color: Colors.white,
+                          size: 20,
+                          text: hardQuestionsList[currentQuestionIndex]
+                              ["question"]),
+                      const SizedBox(height: 20),
+                      ListView.builder(
+                        shrinkWrap: true,
+                        itemCount: optionsList.length,
+                        itemBuilder: (BuildContext context, int index) {
+                          var answer = hardQuestionsList[currentQuestionIndex]
+                              ["correct_answer"];
+
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                if (answer.toString() ==
+                                    optionsList[index].toString()) {
+                                  optionsColor[index] = Colors.green;
+                                  points = points + 10;
+                                } else {
+                                  optionsColor[index] = Colors.red;
+                                }
+
+                                if (currentQuestionIndex <
+                                    hardQuestionsList.length - 1) {
+                                  Future.delayed(const Duration(seconds: 1),
+                                      () {
+                                    gotoNextQuestion();
+                                  });
+                                } else {
+                                  timer!.cancel();
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            ResultScreen(score: points),
+                                      ));
+                                }
+                              });
+                            },
+                            child: Container(
+                              margin: const EdgeInsets.only(bottom: 20),
+                              alignment: Alignment.center,
+                              width: size.width - 100,
+                              padding: const EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                color: optionsColor[index],
+                                borderRadius: BorderRadius.circular(12),
+                              ),
+                              child: headingText(
+                                color: blue,
+                                size: 18,
+                                text: optionsList[index].toString(),
+                              ),
+                            ),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                );
+              } else {
+                return const Center(
+                  child: CircularProgressIndicator(
+                    valueColor: AlwaysStoppedAnimation(Colors.white),
+                  ),
+                );
+              }
+            },
           ),
-        ],
-      ),
-    );
+        ));
   }
 }

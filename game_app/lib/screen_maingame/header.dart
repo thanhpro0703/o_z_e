@@ -43,6 +43,7 @@ class _MyHeaderState extends State<MyHeader> {
               button: ElavetedButon(
                 text: "Hear",
                 page: () {
+                  Navigator.pop(context);
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => ScreenMainGame(),
                   ));
@@ -58,6 +59,7 @@ class _MyHeaderState extends State<MyHeader> {
               button: ElavetedButon(
                 text: "Golds",
                 page: () {
+                  Navigator.pop(context);
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => ScreenMainGame(),
                   ));

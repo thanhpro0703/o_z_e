@@ -2,8 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/auth/auth_page.dart';
 import 'package:game_app/auth/main_page.dart';
+import 'package:game_app/myhomepage.dart';
 import 'package:game_app/page/add-pay-method.dart';
 import 'package:game_app/screen_friends/screen_friends.dart';
+import 'package:game_app/screen_playgame/content_playgame.dart';
 import 'package:game_app/user_page/login_page.dart';
 import '../screen_playgame/screen_playgame.dart';
 import 'package:game_app/screen_shop/screen_shop.dart';
@@ -37,8 +39,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: ScreenMainGame(),
-    );
+        debugShowCheckedModeBanner: false, home: ScreenPlayGame());
   }
 }

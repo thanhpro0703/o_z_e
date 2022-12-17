@@ -2,6 +2,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_choose_level/screen_choose_level.dart';
 import 'package:game_app/screen_playgame/screen_playgame.dart';
+import 'package:game_app/screen_room/screen_room.dart';
 import '../screen_maingame/screen_maingame.dart';
 
 class Screen_Solo extends StatefulWidget {

@@ -3,8 +3,12 @@ import 'package:game_app/screen_maingame/screen_maingame.dart';
 import '../button_game/color.dart';
 
 class ResultScreen extends StatefulWidget {
-  int score;
-  ResultScreen(this.score, {Key? key}) : super(key: key);
+  const ResultScreen({
+    Key? key,
+    required this.score,
+  }) : super(key: key);
+
+  final int score;
 
   @override
   _ResultScreenState createState() => _ResultScreenState();

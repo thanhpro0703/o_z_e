@@ -37,10 +37,10 @@ class _ScreenSettingState extends State<ScreenSetting> {
                 height: 70,
                 child: ButtonPlayWidget(
                   buttonplay: ElavetedButonPlay(
-                    text: "",
+                    text: FirebaseAuth.instance.currentUser!.email!,
                     page: () {},
                   ),
-                  //  FirebaseAuth.instance.currentUser!.email!,
+                  //  ,
                 ),
               ),
               Padding(
@@ -181,12 +181,14 @@ class _ScreenSettingState extends State<ScreenSetting> {
                         child: ButtonWidget(
                           button: ElavetedButon(
                               text: "Log Out",
-                              page:
-                                  () {} /*async {
-                              await FirebaseAuth.instance.signOut();
-                              Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => MainPage(),
-                              ));
+                              page: () async {
+                                await FirebaseAuth.instance.signOut();
+                                Navigator.of(context).push(MaterialPageRoute(
+                                  builder: (context) => MainPage(),
+                                ));
+                              }
+                              /* {
+                             
                             }),*/
                               ),
                         )),

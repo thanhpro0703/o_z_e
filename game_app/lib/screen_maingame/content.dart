@@ -33,6 +33,7 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "P L A Y",
                     page: () {
+                      Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => ScreenSinglePlay(),
                       ));
@@ -43,6 +44,7 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "R O O M",
                     page: () {
+                      Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => ScreenRoom(),
                       ));
@@ -53,6 +55,7 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "R A N K",
                     page: () {
+                      Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => Screen_Choose_Level(),
                       ));

@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "417057139993",
-    "project_id": "ozeapp-74d75",
-    "storage_bucket": "ozeapp-74d75.appspot.com"
+    "project_number": "824121843317",
+    "project_id": "ozeapp-5f71c",
+    "storage_bucket": "ozeapp-5f71c.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:417057139993:android:c63344132b3540e971a988",
+        "mobilesdk_app_id": "1:824121843317:android:4252752cd83e070786a23c",
         "android_client_info": {
           "package_name": "com.example.game_app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "417057139993-9rmkds7tj4mf35ibjm1mkqfoqkm89ejq.apps.googleusercontent.com",
+          "client_id": "824121843317-dpp33g8b2egpf21bafq8m51lemqrr9or.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD6rWvDe8HfVdDhc8ZGumzJXtoBdIbh-jQ"
+          "current_key": "AIzaSyD-ojVshKR46-fqTy0rTnu7d8En3jBUZdY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "417057139993-9rmkds7tj4mf35ibjm1mkqfoqkm89ejq.apps.googleusercontent.com",
+              "client_id": "824121843317-dpp33g8b2egpf21bafq8m51lemqrr9or.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
