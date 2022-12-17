@@ -42,6 +42,8 @@ dependencies:
   bottom_drawer: ^0.0.5
   email_validator:
   basic_utils: ^5.4.2
+  sqflite:
+  firebase_database: ^10.0.7
 
 dev_dependencies:
   flutter_test:

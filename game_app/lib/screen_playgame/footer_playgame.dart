@@ -3,6 +3,7 @@ import 'package:game_app/screen_shop/screen_shop.dart';
 import '../screen_room/footer_room.dart';
 import '../screen_room/screen_room.dart';
 import '../button_game/button_game.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class MyFooterPlayGame extends StatefulWidget {
   const MyFooterPlayGame({super.key});
@@ -59,7 +60,13 @@ class _MyFooterPlayGameState extends State<MyFooterPlayGame> {
                 )),
                 ButtonWidget(
                     button: ElavetedButon(
-                  page: () {},
+                  page: () {
+                    DatabaseReference scoresRef =
+                        FirebaseDatabase.instance.ref().child("scores");
+                    scoresRef
+                        .child("played1")
+                        .set({"name": "Player 1", "score": 100});
+                  },
                   text: "NEXT",
                 )),
               ],

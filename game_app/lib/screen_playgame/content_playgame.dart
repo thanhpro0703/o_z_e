@@ -1,13 +1,13 @@
 import 'dart:async';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/api_services.dart';
-import 'package:game_app/screen_maingame/screen_maingame.dart';
 import 'package:game_app/screen_result/screen_result.dart';
 import '../const/colors.dart';
 import '../const/images.dart';
-
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_core/firebase_core.dart';
 import '../const/text_style.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -19,7 +19,7 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen> {
   var currentQuestionIndex = 0;
-  int seconds = 60;
+  int seconds = 20;
   Timer? timer;
   late Future quiz;
 
@@ -65,6 +65,9 @@ class _QuizScreenState extends State<QuizScreen> {
       setState(() {
         if (seconds > 0) {
           seconds--;
+        } else if (currentQuestionIndex == hardQuestionsList.length - 1 &&
+            seconds == 0) {
+          gotoNextResult();
         } else {
           gotoNextQuestion();
         }
@@ -77,13 +80,24 @@ class _QuizScreenState extends State<QuizScreen> {
     currentQuestionIndex++;
     resetColors();
     timer!.cancel();
-    seconds = 60;
+    seconds = 15;
     startTimer();
+  }
+
+  gotoNextResult() {
+    isLoaded = false;
+    timer!.cancel();
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ResultScreen(score: points),
+        ));
   }
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
+
     return Expanded(
         flex: 4,
         child: Container(
@@ -135,11 +149,6 @@ class _QuizScreenState extends State<QuizScreen> {
                             child: IconButton(
                                 onPressed: () {
                                   Navigator.pop(context);
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => ScreenMainGame(),
-                                      ));
                                 },
                                 icon: const Icon(
                                   CupertinoIcons.xmark,
@@ -158,7 +167,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                 width: 80,
                                 height: 80,
                                 child: CircularProgressIndicator(
-                                  value: seconds / 60,
+                                  value: seconds / 10,
                                   valueColor: const AlwaysStoppedAnimation(
                                       Colors.white),
                                 ),
@@ -216,8 +225,8 @@ class _QuizScreenState extends State<QuizScreen> {
 
                                 if (currentQuestionIndex <
                                     hardQuestionsList.length - 1) {
-                                  Future.delayed(const Duration(seconds: 1),
-                                      () {
+                                  Future.delayed(
+                                      const Duration(milliseconds: 500), () {
                                     gotoNextQuestion();
                                   });
                                 } else {
