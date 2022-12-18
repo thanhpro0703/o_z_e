@@ -12,3 +12,9 @@ getQuiz() async {
     return data;
   }
 }
+
+Future addScore(int score, String username) async {
+  final url = Uri.parse(
+      'https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json');
+  http.post(url, body: json.encode({'score': score, 'username': username}));
+}

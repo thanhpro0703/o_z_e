@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/api_services.dart';
 import 'package:game_app/screen_maingame/screen_maingame.dart';
 import '../button_game/color.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ResultScreen extends StatefulWidget {
   const ResultScreen({
@@ -58,6 +60,7 @@ class _ResultScreenState extends State<ResultScreen> {
           ),
           ElevatedButton(
             onPressed: () {
+              addScore(widget.score, FirebaseAuth.instance.currentUser!.email!);
               Navigator.push(
                   context,
                   MaterialPageRoute(

@@ -1,8 +1,12 @@
 import 'dart:async';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/api_services.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:game_app/screen_result/screen_result.dart';
 import '../const/colors.dart';
 import '../const/images.dart';
@@ -94,6 +98,24 @@ class _QuizScreenState extends State<QuizScreen> {
         ));
   }
 
+  // Future addScore(int score, String username) async {
+  //   final url = Uri.parse(
+  //       'https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json');
+  //   http.post(url, body: json.encode({'score': score, 'username': username}));
+  // }
+
+  Future addHighScore2() async {
+    var link =
+        "https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json";
+    var res = await http.get(Uri.parse(link));
+    if (res.statusCode == 200) {
+      var data = jsonDecode(res.body.toString());
+      print("data is loaded");
+      print(data);
+      return data;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -117,7 +139,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 var data = snapshot.data["results"];
                 int hardQuestionsCount = 0;
                 for (var item in data) {
-                  if (item["difficulty"] == "hard") {
+                  if (item["difficulty"] == "easy") {
                     hardQuestionsCount++;
                     if (hardQuestionsList.length < hardQuestionsCount) {
                       hardQuestionsList.add(item);
@@ -180,7 +202,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               border: Border.all(color: lightgrey, width: 2),
                             ),
                             child: TextButton.icon(
-                                onPressed: null,
+                                onPressed: () {},
                                 icon: const Icon(CupertinoIcons.heart_fill,
                                     color: Colors.white, size: 18),
                                 label: normalText(
