@@ -20,11 +20,7 @@ class _RegisterPageState extends State<RegisterPage> {
     showDialog(
         context: context,
         builder: (context) {
-          return Center(
-              child: CircularProgressIndicator(
-            backgroundColor: Colors.blue,
-            strokeWidth: 5,
-          ));
+          return Center(child: CircularProgressIndicator());
         });
     try {
       if (_passwordConfirmed()) {
