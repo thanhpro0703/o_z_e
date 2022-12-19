@@ -16,7 +16,39 @@ class ResultScreen extends StatefulWidget {
   _ResultScreenState createState() => _ResultScreenState();
 }
 
-class _ResultScreenState extends State<ResultScreen> {
+class _ResultScreenState extends State<ResultScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
+  late Animation<Color?> _colorAnimation;
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+      vsync: this,
+      duration: Duration(seconds: 1),
+    );
+    _controller.repeat(reverse: true);
+    _colorAnimation = ColorTween(
+      begin: Colors.red,
+      end: Colors.green,
+    ).animate(
+      CurvedAnimation(
+        parent: _controller,
+        curve: Curves.linear,
+      ),
+    );
+    Animation<double> _fontSizeAnimation = Tween<double>(
+      begin: 1,
+      end: 48,
+    ).animate(_controller);
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +57,35 @@ class _ResultScreenState extends State<ResultScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
+          SizedBox(
+            height: 20.0,
+          ),
+          FutureBuilder<dynamic>(
+            future: getHighScore(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {
+                int highScore = snapshot.data;
+                int currentScore = widget.score;
+                if (currentScore > highScore) {
+                  highScore = currentScore;
+                }
+                return AnimatedBuilder(
+                  animation: _colorAnimation,
+                  builder: (context, child) {
+                    return Text(
+                      "High score in serve is ${highScore.toString()}",
+                      style:
+                          TextStyle(color: _colorAnimation.value, fontSize: 32),
+                    );
+                  },
+                );
+              } else if (snapshot.hasError) {
+                return Text("Error: ${snapshot.error}");
+              }
+              return CircularProgressIndicator();
+            },
+          ),
+          SizedBox(height: 25),
           SizedBox(
             width: double.infinity,
             child: Text(
@@ -38,7 +99,7 @@ class _ResultScreenState extends State<ResultScreen> {
             ),
           ),
           SizedBox(
-            height: 45.0,
+            height: 20.0,
           ),
           Text(
             "You Score is",
@@ -60,12 +121,12 @@ class _ResultScreenState extends State<ResultScreen> {
           ),
           ElevatedButton(
             onPressed: () {
-              addScore(widget.score, FirebaseAuth.instance.currentUser!.email!);
               Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => ScreenMainGame(),
-                  ));
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ScreenMainGame(),
+                ),
+              );
             },
             child: Text(
               "Reapeat the quizz",

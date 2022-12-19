@@ -91,6 +91,7 @@ class _QuizScreenState extends State<QuizScreen> {
   gotoNextResult() {
     isLoaded = false;
     timer!.cancel();
+
     Navigator.push(
         context,
         MaterialPageRoute(
@@ -98,28 +99,9 @@ class _QuizScreenState extends State<QuizScreen> {
         ));
   }
 
-  // Future addScore(int score, String username) async {
-  //   final url = Uri.parse(
-  //       'https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json');
-  //   http.post(url, body: json.encode({'score': score, 'username': username}));
-  // }
-
-  Future addHighScore2() async {
-    var link =
-        "https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json";
-    var res = await http.get(Uri.parse(link));
-    if (res.statusCode == 200) {
-      var data = jsonDecode(res.body.toString());
-      print("data is loaded");
-      print(data);
-      return data;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
-
     return Expanded(
         flex: 4,
         child: Container(
@@ -139,7 +121,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 var data = snapshot.data["results"];
                 int hardQuestionsCount = 0;
                 for (var item in data) {
-                  if (item["difficulty"] == "easy") {
+                  if (item["difficulty"] == "medium") {
                     hardQuestionsCount++;
                     if (hardQuestionsList.length < hardQuestionsCount) {
                       hardQuestionsList.add(item);
@@ -189,7 +171,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                 width: 80,
                                 height: 80,
                                 child: CircularProgressIndicator(
-                                  value: seconds / 10,
+                                  value: seconds / 15,
                                   valueColor: const AlwaysStoppedAnimation(
                                       Colors.white),
                                 ),
@@ -202,13 +184,17 @@ class _QuizScreenState extends State<QuizScreen> {
                               border: Border.all(color: lightgrey, width: 2),
                             ),
                             child: TextButton.icon(
-                                onPressed: () {},
+                                onPressed: () {
+                                  getHighScore();
+                                },
                                 icon: const Icon(CupertinoIcons.heart_fill,
                                     color: Colors.white, size: 18),
                                 label: normalText(
                                     color: Colors.white,
                                     size: 14,
-                                    text: "Like")),
+                                    text:
+                                        hardQuestionsList[currentQuestionIndex]
+                                            ["correct_answer"])),
                           ),
                         ],
                       ),
@@ -248,11 +234,15 @@ class _QuizScreenState extends State<QuizScreen> {
                                 if (currentQuestionIndex <
                                     hardQuestionsList.length - 1) {
                                   Future.delayed(
-                                      const Duration(milliseconds: 500), () {
+                                      const Duration(milliseconds: 250), () {
                                     gotoNextQuestion();
                                   });
                                 } else {
                                   timer!.cancel();
+                                  addScore(
+                                      points,
+                                      FirebaseAuth
+                                          .instance.currentUser!.email!);
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(

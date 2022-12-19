@@ -18,3 +18,25 @@ Future addScore(int score, String username) async {
       'https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json');
   http.post(url, body: json.encode({'score': score, 'username': username}));
 }
+
+Future<dynamic> getHighScore() async {
+  var data;
+  var highScore = 0;
+  var link =
+      "https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json";
+  var res = await http.get(Uri.parse(link));
+  if (res.statusCode == 200) {
+    data = jsonDecode(res.body.toString());
+    print(data);
+  }
+  if (data == null || data.isEmpty) {
+    return 0;
+  }
+  for (var item in data.values) {
+    if (item['score'] > highScore) {
+      highScore = item['score'];
+    }
+    print(highScore);
+  }
+  return highScore;
+}
