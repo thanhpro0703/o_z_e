@@ -26,6 +26,7 @@ import 'screen_account/screen_account.dart';
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
@@ -38,7 +39,6 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false, home: ScreenPlayGame());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MainPage());
   }
 }

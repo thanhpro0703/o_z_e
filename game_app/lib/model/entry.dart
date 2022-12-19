@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/cupertino.dart';
 
 class Entry {
@@ -18,4 +20,18 @@ class PlayLevels {
   final String Level;
   final String Topic;
   PlayLevels({required this.Level, required this.Topic});
+}
+
+class HighScore {
+  String name;
+  int score;
+
+  HighScore({required this.name, required this.score});
+
+  Map<String, dynamic> toJson() {
+    return {
+      'name': name,
+      'score': score,
+    };
+  }
 }

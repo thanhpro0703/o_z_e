@@ -20,11 +20,7 @@ class _LoginPageState extends State<LoginPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return Center(
-          child: CircularProgressIndicator(
-            backgroundColor: Colors.blue,
-          ),
-        );
+        return Center(child: CircularProgressIndicator());
       },
     );
     try {
@@ -52,161 +48,200 @@ class _LoginPageState extends State<LoginPage> {
         backgroundColor: Colors.grey[300],
         body: Center(
           child: SingleChildScrollView(
-            child:
-                Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Lottie.asset("assets/109272-lolo-new-branding.json",
-                  width: 180, height: 180),
-              SizedBox(height: 25),
-              Text(
-                "Hello Again!",
-                style: GoogleFonts.bebasNeue(
-                  fontSize: 54,
-                ),
-              ),
-              Text(
-                "Welcome back, you\'ve been missed",
-                style: TextStyle(fontSize: 20),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Lottie.asset("assets/109272-lolo-new-branding.json",
+                    width: 180, height: 180),
+                SizedBox(height: 25),
+                Text(
+                  "Hello Again!",
+                  style: GoogleFonts.bebasNeue(
+                    fontSize: 54,
                   ),
-                  child: TextFormField(
-                    textInputAction: TextInputAction.next,
-                    controller: _emailController,
-                    cursorColor: Colors.white,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (email) =>
-                        email != null && !EmailValidator.validate(email)
-                            ? 'Enter a valid email'
-                            : null,
-                    decoration: InputDecoration(
-                      hintText: "Email",
-                      fillColor: Colors.grey[200],
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.deepPurple),
+                ),
+                Text(
+                  "Welcome back, you\'ve been missed",
+                  style: TextStyle(fontSize: 20),
+                ),
+                SizedBox(
+                  height: 20,
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: TextFormField(
+                      textInputAction: TextInputAction.next,
+                      controller: _emailController,
+                      cursorColor: Colors.white,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      validator: (email) =>
+                          email != null && !EmailValidator.validate(email)
+                              ? 'Enter a valid email'
+                              : null,
+                      decoration: InputDecoration(
+                        hintText: "Email",
+                        fillColor: Colors.grey[200],
+                        filled: true,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.deepPurple),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 20),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  child: TextFormField(
-                    obscureText: true,
-                    textInputAction: TextInputAction.next,
-                    controller: _passwordController,
-                    cursorColor: Colors.white,
-                    autovalidateMode: AutovalidateMode.onUserInteraction,
-                    validator: (value) => value != null && value.length < 6
-                        ? 'Enter min. 6 chacracters'
-                        : null,
-                    decoration: InputDecoration(
-                      hintText: "Password",
-                      fillColor: Colors.grey[200],
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.deepPurple),
+                SizedBox(height: 20),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: TextFormField(
+                      obscureText: true,
+                      textInputAction: TextInputAction.next,
+                      controller: _passwordController,
+                      cursorColor: Colors.white,
+                      autovalidateMode: AutovalidateMode.onUserInteraction,
+                      validator: (value) => value != null && value.length < 6
+                          ? 'Enter min. 6 chacracters'
+                          : null,
+                      decoration: InputDecoration(
+                        hintText: "Password",
+                        fillColor: Colors.grey[200],
+                        filled: true,
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.white),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: BorderSide(color: Colors.deepPurple),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 5),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                SizedBox(height: 5),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => ForgotPassword()));
+                        },
+                        child: Text(
+                          "Forgot Password?",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15,
+                            color: Colors.lightBlue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                SizedBox(height: 5),
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 25),
+                  child: Material(
+                    borderRadius: BorderRadius.circular(10),
+                    borderOnForeground: true,
+                    animationDuration: Duration(milliseconds: 200),
+                    color: Colors.deepPurple,
+                    child: InkWell(
+                      onTap: () => signIn(),
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Center(
+                          child: Text(
+                            'Sign In',
+                            style: TextStyle(
+                                fontSize: 23,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Text(
+                      "Not a member? ",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    ),
                     GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => ForgotPassword()));
-                      },
+                      onTap: widget.showRegisterPage,
                       child: Text(
-                        "Forgot Password?",
+                        "Register now",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
-                          fontSize: 15,
+                          fontSize: 16,
                           color: Colors.lightBlue,
                         ),
                       ),
-                    ),
+                    )
                   ],
                 ),
-              ),
-              SizedBox(height: 5),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 25),
-                child: Material(
-                  borderRadius: BorderRadius.circular(10),
-                  borderOnForeground: true,
-                  animationDuration: Duration(milliseconds: 200),
-                  color: Colors.deepPurple,
-                  child: InkWell(
-                    onTap: () => signIn(),
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      child: Center(
-                        child: Text(
-                          'Sign In',
-                          style: TextStyle(
-                              fontSize: 23,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Not a member? ",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                  ),
-                  GestureDetector(
-                    onTap: widget.showRegisterPage,
-                    child: Text(
-                      "Register now",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                        color: Colors.lightBlue,
-                      ),
-                    ),
-                  )
-                ],
-              )
-            ]),
+                // Row(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: const [
+                //     // google button
+                //     SquareTile(imagePath: 'assets/google.png'),
+
+                //     SizedBox(width: 25),
+
+                //     // apple button
+                //     SquareTile(imagePath: 'assets/apple.png')
+                //   ],
+                // ),
+              ],
+            ),
           ),
         ),
+      ),
+    );
+  }
+}
+
+class SquareTile extends StatelessWidget {
+  final String imagePath;
+  const SquareTile({
+    super.key,
+    required this.imagePath,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.white),
+        borderRadius: BorderRadius.circular(16),
+        color: Colors.grey[200],
+      ),
+      child: Image.asset(
+        imagePath,
+        height: 40,
       ),
     );
   }

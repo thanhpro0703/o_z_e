@@ -1,13 +1,17 @@
 import 'dart:async';
-
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/api_services.dart';
-import 'package:game_app/screen_maingame/screen_maingame.dart';
+import 'package:firebase_database/firebase_database.dart';
 import 'package:game_app/screen_result/screen_result.dart';
 import '../const/colors.dart';
 import '../const/images.dart';
-
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_core/firebase_core.dart';
 import '../const/text_style.dart';
 
 class QuizScreen extends StatefulWidget {
@@ -19,7 +23,7 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen> {
   var currentQuestionIndex = 0;
-  int seconds = 60;
+  int seconds = 20;
   Timer? timer;
   late Future quiz;
 
@@ -65,6 +69,9 @@ class _QuizScreenState extends State<QuizScreen> {
       setState(() {
         if (seconds > 0) {
           seconds--;
+        } else if (currentQuestionIndex == hardQuestionsList.length - 1 &&
+            seconds == 0) {
+          gotoNextResult();
         } else {
           gotoNextQuestion();
         }
@@ -77,8 +84,19 @@ class _QuizScreenState extends State<QuizScreen> {
     currentQuestionIndex++;
     resetColors();
     timer!.cancel();
-    seconds = 60;
+    seconds = 15;
     startTimer();
+  }
+
+  gotoNextResult() {
+    isLoaded = false;
+    timer!.cancel();
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => ResultScreen(score: points),
+        ));
   }
 
   @override
@@ -103,7 +121,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 var data = snapshot.data["results"];
                 int hardQuestionsCount = 0;
                 for (var item in data) {
-                  if (item["difficulty"] == "hard") {
+                  if (item["difficulty"] == "medium") {
                     hardQuestionsCount++;
                     if (hardQuestionsList.length < hardQuestionsCount) {
                       hardQuestionsList.add(item);
@@ -135,11 +153,6 @@ class _QuizScreenState extends State<QuizScreen> {
                             child: IconButton(
                                 onPressed: () {
                                   Navigator.pop(context);
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => ScreenMainGame(),
-                                      ));
                                 },
                                 icon: const Icon(
                                   CupertinoIcons.xmark,
@@ -158,7 +171,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                 width: 80,
                                 height: 80,
                                 child: CircularProgressIndicator(
-                                  value: seconds / 60,
+                                  value: seconds / 15,
                                   valueColor: const AlwaysStoppedAnimation(
                                       Colors.white),
                                 ),
@@ -171,13 +184,17 @@ class _QuizScreenState extends State<QuizScreen> {
                               border: Border.all(color: lightgrey, width: 2),
                             ),
                             child: TextButton.icon(
-                                onPressed: null,
+                                onPressed: () {
+                                  getHighScore();
+                                },
                                 icon: const Icon(CupertinoIcons.heart_fill,
                                     color: Colors.white, size: 18),
                                 label: normalText(
                                     color: Colors.white,
                                     size: 14,
-                                    text: "Like")),
+                                    text:
+                                        hardQuestionsList[currentQuestionIndex]
+                                            ["correct_answer"])),
                           ),
                         ],
                       ),
@@ -216,12 +233,16 @@ class _QuizScreenState extends State<QuizScreen> {
 
                                 if (currentQuestionIndex <
                                     hardQuestionsList.length - 1) {
-                                  Future.delayed(const Duration(seconds: 1),
-                                      () {
+                                  Future.delayed(
+                                      const Duration(milliseconds: 250), () {
                                     gotoNextQuestion();
                                   });
                                 } else {
                                   timer!.cancel();
+                                  addScore(
+                                      points,
+                                      FirebaseAuth
+                                          .instance.currentUser!.email!);
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
