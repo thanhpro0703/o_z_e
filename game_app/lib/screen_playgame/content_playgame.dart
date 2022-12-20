@@ -168,8 +168,8 @@ class _QuizScreenState extends State<QuizScreen> {
                                   size: 24,
                                   text: "$seconds"),
                               SizedBox(
-                                width: 80,
-                                height: 80,
+                                width: 50,
+                                height: 50,
                                 child: CircularProgressIndicator(
                                   value: seconds / 15,
                                   valueColor: const AlwaysStoppedAnimation(
@@ -194,7 +194,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                     size: 14,
                                     text:
                                         hardQuestionsList[currentQuestionIndex]
-                                            ["correct_answer"])),
+                                            ["difficulty"])),
                           ),
                         ],
                       ),
