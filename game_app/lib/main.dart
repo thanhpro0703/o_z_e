@@ -21,7 +21,7 @@ import 'screen_singler_play/screen_singler_play.dart';
 import 'screen_play_group/screen_play_group.dart';
 import './screen_play_group/screen_play_group.dart';
 import 'package:firebase_core/firebase_core.dart';
-
+import 'dart:ffi';
 import 'screen_account/screen_account.dart';
 
 // Future main() async {
@@ -31,6 +31,7 @@ import 'screen_account/screen_account.dart';
 //   runApp(const MyApp());
 // }
 
+<<<<<<< HEAD
 // // void main() {
 // //   runApp(const MyApp());
 // // }
@@ -50,6 +51,10 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MyApp());
+=======
+void main() {
+  runApp(const MyApp());
+>>>>>>> bbda8d4afaed06b37d5886b1d3d1ef0959d4f3ba
 }
 
 class MyApp extends StatelessWidget {
@@ -71,6 +76,7 @@ class _CreateRoomPageState extends State<CreateRoomPage> {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return Scaffold(
       appBar: AppBar(
         title: Text('Create Room'),
@@ -187,5 +193,9 @@ class Room {
       createdAt: json['createdAt'],
       members: json['members'],
     );
+=======
+    return MaterialApp(
+        debugShowCheckedModeBanner: false, home: ScreenMainGame());
+>>>>>>> bbda8d4afaed06b37d5886b1d3d1ef0959d4f3ba
   }
 }
