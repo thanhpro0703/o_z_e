@@ -15,8 +15,8 @@ import 'package:firebase_core/firebase_core.dart';
 import '../const/text_style.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({Key? key}) : super(key: key);
-
+  QuizScreen({Key? key, required this.level}) : super(key: key);
+  String level;
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
@@ -121,7 +121,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 var data = snapshot.data["results"];
                 int hardQuestionsCount = 0;
                 for (var item in data) {
-                  if (item["difficulty"] == "medium") {
+                  if (item["level"] == widget.level) {
                     hardQuestionsCount++;
                     if (hardQuestionsList.length < hardQuestionsCount) {
                       hardQuestionsList.add(item);

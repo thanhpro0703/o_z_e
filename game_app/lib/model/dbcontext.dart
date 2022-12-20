@@ -34,15 +34,15 @@ class ListDB {
 
 class ListDbPlayLevels {
   static List<PlayLevels> listPlayLevels = [
-    PlayLevels(Level: "Cửa 1", Topic: "Chủ đề 1"),
-    PlayLevels(Level: "Cửa 2", Topic: "Chủ đề 2"),
-    PlayLevels(Level: "Cửa 3", Topic: "Chủ đề 3"),
-    PlayLevels(Level: "Cửa 4", Topic: "Chủ đề 4"),
-    PlayLevels(Level: "Cửa 5", Topic: "Chủ đề 5"),
-    PlayLevels(Level: "Cửa 6", Topic: "Chủ đề 6"),
-    PlayLevels(Level: "Cửa 7", Topic: "Chủ đề 7"),
-    PlayLevels(Level: "Cửa 8", Topic: "Chủ đề 8"),
-    PlayLevels(Level: "Cửa 9", Topic: "Chủ đề 9"),
-    PlayLevels(Level: "Cửa 10", Topic: "Chủ đề 10")
+    PlayLevels(Level: "1", Topic: "Chủ đề 1"),
+    PlayLevels(Level: "2", Topic: "Chủ đề 2"),
+    PlayLevels(Level: "3", Topic: "Chủ đề 3"),
+    PlayLevels(Level: "4", Topic: "Chủ đề 4"),
+    PlayLevels(Level: "5", Topic: "Chủ đề 5"),
+    PlayLevels(Level: "6", Topic: "Chủ đề 6"),
+    PlayLevels(Level: "7", Topic: "Chủ đề 7"),
+    PlayLevels(Level: "8", Topic: "Chủ đề 8"),
+    PlayLevels(Level: "9", Topic: "Chủ đề 9"),
+    PlayLevels(Level: "10", Topic: "Chủ đề 10")
   ];
 }

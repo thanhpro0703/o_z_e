@@ -5,7 +5,9 @@ import 'package:game_app/screen_playgame/screen_playgame.dart';
 import '../button_game/button_game.dart';
 
 class MyContentSinglePlay extends StatefulWidget {
-  const MyContentSinglePlay({super.key});
+  const MyContentSinglePlay({
+    super.key,
+  });
 
   @override
   State<MyContentSinglePlay> createState() => _MyContentSinglePlayState();
@@ -95,7 +97,11 @@ class _MySquareState extends State<MySquare> {
                         heightCC = 20;
                       });
                     },
-                    child: Text(widget.playlevel.Level),
+                    child: Row(
+                      children: [
+                        Text(widget.playlevel.Level),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -172,7 +178,8 @@ class _MySquareState extends State<MySquare> {
                                   button: ElavetedButon(
                                 page: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-                                    builder: (context) => ScreenPlayGame(),
+                                    builder: (context) => ScreenPlayGame(
+                                        level: widget.playlevel.Level),
                                   ));
                                 },
                                 text: "Play",

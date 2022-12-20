@@ -187,9 +187,9 @@ class _MyScreenSolo extends State<Screen_Solo> {
                     child: Center(
                       child: TextButton(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ScreenPlayGame(),
-                          ));
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //   builder: (context) => ScreenPlayGame(),
+                          // ));
                         },
                         child: Text('Start',
                             style: TextStyle(
