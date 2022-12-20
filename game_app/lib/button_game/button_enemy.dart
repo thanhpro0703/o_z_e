@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_account/screen_account.dart';
 import 'package:game_app/screen_info_enemy/screen_info_enemy.dart';
