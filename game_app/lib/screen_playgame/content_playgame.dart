@@ -13,6 +13,7 @@ import '../const/images.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '../const/text_style.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class QuizScreen extends StatefulWidget {
   QuizScreen({Key? key, required this.level}) : super(key: key);
@@ -26,7 +27,7 @@ class _QuizScreenState extends State<QuizScreen> {
   int seconds = 15;
   Timer? timer;
   late Future quiz;
-
+  final player = AudioPlayer();
   int points = 0;
 
   var isLoaded = false;
@@ -189,9 +190,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               border: Border.all(color: lightgrey, width: 2),
                             ),
                             child: TextButton.icon(
-                                onPressed: () {
-                                  getHighScore();
-                                },
+                                onPressed: () {},
                                 icon: const Icon(CupertinoIcons.heart_fill,
                                     color: Colors.white, size: 18),
                                 label: normalText(
@@ -233,9 +232,11 @@ class _QuizScreenState extends State<QuizScreen> {
                                   optionsColor[index] =
                                       Color.fromARGB(255, 140, 252, 144);
                                   points = points + 10;
+                                  player.play(AssetSource('login.mp3'));
                                 } else {
                                   optionsColor[index] =
                                       Color.fromARGB(255, 255, 108, 97);
+                                  player.play(AssetSource('sai.wav'));
                                 }
 
                                 if (currentQuestionIndex <

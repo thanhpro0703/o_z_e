@@ -1,6 +1,7 @@
 import 'dart:convert';
-
+import 'package:audioplayers/audioplayers.dart';
 import 'package:http/http.dart' as http;
+import 'package:audioplayers/audioplayers.dart';
 
 var link = "https://ozeapp-5f71c-default-rtdb.firebaseio.com/results.json";
 
@@ -20,6 +21,8 @@ Future addScore(int score, String username) async {
 }
 
 Future<dynamic> getHighScore() async {
+  final player = AudioPlayer();
+  player.play(AssetSource('complete.wav'));
   var data;
   var highScore = 0;
   var link =

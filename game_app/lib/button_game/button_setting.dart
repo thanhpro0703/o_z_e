@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../screen_setting/screen_seting.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class ButtonSetting extends StatefulWidget {
   const ButtonSetting({super.key, required this.img});
@@ -10,6 +11,7 @@ class ButtonSetting extends StatefulWidget {
 }
 
 class _ButtonSettingState extends State<ButtonSetting> {
+  final player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -47,6 +49,7 @@ class _ButtonSettingState extends State<ButtonSetting> {
                   shadowColor: MaterialStateProperty.all(Colors.transparent),
                 ),
                 onPressed: () {
+                  player.play(AssetSource('setting.wav'));
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => ScreenSetting(),
                   ));

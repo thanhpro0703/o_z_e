@@ -4,7 +4,7 @@ import 'package:game_app/user_page/forgot_pw_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:email_validator/email_validator.dart';
-
+import 'package:audioplayers/audioplayers.dart';
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
   LoginPage({super.key, required this.showRegisterPage});
@@ -15,8 +15,9 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
-
+  final player = AudioPlayer();
   Future signIn() async {
+ player.play(AssetSource('login.mp3'));
     showDialog(
       context: context,
       builder: (context) {
@@ -55,7 +56,7 @@ class _LoginPageState extends State<LoginPage> {
                     width: 180, height: 180),
                 SizedBox(height: 25),
                 Text(
-                  "Hello Again!",
+                  "Hello Dear Friend!",
                   style: GoogleFonts.bebasNeue(
                     fontSize: 54,
                   ),
@@ -160,7 +161,7 @@ class _LoginPageState extends State<LoginPage> {
                     borderRadius: BorderRadius.circular(10),
                     borderOnForeground: true,
                     animationDuration: Duration(milliseconds: 200),
-                    color: Colors.deepPurple,
+                    color: Color.fromARGB(255, 34, 34, 34),
                     child: InkWell(
                       onTap: () => signIn(),
                       child: Container(

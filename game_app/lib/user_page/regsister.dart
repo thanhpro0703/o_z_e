@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:email_validator/email_validator.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback showLoginPage;
@@ -13,10 +14,12 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  final player = AudioPlayer();
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
   final _confimpasswordController = TextEditingController();
   Future signUp() async {
+    player.play(AssetSource('register.mp3'));
     showDialog(
         context: context,
         builder: (context) {
@@ -176,7 +179,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   borderRadius: BorderRadius.circular(10),
                   borderOnForeground: true,
                   animationDuration: Duration(milliseconds: 200),
-                  color: Colors.deepPurple,
+                  color: Color.fromARGB(255, 84, 177, 253),
                   child: InkWell(
                     onTap: () => signUp(),
                     child: Container(

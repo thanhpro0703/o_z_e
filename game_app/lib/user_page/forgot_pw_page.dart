@@ -17,15 +17,12 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   }
 
   Future passwordReset() async {
-    // showDialog(
-    //     context: context,
-    //     builder: (context) {
-    //       return Center(
-    //           child: CircularProgressIndicator(
-    //         backgroundColor: Colors.blue,
-
-    //       ));
-    //     });
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Center(child: CircularProgressIndicator());
+      },
+    );
     try {
       await FirebaseAuth.instance
           .sendPasswordResetEmail(email: _emailController.text.trim());
@@ -43,7 +40,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.deepPurple),
+        appBar: AppBar(
+            title: Text('Forgot Password?'),
+            backgroundColor: Color.fromARGB(255, 129, 82, 209)),
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -86,7 +85,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                 borderRadius: BorderRadius.circular(10),
                 borderOnForeground: true,
                 animationDuration: Duration(milliseconds: 200),
-                color: Colors.deepPurple,
+                color: Colors.lightGreen,
                 child: InkWell(
                   onTap: () => passwordReset(),
                   child: Container(
