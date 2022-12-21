@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:audioplayers/audioplayers.dart';
+
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
   LoginPage({super.key, required this.showRegisterPage});
@@ -17,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
   final player = AudioPlayer();
   Future signIn() async {
- player.play(AssetSource('login.mp3'));
+    player.play(AssetSource('login.mp3'));
     showDialog(
       context: context,
       builder: (context) {

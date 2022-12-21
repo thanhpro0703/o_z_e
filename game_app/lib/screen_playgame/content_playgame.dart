@@ -231,7 +231,19 @@ class _QuizScreenState extends State<QuizScreen> {
                                     optionsList[index].toString()) {
                                   optionsColor[index] =
                                       Color.fromARGB(255, 140, 252, 144);
-                                  points = points + 10;
+                                  if (seconds == 15) {
+                                    points = points + 30;
+                                  } else if (seconds == 14) {
+                                    points = points + 25;
+                                  } else if (seconds == 13) {
+                                    points = points + 20;
+                                  } else if (seconds == 12) {
+                                    points = points + 15;
+                                  } else {
+                                    points = points + 10;
+                                  }
+                                  print(points);
+
                                   player.play(AssetSource('login.mp3'));
                                 } else {
                                   optionsColor[index] =
