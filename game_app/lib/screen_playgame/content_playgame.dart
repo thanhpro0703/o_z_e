@@ -23,7 +23,7 @@ class QuizScreen extends StatefulWidget {
 
 class _QuizScreenState extends State<QuizScreen> {
   var currentQuestionIndex = 0;
-  int seconds = 20;
+  int seconds = 15;
   Timer? timer;
   late Future quiz;
 
@@ -112,7 +112,12 @@ class _QuizScreenState extends State<QuizScreen> {
               gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [blue, darkBlue],
+            colors: [
+              Color(0xff928DAB),
+              Color(0xff56CCF2),
+              Color(0xfff39060),
+              Color(0xffffb56b),
+            ],
           )),
           child: FutureBuilder(
             future: quiz,
@@ -203,7 +208,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           alignment: Alignment.centerLeft,
                           child: normalText(
                               color: lightgrey,
-                              size: 18,
+                              size: 19,
                               text:
                                   "Question ${currentQuestionIndex + 1} of ${hardQuestionsList.length}")),
                       const SizedBox(height: 20),
@@ -225,10 +230,12 @@ class _QuizScreenState extends State<QuizScreen> {
                               setState(() {
                                 if (answer.toString() ==
                                     optionsList[index].toString()) {
-                                  optionsColor[index] = Colors.green;
+                                  optionsColor[index] =
+                                      Color.fromARGB(255, 140, 252, 144);
                                   points = points + 10;
                                 } else {
-                                  optionsColor[index] = Colors.red;
+                                  optionsColor[index] =
+                                      Color.fromARGB(255, 255, 108, 97);
                                 }
 
                                 if (currentQuestionIndex <

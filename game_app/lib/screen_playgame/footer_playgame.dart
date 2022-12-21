@@ -60,13 +60,7 @@ class _MyFooterPlayGameState extends State<MyFooterPlayGame> {
                 )),
                 ButtonWidget(
                     button: ElavetedButon(
-                  page: () {
-                    DatabaseReference scoresRef =
-                        FirebaseDatabase.instance.ref().child("scores");
-                    scoresRef
-                        .child("played1")
-                        .set({"name": "Player 1", "score": 100});
-                  },
+                  page: () {},
                   text: "NEXT",
                 )),
               ],

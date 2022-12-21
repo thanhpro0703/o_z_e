@@ -155,6 +155,11 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                       text: "BACK",
                       page: () {
                         Navigator.of(context).pop();
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => ScreenMainGame(),
+                            ));
                       },
                     ),
                   ),
