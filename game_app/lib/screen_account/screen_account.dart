@@ -79,7 +79,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                       Color(0xffff2193b0),
                       Color(0xfff6dd5ed),
                     ],
-                    img: 'assets/textmyaccount.png',
+                    username: FirebaseAuth.instance.currentUser!.email!,
                   ),
                 ],
               ),
