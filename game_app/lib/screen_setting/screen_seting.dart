@@ -8,6 +8,7 @@ import 'package:game_app/screen_maingame/screen_maingame.dart';
 import 'package:game_app/screen_play_group/screen_play_group.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import 'package:game_app/screen_solo/screen_solo.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../button_game/button_game.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -74,7 +75,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                         },
                         width: 65,
                         height: 65,
-                        img: isPlaying
+                        username: isPlaying
                             ? 'assets/pausee.png'
                             : 'assets/musical-note.png',
                         colors: [
@@ -87,7 +88,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                         onPressed: () {},
                         width: 65,
                         height: 65,
-                        img: 'assets/sound.png',
+                        username: 'assets/sound.png',
                         colors: [
                           Color(0xffff2980b9),
                           Color(0xfff6dd5fa),
@@ -98,7 +99,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                         onPressed: () {},
                         width: 65,
                         height: 65,
-                        img: 'assets/vibration.png',
+                        username: 'assets/vibration.png',
                         colors: [
                           Color(0xffff2980b9),
                           Color(0xfff6dd5fa),
@@ -121,7 +122,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                           onPressed: () {},
                           width: 90,
                           height: 90,
-                          img: 'assets/account.png',
+                          username: 'assets/account.png',
                           colors: [
                             Color(0xffffd53369),
                             Color(0xfffcabd6d),
@@ -137,7 +138,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                           },
                           width: 190,
                           height: 60,
-                          img: 'assets/textmyaccount.png',
+                          username: 'assets/textmyaccount.png',
                           colors: [
                             Color(0xffff2193b0),
                             Color(0xfff6dd5ed),
@@ -163,7 +164,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                         },
                         width: 200,
                         height: 30,
-                        img: 'assets/howtoplay.png',
+                        username: 'assets/howtoplay.png',
                         colors: [
                           Color(0xffff83a4d4),
                           Color(0xfff6bfbff),
@@ -231,12 +232,12 @@ class ButtonSetting extends StatefulWidget {
       {super.key,
       required this.width,
       required this.height,
-      required this.img,
+      required this.username,
       required this.colors,
-      required this.onPressed});
+      required this.onPressed,});
   final double width;
   final double height;
-  final String img;
+  final String username;
   final List<Color> colors;
   final void Function()? onPressed;
 
@@ -284,8 +285,8 @@ class _ButtonSettingState extends State<ButtonSetting> {
                   onPressed: widget.onPressed,
                   child: Container(
                       margin: EdgeInsets.only(top: 5),
-                      child: Image.asset(
-                        widget.img,
+                      child: Text(
+                        widget.username,style: GoogleFonts.aclonica(fontSize: 18),
                       ),
                       width: 120)),
             ),

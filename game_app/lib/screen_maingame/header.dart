@@ -53,7 +53,7 @@ class _MyHeaderState extends State<MyHeader> {
             ButtonAvatar(
               height: 100,
               width: 100,
-              img: 'assets/account.png',
+              image: 'assets/account.png',
             ),
             ButtonWidget(
               button: ElavetedButon(

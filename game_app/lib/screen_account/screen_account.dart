@@ -42,7 +42,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                     ButtonAvatar(
                       height: 100,
                       width: 100,
-                      img: 'assets/account.png',
+                      image: 'assets/account.png',
                     ),
                     Container(
                         child: Center(
@@ -76,7 +76,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                     colors: [
                       Color(0xffff2193b0),
                       Color(0xfff6dd5ed),
-                    ], img: 'assets/textmyaccount.png',
+                    ], username: FirebaseAuth.instance.currentUser!.email!,
                   ),
                 ],
               ),

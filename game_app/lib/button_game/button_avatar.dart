@@ -4,10 +4,10 @@ import 'package:game_app/screen_account/screen_account.dart';
 class ButtonAvatar extends StatelessWidget {
   const ButtonAvatar(
       {super.key,
-      required this.img,
+      required this.image,
       required this.width,
       required this.height});
-  final String img;
+  final String image;
   final double width;
   final double height;
   @override
@@ -55,9 +55,7 @@ class ButtonAvatar extends StatelessWidget {
                       ));
                 },
                 child: Image.asset(
-                  img,
-                  width: 45,
-                  height: 40,
+                  image,
                 )),
           ),
         ),
