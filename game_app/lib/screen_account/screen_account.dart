@@ -105,6 +105,9 @@ class _MyScreenAccount extends State<Screen_Acount> {
                       FutureBuilder(
                         future: getHighScore(),
                         builder: (context, snapshot) {
+                          if(snapshot.data == null || !snapshot.hasData){
+                            return Center(child: CircularProgressIndicator(),);
+                          }
                           return Text("Height Score: ${snapshot.data!}",
                               style: GoogleFonts.akayaTelivigala(
                                   fontSize: 40,
@@ -115,6 +118,9 @@ class _MyScreenAccount extends State<Screen_Acount> {
                       FutureBuilder(
                         future: totalScore(),
                         builder: (context, snapshot) {
+                          if(snapshot.data == null || !snapshot.hasData){
+                            return Center(child: CircularProgressIndicator(),);
+                          }
                           return Text(
                             "Total Score: ${snapshot.data!}",
                             style: GoogleFonts.akayaTelivigala(
