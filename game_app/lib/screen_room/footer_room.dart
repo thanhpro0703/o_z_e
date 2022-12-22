@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:game_app/screen_playgame/screen_playgame.dart';
 import 'package:game_app/screen_room/screen_room.dart';
+import 'package:game_app/screen_solo/screen_solo.dart';
 import '../screen_maingame/screen_maingame.dart';
 import '../button_game/button_game.dart';
 
@@ -31,6 +32,9 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                       text: "BACK",
                       page: () {
                         Navigator.of(context).pop();
+                        Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => ScreenMainGame(),
+                        ));
                       },
                     ),
                   ),
@@ -53,8 +57,9 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                       button: ElavetedButon(
                           text: "RANK",
                           page: () {
+                            Navigator.pop(context);
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => ScreenPlayGame(),
+                              builder: (context) => ScreenPlayGame(level: '10'),
                             ));
                           })),
                 )

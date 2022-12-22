@@ -22,443 +22,70 @@ class _ScreenShopState extends State<ScreenShop> {
     return Scaffold(
       body: SafeArea(
           child: Stack(
-            children: [
-              Container(
-                child: Column(
-                  children: [
-                    MyHeader(),
-                    Expanded(
-                      flex: 4,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/background-home.png'),
-                              fit: BoxFit.fill),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: ListView(
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Colors.black26,
-                                          offset: Offset(0, 4),
-                                          blurRadius: 5.0)
-                                    ],
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.7, 1.5),
-                                      colors: <Color>[
-                                        Color(0xffffeecda3),
-                                        Color(0xfffef629f),
-                                      ],
-                                    ),
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 1,
-                                  child: Column(
+        children: [
+          Container(
+            child: Column(
+              children: [
+                MyHeader(),
+                Expanded(
+                  flex: 4,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage('assets/background-home.png'),
+                          fit: BoxFit.fill),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ListView(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(0, 4),
+                                      blurRadius: 5.0)
+                                ],
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment(0.7, 1.5),
+                                  colors: <Color>[
+                                    Color(0xffffeecda3),
+                                    Color(0xfffef629f),
+                                  ],
+                                ),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              width: MediaQuery.of(context).size.width / 1,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
                                     children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '100',
-                                            image: 'assets/gold-bars.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '200',
-                                            image: 'assets/money.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '300',
-                                            image: 'assets/idea.png',
-                                          )
-                                        ],
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '100',
+                                        image: 'assets/gold-bars.png',
                                       ),
-                                      Container(
-                                        margin: EdgeInsets.all(5),
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.black26,
-                                                offset: Offset(0, 4),
-                                                blurRadius: 5.0)
-                                          ],
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topLeft,
-                                            end: Alignment(0.7, 1.5),
-                                            colors: <Color>[
-                                              Color(0xffffede574),
-                                              Color(0xfffe1f5c4),
-                                            ],
-                                          ),
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(20),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: [
-                                            ButtonPlayWidget(
-                                                buttonplay: ElavetedButonBuy(
-                                                    page: () {
-                                                      _controller.open();
-                                                      setState(() {
-
-                                                      });
-
-                                                    }, text: money))
-                                          ],
-                                        ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '200',
+                                        image: 'assets/money.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '300',
+                                        image: 'assets/idea.png',
                                       )
                                     ],
                                   ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Colors.black26,
-                                          offset: Offset(0, 4),
-                                          blurRadius: 5.0)
-                                    ],
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.7, 1.5),
-                                      colors: <Color>[
-                                        Color(0xffffeecda3),
-                                        Color(0xfffef629f),
-                                      ],
-                                    ),
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 1,
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '100',
-                                            image: 'assets/gold-bars.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '200',
-                                            image: 'assets/money.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '300',
-                                            image: 'assets/idea.png',
-                                          )
-                                        ],
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.all(5),
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.black26,
-                                                offset: Offset(0, 4),
-                                                blurRadius: 5.0)
-                                          ],
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topLeft,
-                                            end: Alignment(0.7, 1.5),
-                                            colors: <Color>[
-                                              Color(0xffffede574),
-                                              Color(0xfffe1f5c4),
-                                            ],
-                                          ),
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(20),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: [
-                                            ButtonPlayWidget(
-                                                buttonplay: ElavetedButonBuy(
-                                                    page: () {
-                                                      _controller.open();
-                                                      setState(() {
-
-                                                      });
-
-                                                    }, text: "109.000"))
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Colors.black26,
-                                          offset: Offset(0, 4),
-                                          blurRadius: 5.0)
-                                    ],
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.7, 1.5),
-                                      colors: <Color>[
-                                        Color(0xffffeecda3),
-                                        Color(0xfffef629f),
-                                      ],
-                                    ),
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 1,
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '100',
-                                            image: 'assets/gold-bars.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '200',
-                                            image: 'assets/money.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '300',
-                                            image: 'assets/idea.png',
-                                          )
-                                        ],
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.all(5),
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.black26,
-                                                offset: Offset(0, 4),
-                                                blurRadius: 5.0)
-                                          ],
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topLeft,
-                                            end: Alignment(0.7, 1.5),
-                                            colors: <Color>[
-                                              Color(0xffffede574),
-                                              Color(0xfffe1f5c4),
-                                            ],
-                                          ),
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(20),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: [
-                                            ButtonPlayWidget(
-                                                buttonplay: ElavetedButonBuy(
-                                                    page: () {
-                                                      _controller.open();
-                                                      setState(() {
-
-                                                      });
-
-                                                    }, text: "109.000"))
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Colors.black26,
-                                          offset: Offset(0, 4),
-                                          blurRadius: 5.0)
-                                    ],
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.7, 1.5),
-                                      colors: <Color>[
-                                        Color(0xffffeecda3),
-                                        Color(0xfffef629f),
-                                      ],
-                                    ),
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 1,
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '100',
-                                            image: 'assets/gold-bars.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '200',
-                                            image: 'assets/money.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '300',
-                                            image: 'assets/idea.png',
-                                          )
-                                        ],
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.all(5),
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.black26,
-                                                offset: Offset(0, 4),
-                                                blurRadius: 5.0)
-                                          ],
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topLeft,
-                                            end: Alignment(0.7, 1.5),
-                                            colors: <Color>[
-                                              Color(0xffffede574),
-                                              Color(0xfffe1f5c4),
-                                            ],
-                                          ),
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(20),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: [
-                                            ButtonPlayWidget(
-                                                buttonplay: ElavetedButonBuy(
-                                                    page: () {
-                                                      _controller.open();
-                                                      setState(() {
-
-                                                      });
-
-                                                    }, text: "109.000"))
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                          color: Colors.black26,
-                                          offset: Offset(0, 4),
-                                          blurRadius: 5.0)
-                                    ],
-                                    gradient: LinearGradient(
-                                      begin: Alignment.topLeft,
-                                      end: Alignment(0.7, 1.5),
-                                      colors: <Color>[
-                                        Color(0xffffeecda3),
-                                        Color(0xfffef629f),
-                                      ],
-                                    ),
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(20),
-                                  ),
-                                  width: MediaQuery.of(context).size.width / 1,
-                                  child: Column(
-                                    children: [
-                                      Row(
-                                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                        children: [
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '100',
-                                            image: 'assets/gold-bars.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '200',
-                                            image: 'assets/money.png',
-                                          ),
-                                          IconShop(
-                                            title: 'IconMoney',
-                                            price: '300',
-                                            image: 'assets/idea.png',
-                                          )
-                                        ],
-                                      ),
-                                      Container(
-                                        margin: EdgeInsets.all(5),
-                                        decoration: BoxDecoration(
-                                          boxShadow: [
-                                            BoxShadow(
-                                                color: Colors.black26,
-                                                offset: Offset(0, 4),
-                                                blurRadius: 5.0)
-                                          ],
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topLeft,
-                                            end: Alignment(0.7, 1.5),
-                                            colors: <Color>[
-                                              Color(0xffffede574),
-                                              Color(0xfffe1f5c4),
-                                            ],
-                                          ),
-                                          color: Colors.white,
-                                          borderRadius: BorderRadius.circular(20),
-                                        ),
-                                        child: Row(
-                                          mainAxisAlignment: MainAxisAlignment.end,
-                                          children: [
-                                            ButtonPlayWidget(
-                                                buttonplay: ElavetedButonBuy(
-                                                    page: () {
-                                                      _controller.open();
-                                                      setState(() {
-
-                                                      });
-
-                                                    }, text: "109.000"))
-                                          ],
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 80,
-                                child: Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.all(10),
+                                  Container(
+                                    margin: EdgeInsets.all(5),
                                     decoration: BoxDecoration(
                                       boxShadow: [
                                         BoxShadow(
@@ -470,221 +97,588 @@ class _ScreenShopState extends State<ScreenShop> {
                                         begin: Alignment.topLeft,
                                         end: Alignment(0.7, 1.5),
                                         colors: <Color>[
-                                          Color(0xffffaaffa9),
-                                          Color(0xfff11ffbd),
+                                          Color(0xffffede574),
+                                          Color(0xfffe1f5c4),
                                         ],
                                       ),
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(20),
                                     ),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                      mainAxisAlignment: MainAxisAlignment.end,
                                       children: [
-                                        IconShop2(
-                                            title: '100',
-                                            price: '100',
-                                            image: 'assets/money.png'),
                                         ButtonPlayWidget(
-                                            buttonplay:
-                                            ElavetedButonBuy(page: () {
-                                              _controller.open();
-                                              setState(() {
-
-                                              });}, text: "100000"))
+                                            buttonplay: ElavetedButonBuy(
+                                                page: () {
+                                                  _controller.open();
+                                                  setState(() {});
+                                                },
+                                                text: money))
                                       ],
                                     ),
-                                  ),
-                                ),
+                                  )
+                                ],
                               ),
-                              Container(
-                                height: 80,
-                                child: Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.black26,
-                                            offset: Offset(0, 4),
-                                            blurRadius: 5.0)
-                                      ],
-                                      gradient: LinearGradient(
-                                        begin: Alignment.topLeft,
-                                        end: Alignment(0.7, 1.5),
-                                        colors: <Color>[
-                                          Color(0xffffaaffa9),
-                                          Color(0xfff11ffbd),
-                                        ],
-                                      ),
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: [
-                                        IconShop2(
-                                            title: '100',
-                                            price: '100',
-                                            image: 'assets/idea.png'),
-                                        ButtonPlayWidget(
-                                            buttonplay:
-                                            ElavetedButonBuy(page: () {
-                                              _controller.open();
-                                              setState(() {
-
-                                              });
-                                            }, text: "109.000"))
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 80,
-                                child: Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.black26,
-                                            offset: Offset(0, 4),
-                                            blurRadius: 5.0)
-                                      ],
-                                      gradient: LinearGradient(
-                                        begin: Alignment.topLeft,
-                                        end: Alignment(0.7, 1.5),
-                                        colors: <Color>[
-                                          Color(0xffffaaffa9),
-                                          Color(0xfff11ffbd),
-                                        ],
-                                      ),
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: [
-                                        IconShop2(
-                                            title: '100',
-                                            price: '100',
-                                            image: 'assets/idea.png'),
-                                        ButtonPlayWidget(
-                                            buttonplay:
-                                            ElavetedButonBuy(page: () {
-                                              _controller.open();
-                                              setState(() {
-
-                                              });
-                                            }, text: "109.000"))
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 80,
-                                child: Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.black26,
-                                            offset: Offset(0, 4),
-                                            blurRadius: 5.0)
-                                      ],
-                                      gradient: LinearGradient(
-                                        begin: Alignment.topLeft,
-                                        end: Alignment(0.7, 1.5),
-                                        colors: <Color>[
-                                          Color(0xffffaaffa9),
-                                          Color(0xfff11ffbd),
-                                        ],
-                                      ),
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: [
-                                        IconShop2(
-                                            title: '100',
-                                            price: '100',
-                                            image: 'assets/idea.png'),
-                                        ButtonPlayWidget(
-                                            buttonplay:
-                                            ElavetedButonBuy(page: () {
-                                              _controller.open();
-                                              setState(() {
-
-                                              });
-                                            }, text: "109.000"))
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                height: 80,
-                                child: Expanded(
-                                  child: Container(
-                                    margin: EdgeInsets.all(10),
-                                    decoration: BoxDecoration(
-                                      boxShadow: [
-                                        BoxShadow(
-                                            color: Colors.black26,
-                                            offset: Offset(0, 4),
-                                            blurRadius: 5.0)
-                                      ],
-                                      gradient: LinearGradient(
-                                        begin: Alignment.topLeft,
-                                        end: Alignment(0.7, 1.5),
-                                        colors: <Color>[
-                                          Color(0xffffaaffa9),
-                                          Color(0xfff11ffbd),
-                                        ],
-                                      ),
-                                      color: Colors.white,
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
-                                    child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                                      children: [
-                                        IconShop2(
-                                            title: '100',
-                                            price: '100',
-                                            image: 'assets/idea.png'),
-                                        ButtonPlayWidget(
-                                            buttonplay:
-                                            ElavetedButonBuy(page: () {
-                                              _controller.open();
-                                              setState(() {
-
-                                              });
-                                            }, text: "109.000"))
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                              ),
-
-                            ],
+                            ),
                           ),
-                        ),
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(0, 4),
+                                      blurRadius: 5.0)
+                                ],
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment(0.7, 1.5),
+                                  colors: <Color>[
+                                    Color(0xffffeecda3),
+                                    Color(0xfffef629f),
+                                  ],
+                                ),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              width: MediaQuery.of(context).size.width / 1,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '100',
+                                        image: 'assets/gold-bars.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '200',
+                                        image: 'assets/money.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '300',
+                                        image: 'assets/idea.png',
+                                      )
+                                    ],
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Colors.black26,
+                                            offset: Offset(0, 4),
+                                            blurRadius: 5.0)
+                                      ],
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topLeft,
+                                        end: Alignment(0.7, 1.5),
+                                        colors: <Color>[
+                                          Color(0xffffede574),
+                                          Color(0xfffe1f5c4),
+                                        ],
+                                      ),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        ButtonPlayWidget(
+                                            buttonplay: ElavetedButonBuy(
+                                                page: () {
+                                                  _controller.open();
+                                                  setState(() {});
+                                                },
+                                                text: "109.000"))
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(0, 4),
+                                      blurRadius: 5.0)
+                                ],
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment(0.7, 1.5),
+                                  colors: <Color>[
+                                    Color(0xffffeecda3),
+                                    Color(0xfffef629f),
+                                  ],
+                                ),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              width: MediaQuery.of(context).size.width / 1,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '100',
+                                        image: 'assets/gold-bars.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '200',
+                                        image: 'assets/money.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '300',
+                                        image: 'assets/idea.png',
+                                      )
+                                    ],
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Colors.black26,
+                                            offset: Offset(0, 4),
+                                            blurRadius: 5.0)
+                                      ],
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topLeft,
+                                        end: Alignment(0.7, 1.5),
+                                        colors: <Color>[
+                                          Color(0xffffede574),
+                                          Color(0xfffe1f5c4),
+                                        ],
+                                      ),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        ButtonPlayWidget(
+                                            buttonplay: ElavetedButonBuy(
+                                                page: () {
+                                                  _controller.open();
+                                                  setState(() {});
+                                                },
+                                                text: "109.000"))
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(0, 4),
+                                      blurRadius: 5.0)
+                                ],
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment(0.7, 1.5),
+                                  colors: <Color>[
+                                    Color(0xffffeecda3),
+                                    Color(0xfffef629f),
+                                  ],
+                                ),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              width: MediaQuery.of(context).size.width / 1,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '100',
+                                        image: 'assets/gold-bars.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '200',
+                                        image: 'assets/money.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '300',
+                                        image: 'assets/idea.png',
+                                      )
+                                    ],
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Colors.black26,
+                                            offset: Offset(0, 4),
+                                            blurRadius: 5.0)
+                                      ],
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topLeft,
+                                        end: Alignment(0.7, 1.5),
+                                        colors: <Color>[
+                                          Color(0xffffede574),
+                                          Color(0xfffe1f5c4),
+                                        ],
+                                      ),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        ButtonPlayWidget(
+                                            buttonplay: ElavetedButonBuy(
+                                                page: () {
+                                                  _controller.open();
+                                                  setState(() {});
+                                                },
+                                                text: "109.000"))
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(8),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.black26,
+                                      offset: Offset(0, 4),
+                                      blurRadius: 5.0)
+                                ],
+                                gradient: LinearGradient(
+                                  begin: Alignment.topLeft,
+                                  end: Alignment(0.7, 1.5),
+                                  colors: <Color>[
+                                    Color(0xffffeecda3),
+                                    Color(0xfffef629f),
+                                  ],
+                                ),
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                              width: MediaQuery.of(context).size.width / 1,
+                              child: Column(
+                                children: [
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '100',
+                                        image: 'assets/gold-bars.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '200',
+                                        image: 'assets/money.png',
+                                      ),
+                                      IconShop(
+                                        title: 'IconMoney',
+                                        price: '300',
+                                        image: 'assets/idea.png',
+                                      )
+                                    ],
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.all(5),
+                                    decoration: BoxDecoration(
+                                      boxShadow: [
+                                        BoxShadow(
+                                            color: Colors.black26,
+                                            offset: Offset(0, 4),
+                                            blurRadius: 5.0)
+                                      ],
+                                      gradient: LinearGradient(
+                                        begin: Alignment.topLeft,
+                                        end: Alignment(0.7, 1.5),
+                                        colors: <Color>[
+                                          Color(0xffffede574),
+                                          Color(0xfffe1f5c4),
+                                        ],
+                                      ),
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        ButtonPlayWidget(
+                                            buttonplay: ElavetedButonBuy(
+                                                page: () {
+                                                  _controller.open();
+                                                  setState(() {});
+                                                },
+                                                text: "109.000"))
+                                      ],
+                                    ),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 80,
+                            child: Expanded(
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0, 4),
+                                        blurRadius: 5.0)
+                                  ],
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.7, 1.5),
+                                    colors: <Color>[
+                                      Color(0xffffaaffa9),
+                                      Color(0xfff11ffbd),
+                                    ],
+                                  ),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    IconShop2(
+                                        title: '100',
+                                        price: '100',
+                                        image: 'assets/money.png'),
+                                    ButtonPlayWidget(
+                                        buttonplay: ElavetedButonBuy(
+                                            page: () {
+                                              _controller.open();
+                                              setState(() {});
+                                            },
+                                            text: "100000"))
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 80,
+                            child: Expanded(
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0, 4),
+                                        blurRadius: 5.0)
+                                  ],
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.7, 1.5),
+                                    colors: <Color>[
+                                      Color(0xffffaaffa9),
+                                      Color(0xfff11ffbd),
+                                    ],
+                                  ),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    IconShop2(
+                                        title: '100',
+                                        price: '100',
+                                        image: 'assets/idea.png'),
+                                    ButtonPlayWidget(
+                                        buttonplay: ElavetedButonBuy(
+                                            page: () {
+                                              _controller.open();
+                                              setState(() {});
+                                            },
+                                            text: "109.000"))
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 80,
+                            child: Expanded(
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0, 4),
+                                        blurRadius: 5.0)
+                                  ],
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.7, 1.5),
+                                    colors: <Color>[
+                                      Color(0xffffaaffa9),
+                                      Color(0xfff11ffbd),
+                                    ],
+                                  ),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    IconShop2(
+                                        title: '100',
+                                        price: '100',
+                                        image: 'assets/idea.png'),
+                                    ButtonPlayWidget(
+                                        buttonplay: ElavetedButonBuy(
+                                            page: () {
+                                              _controller.open();
+                                              setState(() {});
+                                            },
+                                            text: "109.000"))
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 80,
+                            child: Expanded(
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0, 4),
+                                        blurRadius: 5.0)
+                                  ],
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.7, 1.5),
+                                    colors: <Color>[
+                                      Color(0xffffaaffa9),
+                                      Color(0xfff11ffbd),
+                                    ],
+                                  ),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    IconShop2(
+                                        title: '100',
+                                        price: '100',
+                                        image: 'assets/idea.png'),
+                                    ButtonPlayWidget(
+                                        buttonplay: ElavetedButonBuy(
+                                            page: () {
+                                              _controller.open();
+                                              setState(() {});
+                                            },
+                                            text: "109.000"))
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            height: 80,
+                            child: Expanded(
+                              child: Container(
+                                margin: EdgeInsets.all(10),
+                                decoration: BoxDecoration(
+                                  boxShadow: [
+                                    BoxShadow(
+                                        color: Colors.black26,
+                                        offset: Offset(0, 4),
+                                        blurRadius: 5.0)
+                                  ],
+                                  gradient: LinearGradient(
+                                    begin: Alignment.topLeft,
+                                    end: Alignment(0.7, 1.5),
+                                    colors: <Color>[
+                                      Color(0xffffaaffa9),
+                                      Color(0xfff11ffbd),
+                                    ],
+                                  ),
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceAround,
+                                  children: [
+                                    IconShop2(
+                                        title: '100',
+                                        price: '100',
+                                        image: 'assets/idea.png'),
+                                    ButtonPlayWidget(
+                                        buttonplay: ElavetedButonBuy(
+                                            page: () {
+                                              _controller.open();
+                                              setState(() {});
+                                            },
+                                            text: "109.000"))
+                                  ],
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
-                    MyFooterRoom(),
-
-                  ],
+                  ),
                 ),
-              ),
-              _buildBottomDrawer(context),
-            ],
-          )
-      ),
+                MyFooterRoom(),
+              ],
+            ),
+          ),
+          _buildBottomDrawer(context),
+        ],
+      )),
     );
   }
+
   Widget _buildBottomDrawer(BuildContext context) {
     return BottomDrawer(
       header: _buildBottomDrawerHead(context),
@@ -724,12 +718,12 @@ class _ScreenShopState extends State<ScreenShop> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Google', style: GoogleFonts.alegreya(fontSize: 18)),
-                  IconButton(onPressed: (){
-                    _controller.close();
-                    setState(() {
-
-                    });
-                  }, icon: Icon(Icons.close))
+                  IconButton(
+                      onPressed: () {
+                        _controller.close();
+                        setState(() {});
+                      },
+                      icon: Icon(Icons.close))
                 ],
               )),
               containerRow(Row(
@@ -758,41 +752,48 @@ class _ScreenShopState extends State<ScreenShop> {
                           fontSize: 25, fontWeight: FontWeight.bold)),
                 ],
               )),
-              containerRow(Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(10),
-                        child: Image.asset(
-                          'assets/momo.png',
-                          width: 60,
+              containerRow(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Row(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(
+                            'assets/momo.png',
+                            width: 60,
+                          ),
                         ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Text('MoMo e-wallet: ****123',
-                          style: GoogleFonts.alegreya(fontSize: 18))
-                    ],
-                  ),
-                  IconButton(
-                      onPressed: () {
-                        Navigator.of(context)
-                            .popUntil((route) => route.isFirst);
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AddPayMethod()));
-                      },
-                      icon: Icon(Icons.navigate_next)),
-                ],
-              ),),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text('MoMo e-wallet: ****123',
+                            style: GoogleFonts.alegreya(fontSize: 18))
+                      ],
+                    ),
+                    IconButton(
+                        onPressed: () {
+                          Navigator.of(context)
+                              .popUntil((route) => route.isFirst);
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AddPayMethod()));
+                        },
+                        icon: Icon(Icons.navigate_next)),
+                  ],
+                ),
+              ),
               SizedBox(
                 height: 10,
               ),
-              ButtonGreen(() => () {}, 'Buy ')
+              ButtonGreen(
+                  () => () {
+                        _controller.close();
+                        setState(() {});
+                      },
+                  'Buy ')
             ],
           ),
         ),
@@ -801,19 +802,14 @@ class _ScreenShopState extends State<ScreenShop> {
   }
 
   containerRow(Row row) => Container(
-    padding: EdgeInsets.all(10),
-    decoration: BoxDecoration(
-      border: Border(bottom: BorderSide(color: Colors.grey, width: 0.5)),
-    ),
-    child: row,
-  );
-
-
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(color: Colors.grey, width: 0.5)),
+        ),
+        child: row,
+      );
 
   double _headerHeight = 0;
   double _bodyHeight = 300;
   BottomDrawerController _controller = BottomDrawerController();
-
-
 }
-

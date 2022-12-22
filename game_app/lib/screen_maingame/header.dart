@@ -3,6 +3,7 @@ import '../screen_maingame/screen_maingame.dart';
 import '../button_game/button_game.dart';
 import '../button_game/button_avatar.dart';
 import '../button_game/button_setting.dart';
+import 'package:lottie/lottie.dart';
 
 class MyHeader extends StatefulWidget {
   const MyHeader({super.key});
@@ -20,15 +21,6 @@ class _MyHeaderState extends State<MyHeader> {
         decoration: BoxDecoration(
           image: DecorationImage(
               image: AssetImage("assets/header.jpg"), fit: BoxFit.cover),
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment(0.7, 1.5),
-            colors: <Color>[
-              Color(0xfff9c58d),
-              Color(0xfffa8cff),
-              Color(0xffffebf4f5),
-            ],
-          ),
           boxShadow: [
             BoxShadow(
               color: Color.fromARGB(255, 255, 255, 255).withOpacity(0.5),
@@ -51,6 +43,7 @@ class _MyHeaderState extends State<MyHeader> {
               button: ElavetedButon(
                 text: "Hear",
                 page: () {
+                  Navigator.pop(context);
                   Navigator.of(context).push(MaterialPageRoute(
                     builder: (context) => ScreenMainGame(),
                   ));
@@ -62,15 +55,15 @@ class _MyHeaderState extends State<MyHeader> {
               width: 100,
               img: 'assets/account.png',
             ),
-            Container(
-              child: ButtonWidget(
-                button: ElavetedButon(
-                    text: "Coins",
-                    page: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ScreenMainGame(),
-                      ));
-                    }),
+            ButtonWidget(
+              button: ElavetedButon(
+                text: "Golds",
+                page: () {
+                  Navigator.pop(context);
+                  Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => ScreenMainGame(),
+                  ));
+                },
               ),
             ),
             ButtonSetting(

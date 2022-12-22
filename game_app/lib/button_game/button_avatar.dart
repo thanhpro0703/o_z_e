@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_account/screen_account.dart';
 
 class ButtonAvatar extends StatelessWidget {
   const ButtonAvatar(
@@ -46,7 +47,13 @@ class ButtonAvatar extends StatelessWidget {
                   // elevation: MaterialStateProperty.all(3),
                   shadowColor: MaterialStateProperty.all(Colors.transparent),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => Screen_Acount(),
+                      ));
+                },
                 child: Image.asset(
                   img,
                   width: 45,

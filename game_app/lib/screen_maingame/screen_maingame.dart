@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:game_app/screen_maingame/content.dart';
 import 'package:game_app/screen_maingame/footer.dart';
 import 'header.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class ScreenMainGame extends StatefulWidget {
   const ScreenMainGame({super.key});
@@ -11,6 +12,7 @@ class ScreenMainGame extends StatefulWidget {
 }
 
 class _ScreenMainGameState extends State<ScreenMainGame> {
+  final player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

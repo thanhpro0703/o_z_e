@@ -19,6 +19,7 @@ class _ElavetedButonState extends State<ElavetedButon> {
             borderRadius: BorderRadius.circular(20.0),
           ),
         ),
+        minimumSize: MaterialStateProperty.all(Size(100, 50)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
         elevation: MaterialStateProperty.all(3),
         shadowColor:
@@ -29,13 +30,6 @@ class _ElavetedButonState extends State<ElavetedButon> {
         padding: const EdgeInsets.all(8.0),
         child: Row(
           children: <Widget>[
-            // Container(
-            //   child: Icon(
-            //     Icons.favorite_border_rounded,
-            //     size: 15,
-            //     color: Color.fromARGB(255, 0, 0, 0),
-            //   ),
-            // ),
             Container(
                 child: Text(
               widget.text,

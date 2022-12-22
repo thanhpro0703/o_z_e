@@ -49,8 +49,8 @@ class _MyFormSignIn extends State<Form_SignIn> {
                   ]),
                   Container(
                     margin: EdgeInsets.fromLTRB(0, 60, 0, 10),
-                    height: 60.0,
-                    width: 330,
+                    height: MediaQuery.of(context).size.width / 6,
+                    width: MediaQuery.of(context).size.width / 1.3,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(50),
                         gradient: LinearGradient(
@@ -66,15 +66,15 @@ class _MyFormSignIn extends State<Form_SignIn> {
                         child: Text(
                           'Sign Up With Email',
                           style: TextStyle(
-                              fontSize: 23,
+                              fontSize: 21,
                               fontFamily: 'UTM Aptima',
                               color: Colors.cyanAccent),
                         )),
                   ),
                   Container(
                       margin: EdgeInsets.fromLTRB(0, 10, 0, 40),
-                      height: 60.0,
-                      width: 330,
+                      height: MediaQuery.of(context).size.width / 6,
+                      width: MediaQuery.of(context).size.width / 1.3,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
                           gradient: LinearGradient(
@@ -96,12 +96,12 @@ class _MyFormSignIn extends State<Form_SignIn> {
                           label: const Text(
                             'Continue With Facebook',
                             style: TextStyle(
-                                fontSize: 23,
+                                fontSize: 22,
                                 fontFamily: 'UTM Aptima',
                                 color: Colors.white),
                           ))),
                   Container(
-                    margin: EdgeInsets.only(top: 120),
+                    margin: EdgeInsets.only(top: 50),
                     child: const Text(
                       'Already have a Oze account?',
                       style: TextStyle(fontSize: 15, color: Colors.black),

@@ -1,8 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/screen_choose_level/screen_choose_level.dart';
 import 'package:game_app/screen_playgame/screen_playgame.dart';
 import 'package:game_app/screen_room/screen_room.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import '../screen_room/footer_room.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class MyContent extends StatefulWidget {
   const MyContent({super.key});
@@ -12,6 +15,7 @@ class MyContent extends StatefulWidget {
 }
 
 class _MyContentState extends State<MyContent> {
+  final player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -23,15 +27,6 @@ class _MyContentState extends State<MyContent> {
                 image: AssetImage("assets/background-home.png"),
                 fit: BoxFit.fill,
               ),
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment(0.7, 1.5),
-                colors: <Color>[
-                  Color(0xffff84ffc9),
-                  Color(0xffffebf4f5),
-                  Color(0xfffff6cfbe),
-                ],
-              ),
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -40,6 +35,8 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "P L A Y",
                     page: () {
+                      player.play(AssetSource('play.mp3'));
+                      Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => ScreenSinglePlay(),
                       ));
@@ -50,6 +47,8 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "R O O M",
                     page: () {
+                      player.play(AssetSource('play.mp3'));
+                      Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => ScreenRoom(),
                       ));
@@ -60,8 +59,10 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "R A N K",
                     page: () {
+                      player.play(AssetSource('play.mp3'));
+                      Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => ScreenPlayGame(),
+                        builder: (context) => Screen_Choose_Level(),
                       ));
                     },
                   ),
@@ -92,7 +93,6 @@ class _ElavetedButonPlayState extends State<ElavetedButonPlay> {
         ),
         minimumSize: MaterialStateProperty.all(Size(200, 80)),
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
-        // elevation: MaterialStateProperty.all(3),
         shadowColor: MaterialStateProperty.all(Colors.transparent),
       ),
       onPressed: widget.page,
@@ -105,7 +105,6 @@ class _ElavetedButonPlayState extends State<ElavetedButonPlay> {
           widget.text,
           style: TextStyle(
             fontSize: 18,
-            // fontWeight: FontWeight.w700,
             color: Colors.white,
           ),
         ),

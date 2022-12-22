@@ -15,8 +15,6 @@ class _MyHeaderPlayGameState extends State<MyHeaderPlayGame> {
       flex: 1,
       child: Container(
         decoration: BoxDecoration(
-          /*  image: DecorationImage(
-              image: AssetImage("assets/header.jpg"), fit: BoxFit.cover),*/
           gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment(0.7, 1.5),
@@ -100,9 +98,9 @@ class _MyHeaderPlayGameState extends State<MyHeaderPlayGame> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
-                          Text("data"),
+                          Text("5"),
                           Text(":"),
-                          Text("data"),
+                          Text("5"),
                         ],
                       )),
                 ),

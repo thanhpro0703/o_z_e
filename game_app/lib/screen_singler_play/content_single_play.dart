@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:game_app/model/dbcontext.dart';
+import 'package:game_app/model/entry.dart';
+import 'package:game_app/screen_playgame/screen_playgame.dart';
 import '../button_game/button_game.dart';
 
 class MyContentSinglePlay extends StatefulWidget {
-  const MyContentSinglePlay({super.key});
+  const MyContentSinglePlay({
+    super.key,
+  });
 
   @override
   State<MyContentSinglePlay> createState() => _MyContentSinglePlayState();
@@ -28,9 +33,11 @@ class _MyContentSinglePlayState extends State<MyContentSinglePlay> {
                 clipBehavior: Clip.antiAliasWithSaveLayer,
                 primary: true,
                 scrollDirection: Axis.horizontal,
-                itemCount: 8,
+                itemCount: ListDbPlayLevels.listPlayLevels.length,
                 itemBuilder: ((context, index) {
-                  return MySquare();
+                  return MySquare(
+                    playlevel: ListDbPlayLevels.listPlayLevels[index],
+                  );
                 })),
           )),
     );
@@ -38,8 +45,8 @@ class _MyContentSinglePlayState extends State<MyContentSinglePlay> {
 }
 
 class MySquare extends StatefulWidget {
-  const MySquare({super.key});
-
+  const MySquare({super.key, required this.playlevel});
+  final PlayLevels playlevel;
   @override
   State<MySquare> createState() => _MySquareState();
 }
@@ -90,7 +97,11 @@ class _MySquareState extends State<MySquare> {
                         heightCC = 20;
                       });
                     },
-                    child: Text("Cửa 1"),
+                    child: Row(
+                      children: [
+                        Text(widget.playlevel.Level),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -155,7 +166,7 @@ class _MySquareState extends State<MySquare> {
                               child: ButtonWidget(
                                   button: ElavetedButon(
                                 page: () {},
-                                text: "Chọn chủ đề",
+                                text: widget.playlevel.Topic,
                               )),
                             ),
                           ),
@@ -165,7 +176,12 @@ class _MySquareState extends State<MySquare> {
                               padding: const EdgeInsets.all(8.0),
                               child: ButtonWidget(
                                   button: ElavetedButon(
-                                page: () {},
+                                page: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+                                    builder: (context) => ScreenPlayGame(
+                                        level: widget.playlevel.Level),
+                                  ));
+                                },
                                 text: "Play",
                               )),
                             ),
@@ -197,120 +213,6 @@ class _MySquareState extends State<MySquare> {
                       size: 30,
                     )),
               )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class MySquare2 extends StatefulWidget {
-  const MySquare2({super.key});
-
-  @override
-  State<MySquare2> createState() => _MySquare2State();
-}
-
-class _MySquare2State extends State<MySquare2> {
-  double w = 200;
-  double h = 100;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: AnimatedContainer(
-        duration: Duration(milliseconds: 900),
-        curve: Curves.easeOutBack,
-        decoration: BoxDecoration(
-            color: Color.fromARGB(255, 240, 253, 52),
-            borderRadius: BorderRadius.circular(20)),
-        width: w,
-        height: h,
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Expanded(
-                flex: 3,
-                child: ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      w = 400;
-                      h = 130;
-                    });
-                  },
-                  child: Text("Cửa 2"),
-                ),
-              ),
-              IconButton(
-                  onPressed: () {
-                    setState(() {
-                      w = 200;
-                      h = 100;
-                    });
-                  },
-                  icon: Icon(
-                    Icons.close,
-                    size: 30,
-                  ))
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class MySquare3 extends StatefulWidget {
-  const MySquare3({super.key});
-
-  @override
-  State<MySquare3> createState() => _MySquare3State();
-}
-
-class _MySquare3State extends State<MySquare3> {
-  double w = 200;
-  double h = 100;
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: AnimatedContainer(
-        duration: Duration(milliseconds: 900),
-        curve: Curves.easeInOutCubicEmphasized,
-        decoration: BoxDecoration(
-            color: Color.fromARGB(255, 253, 52, 169),
-            borderRadius: BorderRadius.circular(20)),
-        width: w,
-        height: h,
-        child: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Expanded(
-                flex: 3,
-                child: ElevatedButton(
-                  onPressed: () {
-                    setState(() {
-                      w = 400;
-                      h = 130;
-                    });
-                  },
-                  child: Text("Cửa 2"),
-                ),
-              ),
-              IconButton(
-                  onPressed: () {
-                    setState(() {
-                      w = 200;
-                      h = 100;
-                    });
-                  },
-                  icon: Icon(
-                    Icons.close,
-                    size: 30,
-                  ))
             ],
           ),
         ),
