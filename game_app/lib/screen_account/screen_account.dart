@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,16 @@ class Screen_Acount extends StatefulWidget {
 }
 
 class _MyScreenAccount extends State<Screen_Acount> {
+
+ 
+  @override
+  void initState() {
+    // TODO: implement initState
+    getDocId();
+    super.initState();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
