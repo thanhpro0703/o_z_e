@@ -244,11 +244,11 @@ class _QuizScreenState extends State<QuizScreen> {
                                   }
                                   print(points);
 
-                                  player.play(AssetSource('login.mp3'));
+                                  player.play(AssetSource('conrec.mp3'));
                                 } else {
                                   optionsColor[index] =
                                       Color.fromARGB(255, 255, 108, 97);
-                                  player.play(AssetSource('sai.wav'));
+                                  player.play(AssetSource('sai.mp3'));
                                 }
 
                                 if (currentQuestionIndex <
