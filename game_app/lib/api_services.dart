@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:audioplayers/audioplayers.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:http/http.dart' as http;
 import 'package:audioplayers/audioplayers.dart';
 
@@ -42,4 +43,37 @@ Future<dynamic> getHighScore() async {
     print(highScore);
   }
   return highScore;
+}
+
+Future<dynamic> totalScore() async{
+  var data;
+  int total = 0;
+  var link =
+      "https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json";
+  var res = await http.get(Uri.parse(link));
+  if (res.statusCode == 200) {
+    data = jsonDecode(res.body.toString());
+    print(data);
+  }
+  if (data == null || data.isEmpty) {
+    return 0;
+  }
+  for (var item in data.values) {
+    if(!item['score'].toString().isEmpty){
+      total += int.parse(item['score'].toString());
+    }
+    print(total);
+  }
+  return total;
+}
+
+
+Future adduserDetails(
+  String userName,
+  int point,
+)async{
+  await FirebaseFirestore.instance.collection('users').add({
+    'username':userName,
+    'point':point
+  });
 }
