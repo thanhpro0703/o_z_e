@@ -44,6 +44,8 @@ dependencies:
   basic_utils: ^5.4.2
   sqflite:
   firebase_database: ^10.0.7
+  flutter_sound: ^9.2.13
+  audioplayers: ^1.1.1
 
 dev_dependencies:
   flutter_test:

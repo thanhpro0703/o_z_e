@@ -9,6 +9,7 @@ import 'package:game_app/screen_play_group/screen_play_group.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import 'package:game_app/screen_solo/screen_solo.dart';
 import '../button_game/button_game.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class ScreenSetting extends StatefulWidget {
   const ScreenSetting({super.key});
@@ -18,6 +19,20 @@ class ScreenSetting extends StatefulWidget {
 }
 
 class _ScreenSettingState extends State<ScreenSetting> {
+  final player = AudioPlayer();
+  bool isPlaying = false;
+
+  @override
+  void initState() {
+    super.initState();
+
+    player.onPlayerStateChanged.listen((state) {
+      setState(() {
+        isPlaying = state == PlayerState.playing;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -50,10 +65,18 @@ class _ScreenSettingState extends State<ScreenSetting> {
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       ButtonSetting(
-                        onPressed: () {},
+                        onPressed: () {
+                          if (isPlaying) {
+                            player.pause();
+                          } else {
+                            player.play(AssetSource('dreams.mp3'));
+                          }
+                        },
                         width: 65,
                         height: 65,
-                        img: 'assets/musical-note.png',
+                        img: isPlaying
+                            ? 'assets/pausee.png'
+                            : 'assets/musical-note.png',
                         colors: [
                           Color(0xffff2980b9),
                           Color(0xfff6dd5fa),

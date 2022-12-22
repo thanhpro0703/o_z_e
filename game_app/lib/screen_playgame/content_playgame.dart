@@ -13,20 +13,21 @@ import '../const/images.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
 import '../const/text_style.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class QuizScreen extends StatefulWidget {
-  const QuizScreen({Key? key}) : super(key: key);
-
+  QuizScreen({Key? key, required this.level}) : super(key: key);
+  String level;
   @override
   State<QuizScreen> createState() => _QuizScreenState();
 }
 
 class _QuizScreenState extends State<QuizScreen> {
   var currentQuestionIndex = 0;
-  int seconds = 20;
+  int seconds = 15;
   Timer? timer;
   late Future quiz;
-
+  final player = AudioPlayer();
   int points = 0;
 
   var isLoaded = false;
@@ -112,7 +113,12 @@ class _QuizScreenState extends State<QuizScreen> {
               gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
-            colors: [blue, darkBlue],
+            colors: [
+              Color(0xff928DAB),
+              Color(0xff56CCF2),
+              Color(0xfff39060),
+              Color(0xffffb56b),
+            ],
           )),
           child: FutureBuilder(
             future: quiz,
@@ -121,7 +127,7 @@ class _QuizScreenState extends State<QuizScreen> {
                 var data = snapshot.data["results"];
                 int hardQuestionsCount = 0;
                 for (var item in data) {
-                  if (item["difficulty"] == "medium") {
+                  if (item["level"] == widget.level) {
                     hardQuestionsCount++;
                     if (hardQuestionsList.length < hardQuestionsCount) {
                       hardQuestionsList.add(item);
@@ -168,8 +174,8 @@ class _QuizScreenState extends State<QuizScreen> {
                                   size: 24,
                                   text: "$seconds"),
                               SizedBox(
-                                width: 80,
-                                height: 80,
+                                width: 50,
+                                height: 50,
                                 child: CircularProgressIndicator(
                                   value: seconds / 15,
                                   valueColor: const AlwaysStoppedAnimation(
@@ -184,9 +190,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               border: Border.all(color: lightgrey, width: 2),
                             ),
                             child: TextButton.icon(
-                                onPressed: () {
-                                  getHighScore();
-                                },
+                                onPressed: () {},
                                 icon: const Icon(CupertinoIcons.heart_fill,
                                     color: Colors.white, size: 18),
                                 label: normalText(
@@ -194,7 +198,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                     size: 14,
                                     text:
                                         hardQuestionsList[currentQuestionIndex]
-                                            ["correct_answer"])),
+                                            ["difficulty"])),
                           ),
                         ],
                       ),
@@ -203,7 +207,7 @@ class _QuizScreenState extends State<QuizScreen> {
                           alignment: Alignment.centerLeft,
                           child: normalText(
                               color: lightgrey,
-                              size: 18,
+                              size: 19,
                               text:
                                   "Question ${currentQuestionIndex + 1} of ${hardQuestionsList.length}")),
                       const SizedBox(height: 20),
@@ -225,10 +229,26 @@ class _QuizScreenState extends State<QuizScreen> {
                               setState(() {
                                 if (answer.toString() ==
                                     optionsList[index].toString()) {
-                                  optionsColor[index] = Colors.green;
-                                  points = points + 10;
+                                  optionsColor[index] =
+                                      Color.fromARGB(255, 140, 252, 144);
+                                  if (seconds == 15) {
+                                    points = points + 30;
+                                  } else if (seconds == 14) {
+                                    points = points + 25;
+                                  } else if (seconds == 13) {
+                                    points = points + 20;
+                                  } else if (seconds == 12) {
+                                    points = points + 15;
+                                  } else {
+                                    points = points + 10;
+                                  }
+                                  print(points);
+
+                                  player.play(AssetSource('conrec.mp3'));
                                 } else {
-                                  optionsColor[index] = Colors.red;
+                                  optionsColor[index] =
+                                      Color.fromARGB(255, 255, 108, 97);
+                                  player.play(AssetSource('sai.mp3'));
                                 }
 
                                 if (currentQuestionIndex <

@@ -3,6 +3,7 @@ import 'package:game_app/screen_friends/content_friends.dart';
 import 'package:game_app/screen_maingame/content.dart';
 import 'package:game_app/screen_maingame/footer.dart';
 import 'package:game_app/screen_maingame/header.dart';
+import 'package:game_app/screen_singler_play/myfootersingleplay.dart';
 
 class ScreenFriends extends StatefulWidget {
   const ScreenFriends({super.key});
@@ -18,7 +19,7 @@ class _ScreenFriendsState extends State<ScreenFriends> {
       body: SafeArea(
         child: Container(
           child: Column(
-            children: [MyHeader(), MyContentFriends(), MyFooter()],
+            children: [MyHeader(), MyContentFriends(), MyFooterSinglePlay()],
           ),
         ),
       ),

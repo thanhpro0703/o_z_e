@@ -5,6 +5,7 @@ import 'package:game_app/screen_playgame/screen_playgame.dart';
 import 'package:game_app/screen_room/screen_room.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import '../screen_room/footer_room.dart';
+import 'package:audioplayers/audioplayers.dart';
 
 class MyContent extends StatefulWidget {
   const MyContent({super.key});
@@ -14,6 +15,7 @@ class MyContent extends StatefulWidget {
 }
 
 class _MyContentState extends State<MyContent> {
+  final player = AudioPlayer();
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -33,6 +35,7 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "P L A Y",
                     page: () {
+                      player.play(AssetSource('play.mp3'));
                       Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => ScreenSinglePlay(),
@@ -44,6 +47,7 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "R O O M",
                     page: () {
+                      player.play(AssetSource('play.mp3'));
                       Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => ScreenRoom(),
@@ -55,6 +59,7 @@ class _MyContentState extends State<MyContent> {
                   buttonplay: ElavetedButonPlay(
                     text: "R A N K",
                     page: () {
+                      player.play(AssetSource('play.mp3'));
                       Navigator.pop(context);
                       Navigator.of(context).push(MaterialPageRoute(
                         builder: (context) => Screen_Choose_Level(),

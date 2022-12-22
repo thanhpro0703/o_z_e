@@ -59,7 +59,7 @@ class _MyFooterRoomState extends State<MyFooterRoom> {
                           page: () {
                             Navigator.pop(context);
                             Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => Screen_Solo(),
+                              builder: (context) => ScreenPlayGame(level: '10'),
                             ));
                           })),
                 )

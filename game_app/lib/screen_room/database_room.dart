@@ -48,8 +48,8 @@ class _DatabaseRoomState extends State<DatabaseRoom> {
                         Icons.ac_unit,
                       ),
                       onPressed: () {
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => ScreenPlayGame()));
+                        // Navigator.of(context).push(MaterialPageRoute(
+                        //     builder: (context) => ScreenPlayGame()));
                       },
                     )),
                   ),

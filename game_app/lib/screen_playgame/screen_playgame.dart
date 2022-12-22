@@ -9,8 +9,8 @@ import 'content_playgame.dart';
 import 'footer_playgame.dart';
 
 class ScreenPlayGame extends StatefulWidget {
-  const ScreenPlayGame({super.key});
-
+  ScreenPlayGame({super.key, required this.level});
+  String level;
   @override
   State<ScreenPlayGame> createState() => _ScreenPlayGameState();
 }
@@ -22,7 +22,7 @@ class _ScreenPlayGameState extends State<ScreenPlayGame> {
       body: SafeArea(
         child: Container(
           child: Column(
-            children: [QuizScreen(), MyFooterPlayGame()],
+            children: [QuizScreen(level: widget.level), MyFooterPlayGame()],
           ),
         ),
       ),
