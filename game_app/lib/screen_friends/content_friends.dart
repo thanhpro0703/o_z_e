@@ -1,4 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/api_services.dart';
 
 import 'package:game_app/method/avatar.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +14,16 @@ class MyContentFriends extends StatefulWidget {
 }
 
 class _MyContentFriendsState extends State<MyContentFriends> {
+
+  List<String> docIDs =[];
+  Future getDocId() async{
+    await FirebaseFirestore.instance.collection('users').get().then((value) =>
+    (snapshot)=> snapshot.docs.forEach((document){
+      docIDs.add(document.reference.id);
+    }),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     return Expanded(
@@ -57,85 +70,50 @@ class _MyContentFriendsState extends State<MyContentFriends> {
                   ],
                 ),
               ),
-              Expanded(flex: 4, child: _listFrends()),
+              Expanded(flex: 4, child: _listFriend()),
             ],
           ),
         ));
   }
 
-  _listFrends() => ListView(
-        children: [
-          _frend(
-              AvatarButton(
-                urlImage: 'assets/pigbed.png',
-                size: 30,
-              ),
-              'name',
-              'rank'),
-          _frend(
-              AvatarButton(
-                urlImage: 'assets/pigbed.png',
-                size: 30,
-              ),
-              'name',
-              'rank'),
-          _frend(
-              AvatarButton(
-                urlImage: 'assets/pigbed.png',
-                size: 30,
-              ),
-              'name',
-              'rank'),
-          _frend(
-              AvatarButton(
-                urlImage: 'assets/pigbed.png',
-                size: 30,
-              ),
-              'name',
-              'rank'),
-          _frend(
-              AvatarButton(
-                urlImage: 'assets/pigbed.png',
-                size: 30,
-              ),
-              'name',
-              'rank'),
-          _frend(
-              AvatarButton(
-                urlImage: 'assets/pigbed.png',
-                size: 30,
-              ),
-              'name',
-              'rank'),
-          _frend(
-              AvatarButton(
-                urlImage: 'assets/pigbed.png',
-                size: 30,
-              ),
-              'name',
-              'rank'),
-          _frend(
-              AvatarButton(
-                urlImage: 'assets/pigbed.png',
-                size: 30,
-              ),
-              'name',
-              'rank'),
-        ],
-      );
-  _frend(avatar, name, rank) => Container(
+
+  _listFriend() => FutureBuilder(
+    future: getUsers(),
+    builder: (context, snapshot) {
+      if(snapshot.data == null || !snapshot.hasData){
+        return const Padding(
+          padding: EdgeInsets.all(150.0),
+          child: CircularProgressIndicator(),
+        );
+      }
+      return ListView.builder(
+        itemCount: snapshot.data!.length,
+          itemBuilder: (context,index){
+        return  _friend(
+            const AvatarButton(
+              urlImage: 'assets/pigbed.png',
+              size: 30,
+            ),
+            snapshot.data![index].username!,
+            snapshot.data![index].rank.toString(),
+        );
+      });
+    },
+
+  );
+  _friend(avatar, name, rank) => Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             avatar,
             Text(
               name,
-              style: TextStyle(fontSize: 30),
+              style: const TextStyle(fontSize: 20, color: Colors.yellow,fontWeight: FontWeight.bold),
             ),
-            Text(rank),
+            Text(rank,style: const TextStyle(fontSize: 20,color: Colors.greenAccent,fontWeight: FontWeight.bold),),
             IconButton(
-                onPressed: () {}, icon: Icon(Icons.remove_red_eye_outlined))
+                onPressed: () {}, icon: Icon(Icons.remove_red_eye_outlined,))
           ],
         ),
       );

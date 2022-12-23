@@ -12,8 +12,8 @@ class AvatarButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(2),
-        decoration: BoxDecoration(
+        padding: const EdgeInsets.all(2),
+        decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             gradient: LinearGradient(
                 begin: Alignment.topCenter,
@@ -37,7 +37,7 @@ Widget AvatarLayout(
 ) =>
     Container(
         padding: EdgeInsets.all(10),
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(10)),
             gradient: LinearGradient(
                 begin: Alignment.topCenter,

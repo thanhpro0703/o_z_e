@@ -95,8 +95,6 @@ class _HistoryState extends State<History> {
       future: history(FirebaseAuth.instance.currentUser!.email!),
       builder: (context, snapshot) {
         if (snapshot.data == null || !snapshot.hasData) {
-          print('email ne tr');
-          print(FirebaseAuth.instance.currentUser!.email!);
           return Container(
             padding: const EdgeInsets.all(150),
             child: const CircularProgressIndicator(

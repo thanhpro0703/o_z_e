@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:game_app/api_services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:email_validator/email_validator.dart';
@@ -27,13 +28,17 @@ class _RegisterPageState extends State<RegisterPage> {
         });
     try {
       if (_passwordConfirmed()) {
+
         await FirebaseAuth.instance.createUserWithEmailAndPassword(
             email: _emailController.text.trim(),
             password: _passwordController.text.trim());
+
       }
     } catch (ex) {
       print(ex);
     }
+
+    addUser(_emailController.text, _passwordController.text, 0, 0);
     Navigator.of(context).pop();
   }
 
@@ -153,24 +158,24 @@ class _RegisterPageState extends State<RegisterPage> {
                     cursorColor: Colors.white,
                     autovalidateMode: AutovalidateMode.onUserInteraction,
                     validator: (value) => value != null && value.length < 6
-                        ? 'Enter min. 6 chacracters'
+                        ? 'Enter min. 6 characters'
                         : null,
                     decoration: InputDecoration(
                       hintText: "Confirm password",
                       fillColor: Colors.grey[200],
                       filled: true,
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.white),
+                        borderSide: const BorderSide(color: Colors.white),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      focusedBorder: OutlineInputBorder(
+                      focusedBorder: const OutlineInputBorder(
                         borderSide: BorderSide(color: Colors.deepPurple),
                       ),
                     ),
                   ),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Padding(

@@ -2,7 +2,13 @@ import 'dart:convert';
 import 'dart:core';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:game_app/model/User.dart';
 import 'package:http/http.dart' as http;
+
+import 'model/HistoryUser.dart';
+import 'model/User.dart';
+
 
 var link = "https://ozeapp-5f71c-default-rtdb.firebaseio.com/results.json";
 
@@ -18,6 +24,11 @@ Future addScore(int score,int lengthQuestion,result, String username) async {
   final url = Uri.parse(
       'https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json');
   http.post(url, body: json.encode({'score': score,'total':lengthQuestion,'result':result,'username': username,}));
+}
+Future addUser(String username,String password, int heightScore, int rank,) async {
+  final url = Uri.parse(
+      'https://ozeapp-5f71c-default-rtdb.firebaseio.com/users.json');
+  http.post(url, body: json.encode({'username':username,'password':password,'heightScore':heightScore,'rank': rank,}));
 }
 
 Future<dynamic> getHighScore() async {
@@ -87,13 +98,6 @@ Future<dynamic> totalScore(String username) async {
   return total;
 }
 
-class HistoryUser {
-  int point;
-  int totalPoint;
-  String result;
-
-  HistoryUser({required this.point, required this.totalPoint, required this.result});
-}
 
 Future<List<HistoryUser>?> history(String username) async {
   var data;
@@ -118,4 +122,25 @@ Future<List<HistoryUser>?> history(String username) async {
   }
   return history;
 }
-
+Future<List<Friends>?> getUsers() async {
+  var data;
+  Friends user;
+  List<Friends> users = [];
+  var link = "https://ozeapp-5f71c-default-rtdb.firebaseio.com/users.json";
+  var res = await http.get(Uri.parse(link));
+  if (res.statusCode == 200) {
+    data = jsonDecode(res.body.toString());
+  }
+  if (data == null || data.isEmpty) {
+    return null;
+  }
+  for (var item in data.values) {
+    if((item['rank'].toString().isNotEmpty || item['heightScore'].toString().isNotEmpty) && item['username']!=FirebaseAuth.instance.currentUser!.email!) {
+      user = Friends(username: item['username'],
+          rank: item['rank'],
+          heightScore: item['heightScore']);
+      users.add(user);
+    }
+  }
+  return users;
+}
