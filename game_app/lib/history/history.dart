@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:game_app/screen_room/footer_room.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class History extends StatefulWidget {
-  const History({Key? key}) : super(key: key);
+class Historyk extends StatefulWidget {
+  const Historyk({Key? key}) : super(key: key);
 
   @override
-  State<History> createState() => _HistoryState();
+  State<Historyk> createState() => _HistorykState();
 }
 
-class _HistoryState extends State<History> {
+class _HistorykState extends State<Historyk> {
   @override
   Widget build(BuildContext context) {
 

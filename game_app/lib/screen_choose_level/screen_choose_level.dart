@@ -63,7 +63,7 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
             ButtonAvatar(
               height: 100,
               width: 100,
-              img: 'assets/account.png',
+              image: 'assets/account.png',
             ),
             Padding(padding: EdgeInsets.only(top: 10)),
             Container(

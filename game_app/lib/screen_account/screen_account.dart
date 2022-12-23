@@ -63,20 +63,16 @@ class _MyScreenAccount extends State<Screen_Acount> {
                               end: Alignment.centerRight,
                             ))),
                   ]),
-                  ButtonSetting(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Screen_Acount(),
-                          ));
-                    },
-                    width: 190,
-                    height: 60,
-                    colors: [
-                      Color(0xffff2193b0),
-                      Color(0xfff6dd5ed),
-                    ], username: FirebaseAuth.instance.currentUser!.email!,
+                  Container(
+                    margin: EdgeInsets.only(top: 10),
+                    height: 70,
+                    child: ButtonPlayWidget(
+                      buttonplay: ElavetedButonPlay(
+                        text: FirebaseAuth.instance.currentUser!.email!,
+                        page: () {},
+                      ),
+                      //  ,
+                    ),
                   ),
                 ],
               ),
@@ -103,7 +99,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                   child: Column(
                     children: [
                       FutureBuilder(
-                        future: getHighScore(),
+                        future: getHighScoreUserName(FirebaseAuth.instance.currentUser!.email!),
                         builder: (context, snapshot) {
                           if(snapshot.data == null || !snapshot.hasData){
                             return Center(child: CircularProgressIndicator(),);
@@ -116,7 +112,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                         },
                       ),
                       FutureBuilder(
-                        future: totalScore(),
+                        future: totalScore(FirebaseAuth.instance.currentUser!.email!),
                         builder: (context, snapshot) {
                           if(snapshot.data == null || !snapshot.hasData){
                             return Center(child: CircularProgressIndicator(),);

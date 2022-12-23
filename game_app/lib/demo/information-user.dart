@@ -18,7 +18,7 @@ class _InformationState extends State<Information> {
         Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => History()));
+                builder: (context) => Historyk()));
       },child: Text('History'),),),
     );
   }
