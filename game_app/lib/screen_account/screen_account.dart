@@ -65,21 +65,15 @@ class _MyScreenAccount extends State<Screen_Acount> {
                           end: Alignment.centerRight,
                         ))),
                   ]),
-                  ButtonSetting(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => Screen_Acount(),
-                          ));
-                    },
-                    width: 190,
-                    height: 60,
-                    colors: [
-                      Color(0xffff2193b0),
-                      Color(0xfff6dd5ed),
-                    ],
-                    img: 'assets/textmyaccount.png',
+                  Container(
+                    height: 70,
+                    child: ButtonPlayWidget(
+                      buttonplay: ElavetedButonPlay(
+                        text: FirebaseAuth.instance.currentUser!.email!,
+                        page: () {},
+                      ),
+                      //  ,
+                    ),
                   ),
                 ],
               ),
@@ -161,26 +155,26 @@ class _MyScreenAccount extends State<Screen_Acount> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Container(
-                    width: 120,
-                    child: ButtonWidget(
-                      button: ElavetedButon(
-                        text: "BACK",
-                        page: () {
-                          Navigator.of(context).pop();
-                        },
-                      ),
-                    ),
-                  ),
-                  Container(
                     height: 70,
                     child: ButtonPlayWidget(
                       buttonplay: ElavetedButonPlay(
-                        text: "ID: abc",
+                        text: "ID: ${FirebaseAuth.instance.currentUser!.uid}",
                         page: () {},
                       ),
                     ),
                   ),
                 ],
+              ),
+              Container(
+                width: 120,
+                child: ButtonWidget(
+                  button: ElavetedButon(
+                    text: "BACK",
+                    page: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ),
               ),
               Spacer()
             ],

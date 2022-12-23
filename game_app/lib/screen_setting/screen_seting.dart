@@ -8,6 +8,7 @@ import 'package:game_app/screen_maingame/screen_maingame.dart';
 import 'package:game_app/screen_play_group/screen_play_group.dart';
 import 'package:game_app/screen_singler_play/screen_singler_play.dart';
 import 'package:game_app/screen_solo/screen_solo.dart';
+import 'package:google_fonts/google_fonts.dart';
 import '../button_game/button_game.dart';
 import 'package:audioplayers/audioplayers.dart';
 
@@ -287,7 +288,7 @@ class _ButtonSettingState extends State<ButtonSetting> {
                       child: Image.asset(
                         widget.img,
                       ),
-                      width: 120)),
+                      width: 180)),
             ),
           )),
     );
