@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/api_services.dart';
 import 'package:game_app/screen_room/footer_room.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -55,25 +58,27 @@ class _HistoryState extends State<History> {
                   ),
                 ),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text("Result",
-                        style: GoogleFonts.rubikBeastly(color: Colors.yellow)),
-                    Text("Support",
-                        style: GoogleFonts.rubikBeastly(color: Colors.yellow)),
+                        style: GoogleFonts.akayaTelivigala(
+                            fontSize: 40,
+                            fontWeight: FontWeight.bold,
+                            color: CupertinoColors.systemYellow)),
+                    Text(
+                      "Point",
+                      style: GoogleFonts.akayaTelivigala(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: CupertinoColors.systemIndigo),
+                    ),
                     Text(
                       "Rank",
-                      style: GoogleFonts.rubikBeastly(color: Colors.yellow),
+                      style: GoogleFonts.akayaTelivigala(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: CupertinoColors.activeOrange),
                     ),
-                    Row(
-                      children: [
-                        Text(
-                          "Point",
-                          style: GoogleFonts.rubikBeastly(
-                              color: Colors.greenAccent),
-                        ),
-                      ],
-                    )
                   ],
                 ),
               ),
@@ -86,64 +91,69 @@ class _HistoryState extends State<History> {
     );
   }
 
-  Widget _listHistory() => Container(
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-              Color(0xfff1f1c18),
-              Color(0xffff8e0e00),
-            ])),
-        child: ListView(
-          children: [
-            itemsList("Win", "Name", "1233", "+45"),
-            itemsList("Loss", "Name", "123", "-45"),
-            itemsList("Win", "Name", "1233", "+45"),
-            itemsList("Loss", "Name", "123", "-45"),
-            itemsList("Win", "Name", "1233", "+45"),
-            itemsList("Loss", "Name", "123", "-45"),
-            itemsList("Win", "Name", "1233", "+45"),
-            itemsList("Loss", "Name", "123", "-45"),
-            itemsList("Win", "Name", "1233", "+45"),
-            itemsList("Loss", "Name", "123", "-45"),
-          ],
-        ),
-      );
-  itemsList(String result, String support, String point, String rank) {
+  Widget _listHistory() => FutureBuilder(
+      future: history(FirebaseAuth.instance.currentUser!.email!),
+      builder: (context, snapshot) {
+        if (snapshot.data == null || !snapshot.hasData) {
+          print('email ne tr');
+          print(FirebaseAuth.instance.currentUser!.email!);
+          return Container(
+            padding: const EdgeInsets.all(150),
+            child: const CircularProgressIndicator(
+              semanticsLabel: "Loading...",
+            ),
+          );
+        }
+        return Container(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                  Color(0xfff1f1c18),
+                  Color(0xffff8e0e00),
+                ])),
+            child: ListView.builder(
+                itemCount: snapshot.data!.length,
+                itemBuilder: (context, index) {
+                  return itemsList(
+                    snapshot.data![index].result!,
+                    snapshot.data![index].totalPoint!.toString(),
+                    snapshot.data![index].point!.toString(),
+                  );
+                }));
+      });
+
+  itemsList(String result, String point, String rank) {
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Text(result,
-              style:
-                  GoogleFonts.rubikBeastly(color: Colors.yellow, fontSize: 20)),
+              style: GoogleFonts.akayaTelivigala(
+                  fontSize: 30, color: CupertinoColors.systemYellow)),
           Row(
             children: [
-              Icon(
-                Icons.add,
-                color: Colors.yellow,
+              const Text(
+                '+',
+                style: TextStyle(color: Colors.green),
               ),
-              Icon(
-                Icons.add,
-                color: Colors.yellow,
+              Text(
+                " ${rank}",
+                style: GoogleFonts.akayaTelivigala(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                    color: CupertinoColors.systemIndigo),
               ),
             ],
           ),
           Text(
             point,
-            style: GoogleFonts.rubikBeastly(color: Colors.yellow),
+            style: GoogleFonts.akayaTelivigala(
+                fontSize: 30, color: CupertinoColors.activeOrange),
           ),
-          Row(
-            children: [
-              Text(
-                " ${rank}",
-                style: GoogleFonts.rubikBeastly(color: Colors.greenAccent),
-              ),
-            ],
-          )
         ],
       ),
     );
