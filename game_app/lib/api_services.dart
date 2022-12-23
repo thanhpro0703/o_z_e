@@ -112,7 +112,7 @@ Future<List<HistoryUser>?> history(String username) async {
   for (var item in data.values) {
     if (item['score'].toString().isNotEmpty && item['username'] == username) {
       total += int.parse(item['score'].toString());
-      user = HistoryUser(point: item['score'], totalPoint: total,result:  (item['result']==null)? "Chưa tổng kết" : "${item['result']}/${item['total']}");
+      user = HistoryUser(point: item['score'], totalPoint: total,result: "${item['result']}/${item['total']}");
       history.add(user);
     }
   }

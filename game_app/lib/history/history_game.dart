@@ -125,6 +125,40 @@ class _HistoryState extends State<History> {
       });
 
   itemsList(String result, String point, String rank) {
+
+    if(result == "null/null"){
+      return Container(
+        padding: EdgeInsets.all(20),
+        decoration: BoxDecoration(),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+           const CircularProgressIndicator(),
+            Row(
+              children: [
+                const Text(
+                  '+',
+                  style: TextStyle(color: Colors.green),
+                ),
+                Text(
+                  " ${rank}",
+                  style: GoogleFonts.akayaTelivigala(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: CupertinoColors.systemIndigo),
+                ),
+              ],
+            ),
+            Text(
+              point,
+              style: GoogleFonts.akayaTelivigala(
+                  fontSize: 30, color: CupertinoColors.activeOrange),
+            ),
+          ],
+        ),
+      );
+    }
+
     return Container(
       padding: EdgeInsets.all(20),
       decoration: BoxDecoration(),
