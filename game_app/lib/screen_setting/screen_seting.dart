@@ -132,7 +132,7 @@ class _ScreenSettingState extends State<ScreenSetting> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Screen_Acount(),
+                                  builder: (context) => Screen_Acount(username: FirebaseAuth.instance.currentUser!.email!,),
                                 ));
                           },
                           width: 190,

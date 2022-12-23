@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/button_game/button_avatar.dart';
 import 'package:game_app/button_game/button_game.dart';
@@ -63,7 +64,7 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
             ButtonAvatar(
               height: 100,
               width: 100,
-              image: 'assets/account.png',
+              image: 'assets/account.png', username: FirebaseAuth.instance.currentUser!.email!,
             ),
             Padding(padding: EdgeInsets.only(top: 10)),
             Container(

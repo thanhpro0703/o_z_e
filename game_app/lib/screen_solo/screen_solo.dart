@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/button_game/button_enemy.dart';
 import 'package:game_app/button_game/button_start.dart';
@@ -37,7 +38,7 @@ class _MyScreenSolo extends State<Screen_Solo> {
               ButtonAvatar(
                 height: 100,
                 width: 100,
-                image: 'assets/account.png',
+                image: 'assets/account.png', username: FirebaseAuth.instance.currentUser!.email!,
               ),
               Padding(padding: EdgeInsets.only(top: 10)),
               Container(

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../screen_maingame/screen_maingame.dart';
 import '../button_game/button_game.dart';
@@ -53,7 +54,7 @@ class _MyHeaderState extends State<MyHeader> {
             ButtonAvatar(
               height: 100,
               width: 100,
-              image: 'assets/account.png',
+              image: 'assets/account.png', username: FirebaseAuth.instance.currentUser!.email!,
             ),
             ButtonWidget(
               button: ElavetedButon(

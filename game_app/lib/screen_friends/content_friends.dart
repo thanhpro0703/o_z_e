@@ -2,8 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/api_services.dart';
+import 'package:game_app/history/history_game.dart';
 
 import 'package:game_app/method/avatar.dart';
+import 'package:game_app/screen_account/screen_account.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class MyContentFriends extends StatefulWidget {
@@ -14,15 +16,7 @@ class MyContentFriends extends StatefulWidget {
 }
 
 class _MyContentFriendsState extends State<MyContentFriends> {
-
-  List<String> docIDs =[];
-  Future getDocId() async{
-    await FirebaseFirestore.instance.collection('users').get().then((value) =>
-    (snapshot)=> snapshot.docs.forEach((document){
-      docIDs.add(document.reference.id);
-    }),
-    );
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -56,6 +50,10 @@ class _MyContentFriendsState extends State<MyContentFriends> {
                             borderSide: BorderSide(color: Colors.deepPurple),
                           ),
                         ),
+                        onChanged: (text){
+                          text=text.toLowerCase();
+
+                        },
                       ),
                     ),
                     Padding(
@@ -101,19 +99,21 @@ class _MyContentFriendsState extends State<MyContentFriends> {
     },
 
   );
-  _friend(avatar, name, rank) => Container(
+  _friend(avatar, username, rank) => Container(
         margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             avatar,
             Text(
-              name,
+              username,
               style: const TextStyle(fontSize: 20, color: Colors.yellow,fontWeight: FontWeight.bold),
             ),
             Text(rank,style: const TextStyle(fontSize: 20,color: Colors.greenAccent,fontWeight: FontWeight.bold),),
             IconButton(
-                onPressed: () {}, icon: Icon(Icons.remove_red_eye_outlined,))
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Screen_Acount(username: username,)));
+                }, icon: const Icon(Icons.remove_red_eye_outlined,))
           ],
         ),
       );

@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:game_app/api_services.dart';
@@ -6,8 +5,9 @@ import 'package:game_app/screen_room/footer_room.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class History extends StatefulWidget {
-  const History({Key? key}) : super(key: key);
+  const History({Key? key, required this.username}) : super(key: key);
 
+  final String username;
   @override
   State<History> createState() => _HistoryState();
 }
@@ -28,7 +28,7 @@ class _HistoryState extends State<History> {
               Container(
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.fromLTRB(50, 20, 20, 20),
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(0),
                     bottom: Radius.circular(30),
@@ -92,7 +92,7 @@ class _HistoryState extends State<History> {
   }
 
   Widget _listHistory() => FutureBuilder(
-      future: history(FirebaseAuth.instance.currentUser!.email!),
+      future: history(widget.username),
       builder: (context, snapshot) {
         if (snapshot.data == null || !snapshot.hasData) {
           return Container(

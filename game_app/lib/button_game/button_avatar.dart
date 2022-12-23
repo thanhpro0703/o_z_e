@@ -6,10 +6,11 @@ class ButtonAvatar extends StatelessWidget {
       {super.key,
       required this.image,
       required this.width,
-      required this.height});
+      required this.height, required this.username});
   final String image;
   final double width;
   final double height;
+  final String username;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -51,7 +52,7 @@ class ButtonAvatar extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => Screen_Acount(),
+                        builder: (context) => Screen_Acount(username: username,),
                       ));
                 },
                 child: Image.asset(

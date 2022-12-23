@@ -17,16 +17,20 @@ import '../screen_maingame/screen_maingame.dart';
 
 class Screen_Acount extends StatefulWidget {
   const Screen_Acount({
-    super.key,
+    super.key, required this.username,
   });
+
+  final String username;
 
   @override
   State<Screen_Acount> createState() => _MyScreenAccount();
 }
 
 class _MyScreenAccount extends State<Screen_Acount> {
+
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
         body: Container(
             decoration: BoxDecoration(
@@ -42,7 +46,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                     ButtonAvatar(
                       height: 100,
                       width: 100,
-                      image: 'assets/account.png',
+                      image: 'assets/account.png', username: widget.username,
                     ),
                     Container(
                         child: Center(
@@ -68,7 +72,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                     height: 70,
                     child: ButtonPlayWidget(
                       buttonplay: ElavetedButonPlay(
-                        text: FirebaseAuth.instance.currentUser!.email!,
+                        text: widget.username,
                         page: () {},
                       ),
                       //  ,
@@ -99,7 +103,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                   child: Column(
                     children: [
                       FutureBuilder(
-                        future: getHighScoreUserName(FirebaseAuth.instance.currentUser!.email!),
+                        future: getHighScoreUserName(widget.username),
                         builder: (context, snapshot) {
                           if(snapshot.data == null || !snapshot.hasData){
                             return Center(child: CircularProgressIndicator(),);
@@ -112,7 +116,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                         },
                       ),
                       FutureBuilder(
-                        future: totalScore(FirebaseAuth.instance.currentUser!.email!),
+                        future: totalScore(widget.username),
                         builder: (context, snapshot) {
                           if(snapshot.data == null || !snapshot.hasData){
                             return Center(child: CircularProgressIndicator(),);
@@ -136,7 +140,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                     text: "History",
                     page: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) =>  History(),
+                        builder: (context) =>  History(username: widget.username,),
                       ));
                     },
                   ),
