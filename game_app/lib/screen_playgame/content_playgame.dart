@@ -29,6 +29,7 @@ class _QuizScreenState extends State<QuizScreen> {
   late Future quiz;
   final player = AudioPlayer();
   int points = 0;
+  int resultQuestion = 0;
 
   var isLoaded = false;
   var hardQuestionsList = [];
@@ -229,6 +230,7 @@ class _QuizScreenState extends State<QuizScreen> {
                               setState(() {
                                 if (answer.toString() ==
                                     optionsList[index].toString()) {
+                                  resultQuestion++;
                                   optionsColor[index] =
                                       Color.fromARGB(255, 140, 252, 144);
                                   if (seconds == 15) {
@@ -261,6 +263,8 @@ class _QuizScreenState extends State<QuizScreen> {
                                   timer!.cancel();
                                   addScore(
                                       points,
+                                      hardQuestionsList.length,
+                                      resultQuestion,
                                       FirebaseAuth
                                           .instance.currentUser!.email!);
                                   Navigator.push(

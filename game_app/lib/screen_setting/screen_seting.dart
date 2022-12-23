@@ -158,9 +158,9 @@ class _ScreenSettingState extends State<ScreenSetting> {
                     children: [
                       ButtonSetting(
                         onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => Screen_Solo(),
-                          ));
+                          // Navigator.of(context).push(MaterialPageRoute(
+                          //   builder: (context) => Screen_Solo(),
+                          // ));
                         },
                         width: 200,
                         height: 30,
