@@ -265,6 +265,7 @@ class _QuizScreenState extends State<QuizScreen> {
                                       points,hardQuestionsList.length,resultQuestion,
                                       FirebaseAuth
                                           .instance.currentUser!.email!);
+
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(

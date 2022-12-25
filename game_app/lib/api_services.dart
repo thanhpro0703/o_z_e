@@ -3,6 +3,7 @@ import 'dart:core';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:game_app/model/User.dart';
 import 'package:http/http.dart' as http;
 
@@ -25,6 +26,7 @@ Future addScore(int score,int lengthQuestion,result, String username) async {
       'https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json');
   http.post(url, body: json.encode({'score': score,'total':lengthQuestion,'result':result,'username': username,}));
 }
+
 Future addUser(String username,String password, int heightScore, int rank,) async {
   final url = Uri.parse(
       'https://ozeapp-5f71c-default-rtdb.firebaseio.com/users.json');
@@ -54,7 +56,7 @@ Future<dynamic> getHighScore() async {
   return highScore;
 }
 
-Future<dynamic> getHighScoreUserName(String username) async {
+Future<int> getHighScoreUserName(String username) async {
   final player = AudioPlayer();
   player.play(AssetSource('complete.wav'));
   var data;
@@ -73,6 +75,7 @@ Future<dynamic> getHighScoreUserName(String username) async {
       highScore = item['score'];
     }
   }
+
   return highScore;
 }
 
@@ -95,8 +98,11 @@ Future<dynamic> totalScore(String username) async {
     }
     print(total);
   }
+
   return total;
 }
+
+
 
 
 Future<List<HistoryUser>?> history(String username) async {
@@ -122,6 +128,7 @@ Future<List<HistoryUser>?> history(String username) async {
   }
   return history;
 }
+
 Future<List<Friends>?> getUsers() async {
   var data;
   Friends user;
@@ -135,10 +142,10 @@ Future<List<Friends>?> getUsers() async {
     return null;
   }
   for (var item in data.values) {
-    if((item['rank'].toString().isNotEmpty || item['heightScore'].toString().isNotEmpty) && item['username']!=FirebaseAuth.instance.currentUser!.email!) {
+    if(item['username'] != FirebaseAuth.instance.currentUser!.email!){
       user = Friends(username: item['username'],
-          rank: item['rank'],
-          heightScore: item['heightScore']);
+          rank: await totalScore(item['username']),
+          heightScore:await getHighScoreUserName(item['username']));
       users.add(user);
     }
   }
