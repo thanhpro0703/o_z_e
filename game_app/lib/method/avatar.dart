@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AvatarButton extends StatelessWidget {
   const AvatarButton({
@@ -50,4 +51,24 @@ Widget AvatarLayout(
           urlImageAsset,
           width: 50,
         ));
+Widget avatarTopRank(
+  String urlImageAsset,
+    int topRank,
+) =>
+    Container(
+      width: 70,
+        height: 70,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(urlImageAsset),
+          ),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            gradient: const LinearGradient(
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+                colors: [
+                  Color.fromRGBO(182, 240, 185, 100),
+                  Color.fromRGBO(225, 143, 232, 100),
+                ])),
+        child:Text(topRank.toString(),style: GoogleFonts.akayaTelivigala(fontSize: 20,color: Colors.deepPurple),));
 //asdf

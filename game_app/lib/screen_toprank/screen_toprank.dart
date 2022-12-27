@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/api_services.dart';
 import 'package:game_app/method/avatar.dart';
 import 'package:game_app/screen_maingame/header.dart';
 import 'package:game_app/screen_room/content_room.dart';
@@ -14,6 +16,15 @@ class TopRank extends StatefulWidget {
 }
 
 class _TopRankState extends State<TopRank> {
+  static int myRank = 0;
+  var users = getUsers();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    myRank;
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -28,8 +39,8 @@ class _TopRankState extends State<TopRank> {
             children: [
               Container(
                 width: MediaQuery.of(context).size.width,
-                padding: EdgeInsets.fromLTRB(50, 20, 20, 20),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.fromLTRB(50, 20, 20, 20),
+                decoration: const BoxDecoration(
                   borderRadius: BorderRadius.vertical(
                     top: Radius.circular(0),
                     bottom: Radius.circular(30),
@@ -51,7 +62,13 @@ class _TopRankState extends State<TopRank> {
                 ),
               ),
               Expanded(flex: 4, child: _listTopRank()),
-              itemsList("pigbed.png", "MyName", "0"),
+
+              FutureBuilder(
+                  future: totalScore(FirebaseAuth.instance.currentUser!.email!),
+                  builder:(context,snapshot){
+                    return itemsList("pigbed.png", FirebaseAuth.instance.currentUser!.email,snapshot.data.toString(), myRank);
+                  }),
+
               MyFooterRoom()
             ],
           ),
@@ -73,21 +90,30 @@ class _TopRankState extends State<TopRank> {
                   Color(0xfff1f1c18),
                   Color(0xffff8e0e00),
                 ])),
-        child: ListView(
-          children: [
-            itemsList("pigbed.png", "Name", "1233"),
-            itemsList("pigbed.png", "Name", "1233"),
-            itemsList("pigbed.png", "Name", "1233"),
-            itemsList("pigbed.png", "Name", "1233"),
-            itemsList("pigbed.png", "Name", "1233"),
-            itemsList("pigbed.png", "Name", "1233"),
-            itemsList("pigbed.png", "Name", "1233"),
-            itemsList("pigbed.png", "Name", "1233"),
-          ],
+        child: FutureBuilder(
+          future: getUsers(),
+          builder:(context,snapshot){
+            if(snapshot.data == null || !snapshot.hasData){
+              return  Padding(
+                padding:  EdgeInsets.all(200),
+                child:const CircularProgressIndicator(),
+              );
+            }
+            return ListView.builder(
+              itemCount: snapshot.data!.length,
+              itemBuilder: (BuildContext context, int index) {
+                int reverseIndex = snapshot.data!.length - 1 - index;
+                if(snapshot.data![reverseIndex].username == FirebaseAuth.instance.currentUser!.email){
+                  myRank = index+1;
+                }
+                return  itemsList("pigbed.png", snapshot.data![reverseIndex].username, snapshot.data![reverseIndex].rank.toString(),index+1);
+              },
+            );
+          }
         ),
       );
 
-  Widget itemsList(avatar, name, grade) => TextButton(
+  Widget itemsList(avatar, name, grade,topRank) => TextButton(
       onPressed: () {
         // chuyển hướng sang trang xem thông tin cá nhân
         Navigator.of(context)
@@ -121,14 +147,14 @@ class _TopRankState extends State<TopRank> {
           children: [
             Row(
               children: [
-                AvatarLayout("assets/${avatar}"),
+                avatarTopRank("assets/${avatar}",topRank),
                 SizedBox(
                   width: 10,
                 ),
                 Text(
                   name,
-                  style: GoogleFonts.dancingScript(
-                      fontStyle: FontStyle.italic, fontSize: 30),
+                  style: GoogleFonts.akayaTelivigala(
+                      fontStyle: FontStyle.italic, fontSize: 25),
                 ),
               ],
             ),

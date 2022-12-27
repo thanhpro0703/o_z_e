@@ -87,6 +87,9 @@ class _MyContentFriendsState extends State<MyContentFriends> {
       return ListView.builder(
         itemCount: snapshot.data!.length,
           itemBuilder: (context,index){
+          if(snapshot.data![index].username == FirebaseAuth.instance.currentUser!.email){
+            return const Text('');
+          }
         return  _friend(
             const AvatarButton(
               urlImage: 'assets/pigbed.png',

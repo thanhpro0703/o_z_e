@@ -8,8 +8,6 @@ import 'package:game_app/model/User.dart';
 import 'package:http/http.dart' as http;
 
 import 'model/HistoryUser.dart';
-import 'model/User.dart';
-
 
 var link = "https://ozeapp-5f71c-default-rtdb.firebaseio.com/results.json";
 
@@ -20,17 +18,41 @@ getQuiz() async {
     return data;
   }
 }
-
-Future addScore(int score,int lengthQuestion,result, String username) async {
-  final url = Uri.parse(
-      'https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json');
-  http.post(url, body: json.encode({'score': score,'total':lengthQuestion,'result':result,'username': username,}));
+getUsersText() async {
+  var res = await http.get(Uri.parse('https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json'));
+  if (res.statusCode == 200) {
+    var data = jsonDecode(res.body.toString());
+    return data;
+  }
 }
 
-Future addUser(String username,String password, int heightScore, int rank,) async {
+Future addScore(int score, int lengthQuestion, result, String username) async {
   final url = Uri.parse(
-      'https://ozeapp-5f71c-default-rtdb.firebaseio.com/users.json');
-  http.post(url, body: json.encode({'username':username,'password':password,'heightScore':heightScore,'rank': rank,}));
+      'https://ozeapp-5f71c-default-rtdb.firebaseio.com/hight_score.json');
+  http.post(url,
+      body: json.encode({
+        'score': score,
+        'total': lengthQuestion,
+        'result': result,
+        'username': username,
+      }));
+}
+
+Future addUser(
+  String username,
+  String password,
+  int heightScore,
+  int rank,
+) async {
+  final url =
+      Uri.parse('https://ozeapp-5f71c-default-rtdb.firebaseio.com/users.json');
+  http.post(url,
+      body: json.encode({
+        'username': username,
+        'password': password,
+        'heightScore': heightScore,
+        'rank': rank,
+      }));
 }
 
 Future<dynamic> getHighScore() async {
@@ -57,8 +79,8 @@ Future<dynamic> getHighScore() async {
 }
 
 Future<int> getHighScoreUserName(String username) async {
-  final player = AudioPlayer();
-  player.play(AssetSource('complete.wav'));
+  // final player = AudioPlayer();
+  // player.play(AssetSource('complete.wav'));
   var data;
   var highScore = 0;
   var link =
@@ -87,7 +109,6 @@ Future<dynamic> totalScore(String username) async {
   var res = await http.get(Uri.parse(link));
   if (res.statusCode == 200) {
     data = jsonDecode(res.body.toString());
-    print(data);
   }
   if (data == null || data.isEmpty) {
     return 0;
@@ -96,14 +117,10 @@ Future<dynamic> totalScore(String username) async {
     if (item['score'].toString().isNotEmpty && item['username'] == username) {
       total += int.parse(item['score'].toString());
     }
-    print(total);
   }
 
   return total;
 }
-
-
-
 
 Future<List<HistoryUser>?> history(String username) async {
   var data;
@@ -122,7 +139,10 @@ Future<List<HistoryUser>?> history(String username) async {
   for (var item in data.values) {
     if (item['score'].toString().isNotEmpty && item['username'] == username) {
       total += int.parse(item['score'].toString());
-      user = HistoryUser(point: item['score'], totalPoint: total,result: "${item['result']}/${item['total']}");
+      user = HistoryUser(
+          point: item['score'],
+          totalPoint: total,
+          result: "${item['result']}/${item['total']}");
       history.add(user);
     }
   }
@@ -142,12 +162,13 @@ Future<List<Friends>?> getUsers() async {
     return null;
   }
   for (var item in data.values) {
-    if(item['username'] != FirebaseAuth.instance.currentUser!.email!){
-      user = Friends(username: item['username'],
+      user = Friends(
+          username: item['username'],
           rank: await totalScore(item['username']),
-          heightScore:await getHighScoreUserName(item['username']));
+          heightScore: await getHighScoreUserName(item['username']));
       users.add(user);
-    }
   }
+  users.sort((a,b)=> a.rank.compareTo(b.rank));
   return users;
 }
+

@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/api_services.dart';
 import 'package:game_app/button_game/button_enemy.dart';
 import 'package:game_app/button_game/button_start.dart';
 import 'package:game_app/screen_choose_level/screen_choose_level.dart';
@@ -53,24 +54,36 @@ class _MyScreenSolo extends State<Screen_Solo> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            'Name',
+                            FirebaseAuth.instance.currentUser!.email!,
                             style: TextStyle(
                                 color: Colors.cyanAccent.withOpacity(0.8),
                                 fontSize: 12),
                           ),
                           Padding(padding: EdgeInsets.only(top: 10)),
-                          Text(
-                            'Point: 198',
-                            style: TextStyle(
-                                color: Colors.cyanAccent.withOpacity(0.8),
-                                fontSize: 12),
+                          FutureBuilder(
+                            future: getHighScoreUserName(FirebaseAuth.instance.currentUser!.email!),
+                            builder: (context,snapshot){
+                              return  Text(
+                                'Height Score: ${snapshot.data}',
+                                style: TextStyle(
+                                    color: Colors.cyanAccent.withOpacity(0.8),
+                                    fontSize: 12),
+                              );
+                            }
+
                           ),
                           Padding(padding: EdgeInsets.only(top: 10)),
-                          Text(
-                            'Rank: 1000',
-                            style: TextStyle(
-                                color: Colors.cyanAccent.withOpacity(0.8),
-                                fontSize: 12),
+                          FutureBuilder(
+                              future: totalScore(FirebaseAuth.instance.currentUser!.email!),
+                              builder: (context,snapshot){
+                                return  Text(
+                                  'Rank: ${snapshot.data}',
+                                  style: TextStyle(
+                                      color: Colors.cyanAccent.withOpacity(0.8),
+                                      fontSize: 12),
+                                );
+                              }
+
                           ),
                         ]),
                   )),

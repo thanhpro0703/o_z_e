@@ -1,6 +1,7 @@
 import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:game_app/api_services.dart';
 import 'package:game_app/button_game/button_avatar.dart';
 import 'package:game_app/button_game/button_game.dart';
 import 'package:game_app/screen_play_group/screen_play_group.dart';
@@ -68,18 +69,21 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
             ),
             Padding(padding: EdgeInsets.only(top: 10)),
             Container(
-                width: MediaQuery.of(context).size.width / 2.2,
+                width: MediaQuery.of(context).size.width / 1.5,
                 height: MediaQuery.of(context).size.height / 14,
                 // color: Colors.grey.withOpacity(0.4),
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(50),
                     color: Color(0xffff6633CC).withOpacity(0.7)),
                 child: Center(
-                  child: Text(
-                    'Name',
-                    style: TextStyle(
-                        color: Colors.cyanAccent.withOpacity(0.8),
-                        fontSize: 19),
+                  child:  Padding(
+                    padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
+                    child: Text(
+                      FirebaseAuth.instance.currentUser!.email!,
+                      style: TextStyle(
+                          color: Colors.cyanAccent.withOpacity(0.8),
+                          fontSize: 19),
+                    ),
                   ),
                 )),
             Padding(padding: EdgeInsets.only(top: 10)),
@@ -94,19 +98,30 @@ class _MyScreenChooseLevel extends State<Screen_Choose_Level> {
                   child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text(
-                          'Rank: 1000',
-                          style: TextStyle(
-                              color: Colors.cyanAccent.withOpacity(0.8),
-                              fontSize: 19),
+                        FutureBuilder(
+                            future: totalScore(FirebaseAuth.instance.currentUser!.email!),
+                            builder:(context,snapshot){
+                              return  Text(
+                                'Rank: ${snapshot.data}',
+                                style: TextStyle(
+                                    color: Colors.cyanAccent.withOpacity(0.8),
+                                    fontSize: 19),
+                              );
+                            }
                         ),
-                        Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10)),
-                        Text(
-                          'Point: 198',
-                          style: TextStyle(
-                              color: Colors.cyanAccent.withOpacity(0.8),
-                              fontSize: 19),
-                        )
+                        const Padding(padding: EdgeInsets.fromLTRB(0, 10, 0, 10)),
+                        FutureBuilder(
+                            future: getHighScoreUserName(FirebaseAuth.instance.currentUser!.email!),
+                            builder:(context,snapshot){
+                              return  Text(
+                                'Height Score: ${snapshot.data}',
+                                style: TextStyle(
+                                    color: Colors.cyanAccent.withOpacity(0.8),
+                                    fontSize: 19),
+                              );
+                            }
+
+                        ),
                       ]),
                 )),
             Padding(padding: EdgeInsets.only(top: 10)),

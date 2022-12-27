@@ -28,11 +28,13 @@ class Screen_Acount extends StatefulWidget {
 
 class _MyScreenAccount extends State<Screen_Acount> {
 
+  var heightScore=0;
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
         body: Container(
+          padding: EdgeInsets.only(top: 30),
             decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage("assets/background-home.png"),
@@ -70,6 +72,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                   Container(
                     margin: EdgeInsets.only(top: 10),
                     height: 70,
+
                     child: ButtonPlayWidget(
                       buttonplay: ElavetedButonPlay(
                         text: widget.username,
@@ -108,6 +111,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                           if(snapshot.data == null || !snapshot.hasData){
                             return Center(child: CircularProgressIndicator(),);
                           }
+                          heightScore = snapshot.data!;
                           return Text("Height Score: ${snapshot.data!}",
                               style: GoogleFonts.akayaTelivigala(
                                   fontSize: 40,
