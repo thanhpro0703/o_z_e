@@ -150,7 +150,7 @@ class _MyScreenAccount extends State<Screen_Acount> {
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 80),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [

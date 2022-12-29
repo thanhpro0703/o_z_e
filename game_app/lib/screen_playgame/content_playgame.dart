@@ -112,15 +112,15 @@ class _QuizScreenState extends State<QuizScreen> {
           padding: const EdgeInsets.all(12),
           decoration: const BoxDecoration(
               gradient: LinearGradient(
-                begin: Alignment.topCenter,
-                end: Alignment.bottomCenter,
-                colors: [
-                  Color(0xff928DAB),
-                  Color(0xff56CCF2),
-                  Color(0xfff39060),
-                  Color(0xffffb56b),
-                ],
-              )),
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            colors: [
+              Color(0xff928DAB),
+              Color(0xff56CCF2),
+              Color(0xfff39060),
+              Color(0xffffb56b),
+            ],
+          )),
           child: FutureBuilder(
             future: quiz,
             builder: (BuildContext context, AsyncSnapshot snapshot) {
@@ -139,9 +139,9 @@ class _QuizScreenState extends State<QuizScreen> {
                 }
                 if (isLoaded == false) {
                   optionsList = hardQuestionsList[currentQuestionIndex]
-                  ["incorrect_answers"];
+                      ["incorrect_answers"];
                   optionsList.add(hardQuestionsList[currentQuestionIndex]
-                  ["correct_answer"]);
+                      ["correct_answer"]);
                   optionsList.shuffle();
                   isLoaded = true;
                 }
@@ -198,8 +198,8 @@ class _QuizScreenState extends State<QuizScreen> {
                                     color: Colors.white,
                                     size: 14,
                                     text:
-                                    hardQuestionsList[currentQuestionIndex]
-                                    ["difficulty"])),
+                                        hardQuestionsList[currentQuestionIndex]
+                                            ["difficulty"])),
                           ),
                         ],
                       ),
@@ -210,20 +210,20 @@ class _QuizScreenState extends State<QuizScreen> {
                               color: lightgrey,
                               size: 19,
                               text:
-                              "Question ${currentQuestionIndex + 1} of ${hardQuestionsList.length}")),
+                                  "Question ${currentQuestionIndex + 1} of ${hardQuestionsList.length}")),
                       const SizedBox(height: 20),
                       normalText(
                           color: Colors.white,
                           size: 20,
                           text: hardQuestionsList[currentQuestionIndex]
-                          ["question"]),
+                              ["question"]),
                       const SizedBox(height: 20),
                       ListView.builder(
                         shrinkWrap: true,
                         itemCount: optionsList.length,
                         itemBuilder: (BuildContext context, int index) {
                           var answer = hardQuestionsList[currentQuestionIndex]
-                          ["correct_answer"];
+                              ["correct_answer"];
 
                           return GestureDetector(
                             onTap: () {
@@ -262,10 +262,11 @@ class _QuizScreenState extends State<QuizScreen> {
                                 } else {
                                   timer!.cancel();
                                   addScore(
-                                      points,hardQuestionsList.length,resultQuestion,
+                                      points,
+                                      hardQuestionsList.length,
+                                      resultQuestion,
                                       FirebaseAuth
                                           .instance.currentUser!.email!);
-
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
