@@ -8,6 +8,8 @@ import 'package:game_app/screen_room/footer_room.dart';
 import 'package:game_app/screen_sign_in/form_sign_in.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../screen_account/screen_account.dart';
+
 class TopRank extends StatefulWidget {
   const TopRank({Key? key}) : super(key: key);
 
@@ -15,14 +17,16 @@ class TopRank extends StatefulWidget {
   State<TopRank> createState() => _TopRankState();
 }
 
+
 class _TopRankState extends State<TopRank> {
   static int myRank = 0;
   var users = getUsers();
-
   @override
   void initState() {
     // TODO: implement initState
-    myRank;
+    setState(() {
+      myRank;
+    });
     super.initState();
   }
   @override
@@ -30,7 +34,7 @@ class _TopRankState extends State<TopRank> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
@@ -105,7 +109,8 @@ class _TopRankState extends State<TopRank> {
               itemBuilder: (BuildContext context, int index) {
                 int reverseIndex = snapshot.data!.length - 1 - index;
                 if(snapshot.data![reverseIndex].username == FirebaseAuth.instance.currentUser!.email){
-                  myRank = index+1;
+                  myRank = index +1;
+
                 }
                 return  itemsList("pigbed.png", snapshot.data![reverseIndex].username, snapshot.data![reverseIndex].rank.toString(),index+1);
               },
@@ -118,13 +123,13 @@ class _TopRankState extends State<TopRank> {
       onPressed: () {
         // chuyển hướng sang trang xem thông tin cá nhân
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Form_SignIn()));
+            .push(MaterialPageRoute(builder: (context) => Screen_Acount(username: name,)));
       },
       child: Container(
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.fromLTRB(0, 0, 0, 10),
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.fromLTRB(0, 0, 0, 10),
         decoration: BoxDecoration(
-          gradient: LinearGradient(
+          gradient: const LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment(0.7, 1.5),
             colors: <Color>[
