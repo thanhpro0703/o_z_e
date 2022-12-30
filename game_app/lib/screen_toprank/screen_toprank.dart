@@ -94,8 +94,9 @@ class _TopRankState extends State<TopRank> {
           future: getUsers(),
           builder:(context,snapshot){
             if(snapshot.data == null || !snapshot.hasData){
-              return  Padding(
-                padding:  EdgeInsets.all(200),
+              return  Container(
+                width: MediaQuery.of(context).size.width,
+                padding:const EdgeInsets.all(150),
                 child:const CircularProgressIndicator(),
               );
             }
